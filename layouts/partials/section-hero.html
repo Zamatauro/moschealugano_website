@@ -1,8 +1,15 @@
-{{/* § 1 · HERO con counter inline */}}
+{{/* § 1 · HERO con counter inline + render reali */}}
 {{ $counter := site.Data.counter }}
 {{ $raised := $counter.raised }}
 {{ $goal := $counter.goal }}
 {{ $pct := mul (div (float $raised) (float $goal)) 100 }}
+
+{{/* Hero images: Hugo image processing → WebP + resize */}}
+{{ $heroMain := resources.Get "img/hero/render-esterno.png" }}
+{{ $heroMainW := $heroMain.Resize "1200x webp q85" }}
+{{ $heroMainSm := $heroMain.Resize "640x webp q80" }}
+{{ $heroPolaroid := resources.Get "img/hero/aerea-lotto.png" }}
+{{ $heroPolaroidW := $heroPolaroid.Resize "480x webp q80" }}
 
 <section id="hero" class="hero section--ivory">
   <div class="container">
@@ -12,8 +19,7 @@
         <p class="eyebrow">{{ i18n "hero_eyebrow" }}</p>
 
         <h1 class="hero__wordmark">Dar al-Salam</h1>
-
-        <p class="hero__wordmark-ar" lang="ar" dir="rtl">{{ .Site.Params.wordmarkAR }}</p>
+        <p class="hero__wordmark-ar"><span lang="ar" dir="rtl">{{ .Site.Params.wordmarkAR }}</span></p>
 
         <p class="hero__claim">{{ .Params.hero_claim | default "Una nuova casa di pace." }}</p>
 
@@ -38,18 +44,27 @@
 
         <div class="hero__cta-row">
           <a href="#donare" class="btn btn--primary">{{ i18n "hero_cta_primary" }} →</a>
-          <a href="#progetto" class="btn btn--secondary">{{ i18n "hero_cta_secondary" }}</a>
         </div>
       </div>
 
       <div class="hero__visual">
-        {{/* TODO V1: render Beier Cabrini con overlay scuro 30% */}}
-        <div style="width:100%;height:100%;background:linear-gradient(135deg, #2E7474 0%, #735751 100%);display:flex;align-items:center;justify-content:center;color:#F5EDE6;font-family:Philosopher,serif;font-size:1.5rem;text-align:center;padding:2rem;">
-          <span>Render Beier Cabrini<br>(da inserire)</span>
-        </div>
+        <img
+          src="{{ $heroMainW.RelPermalink }}"
+          srcset="{{ $heroMainSm.RelPermalink }} 640w, {{ $heroMainW.RelPermalink }} 1200w"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          alt="Render esterno del nuovo centro Dar al-Salam, Beier Cabrini Architetti"
+          loading="eager"
+          width="{{ $heroMainW.Width }}"
+          height="{{ $heroMainW.Height }}">
+
         <div class="hero__polaroid">
-          <div style="width:100%;aspect-ratio:4/3;background:#E3DDD8;display:flex;align-items:center;justify-content:center;color:#735751;font-size:0.75rem;">[planimetria]</div>
-          <p class="hero__polaroid-caption">Render Beier Cabrini · via Ceresio 53B</p>
+          <img
+            src="{{ $heroPolaroidW.RelPermalink }}"
+            alt="Vista aerea del lotto a Pregassona"
+            loading="lazy"
+            width="{{ $heroPolaroidW.Width }}"
+            height="{{ $heroPolaroidW.Height }}">
+          <p class="hero__polaroid-caption">Via Ceresio 53B · Pregassona</p>
         </div>
       </div>
 

@@ -253,8 +253,10 @@ html[lang="ar"] .heading,
   line-height: var(--lh-tight);
   color: var(--c-brand);
   margin: var(--sp-2) 0 var(--sp-3);
-  direction: rtl;
+  text-align: left;     /* ancorato a sinistra come il wordmark IT */
 }
+html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
+.hero__wordmark-ar span { unicode-bidi: isolate; }
 .hero__claim {
   font-family: var(--font-display);
   font-style: italic;
@@ -280,32 +282,39 @@ html[lang="ar"] .heading,
 .hero__visual {
   position: relative;
   aspect-ratio: 4/5;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: var(--c-sand);
+  /* niente overflow:hidden: la polaroid esce volutamente */
+  background: transparent;
 }
-.hero__visual img {
+.hero__visual > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: var(--radius-md);
+  display: block;
 }
 .hero__polaroid {
   position: absolute;
-  bottom: -10%;
-  left: -10%;
-  width: 45%;
+  bottom: 4%;       /* dentro il box, non fuori */
+  left: 4%;
+  width: 42%;
+  max-width: 240px;
   background: var(--c-ivory);
   padding: var(--sp-2);
-  box-shadow: 0 18px 36px -16px rgba(58,58,58,0.25);
-  transform: rotate(-3deg);
+  box-shadow: 0 18px 36px -16px rgba(58,58,58,0.35);
+  transform: rotate(-2.5deg);
+  z-index: 2;
 }
 .hero__polaroid img {
+  width: 100%;
+  height: auto;
   aspect-ratio: 4/3;
-  filter: saturate(0.6);
-  opacity: 0.92;
+  object-fit: cover;
+  display: block;
+  margin: 0;
 }
 .hero__polaroid-caption {
   margin-top: var(--sp-2);
+  margin-bottom: 0;
   font-family: var(--font-ui);
   font-size: 0.625rem;
   font-weight: 600;
@@ -313,6 +322,7 @@ html[lang="ar"] .heading,
   text-transform: uppercase;
   color: var(--c-brand);
   line-height: 1.3;
+  text-align: center;
 }
 
 /* ---------- COUNTER ---------- */
@@ -401,6 +411,193 @@ html[lang="ar"] .heading,
   display: flex;
   flex-wrap: wrap;
   gap: var(--sp-4);
+}
+
+/* ---------- GALLERY (§ 2) ---------- */
+
+.gallery {
+  display: flex;
+  gap: var(--sp-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: var(--content-pad-mob);
+  margin: var(--sp-8) calc(var(--content-pad-mob) * -1);
+  padding: 0 var(--content-pad-mob) var(--sp-4);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.gallery::-webkit-scrollbar { height: 6px; }
+.gallery::-webkit-scrollbar-thumb { background: rgba(46,116,116,0.3); border-radius: 3px; }
+@media (min-width: 768px) {
+  .gallery {
+    margin: var(--sp-8) calc(var(--content-pad-desk) * -1);
+    padding: 0 var(--content-pad-desk) var(--sp-4);
+  }
+}
+.gallery__item {
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+  margin: 0;
+  background: var(--c-white);
+  padding: var(--sp-3);
+  box-shadow: var(--shadow-sm);
+}
+@media (min-width: 768px) { .gallery__item { flex-basis: 360px; } }
+.gallery__item img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  background: #f8f5f0;
+  display: block;
+}
+.gallery__item figcaption {
+  margin-top: var(--sp-3);
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--c-accent);
+  text-align: center;
+}
+
+/* ---------- PROJECT FACTS (§ 2c) ---------- */
+
+.project-facts {
+  margin: var(--sp-12) 0;
+  padding: var(--sp-6);
+  background: var(--c-white);
+  border-radius: var(--radius-md);
+}
+.project-facts dl {
+  margin: 0;
+  display: grid;
+  gap: var(--sp-4);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .project-facts dl {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-6) var(--sp-12);
+  }
+}
+.project-facts div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  border-bottom: 1px solid rgba(46,116,116,0.10);
+  padding-bottom: var(--sp-3);
+}
+.project-facts dt {
+  font-family: var(--font-ui);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+.project-facts dd {
+  margin: 0;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--c-text);
+}
+
+/* ---------- BUDGET (§ 2d) ---------- */
+
+.budget {
+  margin: var(--sp-12) 0;
+  display: grid;
+  gap: var(--sp-8);
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .budget { grid-template-columns: auto 1fr; gap: var(--sp-12); }
+}
+.budget h3 {
+  grid-column: 1 / -1;
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  color: var(--c-brand);
+  margin-bottom: 0;
+}
+.budget__chart {
+  display: flex;
+  justify-content: center;
+}
+.budget__legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.budget__row {
+  display: grid;
+  grid-template-columns: 16px 1fr auto auto;
+  gap: var(--sp-3);
+  align-items: center;
+  padding-bottom: var(--sp-3);
+  border-bottom: 1px solid rgba(46,116,116,0.10);
+}
+.budget__row:last-child { border-bottom: none; }
+.budget__dot {
+  width: 16px; height: 16px;
+  border-radius: var(--radius-sm);
+}
+.budget__label { font-size: var(--fs-body); color: var(--c-text); }
+.budget__value { font-size: var(--fs-body); color: var(--c-text-soft); }
+.budget__pct {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--c-brand);
+  min-width: 3rem;
+  text-align: right;
+}
+.budget__row--total { border-top: 2px solid var(--c-text); padding-top: var(--sp-3); margin-top: var(--sp-2); }
+.budget__row--secondary { color: var(--c-text-soft); }
+.budget__row--highlight {
+  background: rgba(212,146,60,0.08);
+  border: 1px solid rgba(212,146,60,0.25);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-3);
+  margin: var(--sp-2) 0;
+}
+.budget__row--highlight .budget__label,
+.budget__row--highlight .budget__value strong {
+  color: var(--c-cta-hover);
+}
+
+/* ---------- CALLOUTS (§ 2e) ---------- */
+
+.callouts {
+  display: grid;
+  gap: var(--sp-6);
+  margin: var(--sp-12) 0 0;
+}
+@media (min-width: 768px) { .callouts { grid-template-columns: 1fr 1fr; } }
+.callout {
+  background: var(--c-ivory);
+  padding: var(--sp-6) var(--sp-8);
+  border: 1px solid rgba(115,87,81,0.20);
+  border-radius: var(--radius-md);
+}
+.callout__eyebrow {
+  font-family: var(--font-ui);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin: 0 0 var(--sp-3);
+}
+.callout p { margin-bottom: var(--sp-3); }
+.callout__quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.125rem;
+  color: var(--c-brand);
+  margin-top: var(--sp-3);
+  margin-bottom: 0;
 }
 
 /* ---------- PLACEHOLDER SECTIONS (in costruzione) ---------- */
