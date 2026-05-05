@@ -208,6 +208,20 @@ governance change 2019, modello 6 appartamenti dettagliato, ecc.).
 
 ---
 
+## ⚠ Da fare prima del go-live (P2.6 review cowork)
+
+**Vincolo legale GDPR/LPD** — anche per sito semi-statico:
+
+- [ ] **Privacy policy** (cosa raccogliamo: nessun tracking dati personali on-site, solo Pixel Meta/GA4 client-side, donazioni gestite da provider esterni con loro privacy)
+- [ ] **Cookie policy** (Pixel Meta + GA4 + eventuali Cloudflare cookies)
+- [ ] **Termini d'uso / Note legali** (chi siamo come associazione, scopo del sito, limiti di responsabilità)
+
+Tre pagine separate `/privacy/`, `/cookie/`, `/note-legali/` linkate dal footer.
+Cowork può scriverle (boilerplate adattato al brandbook + fattispecie LMT).
+Tempo: 1h cowork + 30 min integrazione.
+
+---
+
 ## Format del consegnato a Claude Code (questa chat)
 
 Copia/incolla **un file Markdown** con la stessa struttura di sopra,

@@ -1,8 +1,14 @@
-{{/* § 1 · HERO con counter inline + render reali */}}
+{{/* § 1 · HERO con counter sul gap */}}
 {{ $counter := site.Data.counter }}
 {{ $raised := $counter.raised }}
 {{ $goal := $counter.goal }}
 {{ $pct := mul (div (float $raised) (float $goal)) 100 }}
+
+{{/* Calcolo days remaining dinamico al build */}}
+{{ $deadline := time.AsTime (printf "%sT00:00:00Z" $counter.deadline_iso) }}
+{{ $today := now }}
+{{ $diffSeconds := sub $deadline.Unix $today.Unix }}
+{{ $daysRemaining := math.Ceil (div $diffSeconds 86400) }}
 
 {{/* Hero images: foto comunità principale + render polaroid (pattern Cambridge Mosque) */}}
 {{/* Brandbook §6: la fotografia umana è il leader visivo. Render in posizione di servizio. */}}
@@ -28,18 +34,28 @@
           {{ .Params.hero_body | default "Bismillah ar-Rahman ar-Rahim. Cari fratelli e care sorelle, dopo vent'anni di affitto in via Bottogno Allah ci ha aperto una porta a Pregassona. Mancano CHF 940'360 per chiudere il terreno entro il 15 settembre." | markdownify }}
         </div>
 
-        {{/* Counter inline */}}
+        {{/* Counter inline — asse del GAP (P0.1 review cowork) */}}
         <div class="counter" role="region" aria-label="Stato della raccolta">
-          <div class="counter__row">
-            <span class="counter__big tabular">CHF {{ $counter.raised_formatted }}</span>
-            <span class="counter__small">{{ i18n "counter_su" }} CHF {{ $counter.goal_formatted }}</span>
+          <div class="counter__pair">
+            <div class="counter__col">
+              <span class="counter__label">Raccolti finora</span>
+              <span class="counter__big tabular">CHF {{ $counter.raised_formatted }}</span>
+            </div>
+            <div class="counter__col counter__col--gap">
+              <span class="counter__label">Mancano entro il 15 settembre</span>
+              <span class="counter__big counter__big--gap tabular">CHF {{ $counter.gap_formatted }}</span>
+            </div>
           </div>
           <div class="counter__bar" aria-hidden="true">
             <div class="counter__bar-fill" style="width: {{ printf "%.0f" $pct }}%"></div>
           </div>
           <div class="counter__meta">
             <span><span class="counter__pct">{{ printf "%.0f" $pct }}%</span> dell'obiettivo</span>
-            <span>{{ i18n "counter_aggiornato" }} {{ $counter.updated }}</span>
+            <span><strong class="tabular">{{ $daysRemaining }}</strong> giorni rimanenti</span>
+            {{ if gt $counter.donors_count 0 }}
+              <span><strong class="tabular">{{ $counter.donors_count }}</strong> fratelli e sorelle</span>
+            {{ end }}
+            <span class="counter__updated">Aggiornato {{ $counter.updated }}</span>
           </div>
         </div>
 

@@ -23,7 +23,7 @@
         <label for="tab-carta" class="tabs__btn">{{ i18n "donare_tab_carta" }}</label>
         <label for="tab-bonifico" class="tabs__btn">{{ i18n "donare_tab_bonifico" }}</label>
         <label for="tab-twint" class="tabs__btn">{{ i18n "donare_tab_twint" }} <small>(CH)</small></label>
-        <label for="tab-altre" class="tabs__btn">{{ i18n "donare_tab_altre" }}</label>
+        <label for="tab-altre" class="tabs__btn">{{ i18n "donare_tab_altre" }} <small>· int.li</small></label>
       </div>
 
       <div class="tabs__panels">
@@ -33,21 +33,22 @@
           <p class="tab-panel__intro">
             La via più semplice per donare da qualunque paese. Carta di credito, Apple Pay, Google Pay. La tua sadaqa arriva subito sul conto del progetto.
           </p>
+          {{/* Micro-storie corrette su numeri verificabili dal bilancio LMT (review cowork P0.4) */}}
           <div class="amounts">
             <a href="{{ $sumup }}?amount=50" class="amount-btn" target="_blank" rel="noopener">
               <span class="amount-btn__big">50<small>CHF</small></span>
-              <span class="amount-btn__label">sadaqa quotidiana</span>
-              <span class="amount-btn__sublabel">quanto la comunità spende ogni giorno per restare aperta</span>
+              <span class="amount-btn__label">una giornata di apertura</span>
+              <span class="amount-btn__sublabel">quanto serve a tenere aperta la sala di Bottogno per un giorno</span>
             </a>
             <a href="{{ $sumup }}?amount=200" class="amount-btn" target="_blank" rel="noopener">
               <span class="amount-btn__big">200<small>CHF</small></span>
-              <span class="amount-btn__label">una settimana di affitto</span>
-              <span class="amount-btn__sublabel">quello che paghiamo a Bottogno per tenere la sala in piedi sette giorni</span>
+              <span class="amount-btn__label">una settimana di apertura</span>
+              <span class="amount-btn__sublabel">sette giorni di sala viva, dalla preghiera dell'alba al taraweeh</span>
             </a>
             <a href="{{ $sumup }}?amount=1000" class="amount-btn" target="_blank" rel="noopener">
               <span class="amount-btn__big">1000<small>CHF</small></span>
-              <span class="amount-btn__label">un mese di scuola coranica</span>
-              <span class="amount-btn__sublabel">un mese intero di lezioni per i bambini della scuola domenicale El Nur</span>
+              <span class="amount-btn__label">un mese di affitto a Bottogno</span>
+              <span class="amount-btn__sublabel">l'affitto che paghiamo da vent'anni per tenere la sala</span>
             </a>
           </div>
           <div class="tab-panel__cta">

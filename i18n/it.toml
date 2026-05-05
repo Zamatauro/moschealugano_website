@@ -67,7 +67,7 @@ other = "Bonifico"
 [donare_tab_twint]
 other = "TWINT"
 [donare_tab_altre]
-other = "Altre piattaforme"
+other = "Crowdfunding"
 [donare_dona_carta]
 other = "Dona con carta"
 [donare_metodi_carta]

@@ -109,8 +109,35 @@
         <div><dt>{{ i18n "progetto_superficie" }}</dt><dd>{{ .Site.Params.superficie }}</dd></div>
         <div><dt>{{ i18n "progetto_architetto" }}</dt><dd>{{ .Site.Params.architetto }}</dd></div>
         <div><dt>{{ i18n "progetto_capienza" }}</dt><dd>{{ .Site.Params.capienza }}</dd></div>
-        <div><dt>{{ i18n "progetto_inizio_cantiere" }}</dt><dd>{{ i18n "progetto_dopo" }}</dd></div>
+        <div><dt>{{ i18n "progetto_inizio_cantiere" }}</dt><dd>Dal 2027, dopo Fase 2</dd></div>
       </dl>
+    </div>
+
+    {{/* 2c-bis · Timeline visiva del progetto (P1.4 review cowork) */}}
+    <div class="timeline">
+      <p class="eyebrow">Le tappe</p>
+      <ol class="timeline__list">
+        <li class="timeline__item is-current">
+          <span class="timeline__date">2026 · oggi</span>
+          <p class="timeline__label">Raccolta Fase 1 in corso</p>
+        </li>
+        <li class="timeline__item is-next">
+          <span class="timeline__date">15 settembre 2026</span>
+          <p class="timeline__label">Chiusura Fase 1 — acquisto terreno + permessi</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__date">2027</span>
+          <p class="timeline__label">Fase 2 — copertura finanziaria della costruzione</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__date">2027 → 2028</span>
+          <p class="timeline__label">Cantiere · circa 18 mesi</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__date">2028 → 2029</span>
+          <p class="timeline__label">Apertura · <em>insha'Allah</em></p>
+        </li>
+      </ol>
     </div>
 
     {{/* 2d · Budget breakdown */}}

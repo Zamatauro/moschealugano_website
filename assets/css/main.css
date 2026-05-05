@@ -431,6 +431,40 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   gap: var(--sp-3);
   flex-wrap: wrap;
 }
+/* Counter pair (raccolti / mancano) — review cowork P0.1 */
+.counter__pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+@media (min-width: 640px) {
+  .counter__pair { grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
+}
+.counter__col { display: flex; flex-direction: column; gap: var(--sp-1); }
+.counter__col--gap { padding-left: 0; }
+@media (min-width: 640px) {
+  .counter__col--gap {
+    padding-left: var(--sp-6);
+    border-left: 2px solid rgba(46,116,116,0.15);
+  }
+}
+.counter__label {
+  font-family: var(--font-ui);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+.counter__big--gap {
+  color: var(--c-text);  /* il gap è in scuro, raccolti in ambra → asimmetria intenzionale */
+}
+.counter__updated {
+  margin-left: auto;
+  font-style: italic;
+  color: var(--c-text-muted);
+}
 .counter__big {
   font-family: var(--font-display);
   font-weight: 700;
@@ -1175,6 +1209,76 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   font-size: var(--fs-caption);
   color: var(--c-text-muted);
   text-align: center;
+}
+
+/* ---------- TIMELINE (§ 2 review cowork P1.4) ---------- */
+.timeline {
+  margin: var(--sp-12) 0 var(--sp-8);
+}
+.timeline__list {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-6) 0 0;
+  position: relative;
+}
+.timeline__list::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: rgba(46,116,116,0.20);
+}
+.timeline__item {
+  position: relative;
+  padding-left: var(--sp-8);
+  padding-bottom: var(--sp-6);
+}
+.timeline__item:last-child { padding-bottom: 0; }
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--c-white);
+  border: 2px solid rgba(46,116,116,0.30);
+  z-index: 1;
+}
+.timeline__item.is-current::before {
+  background: var(--c-cta);
+  border-color: var(--c-cta);
+  box-shadow: 0 0 0 4px rgba(212,146,60,0.25);
+}
+.timeline__item.is-next::before {
+  border-color: var(--c-cta);
+  background: var(--c-ivory);
+}
+.timeline__date {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: var(--sp-1);
+}
+.timeline__item.is-current .timeline__date,
+.timeline__item.is-next .timeline__date {
+  color: var(--c-cta);
+}
+.timeline__label {
+  margin: 0;
+  font-size: var(--fs-body);
+  color: var(--c-text);
+  line-height: 1.45;
+}
+.timeline__item.is-current .timeline__label {
+  font-weight: 600;
 }
 
 /* ---------- CONTAINER NARROW ---------- */
