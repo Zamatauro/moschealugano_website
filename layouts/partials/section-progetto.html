@@ -99,6 +99,25 @@
           <span class="budget__value tabular">CHF {{ .Site.Data.counter.raised_formatted }}</span>
           <span class="budget__pct"></span>
         </div>
+
+        {{/* Scomposizione del 421'400 CHF già coperto, dal doc committente */}}
+        <details class="budget__details">
+          <summary>Come è composto il già coperto</summary>
+          <div class="budget__sub">
+            <div class="budget__sub-row">
+              <span>Già raccolto da fedeli</span>
+              <span class="tabular">CHF 132'020</span>
+            </div>
+            <div class="budget__sub-row">
+              <span>Promesso da fedeli</span>
+              <span class="tabular">CHF 181'600</span>
+            </div>
+            <div class="budget__sub-row">
+              <span>Raccolto nei 6 anni precedenti</span>
+              <span class="tabular">CHF 107'780</span>
+            </div>
+          </div>
+        </details>
         <div class="budget__row budget__row--highlight">
           <span class="budget__dot" style="background:transparent"></span>
           <span class="budget__label"><strong>{{ i18n "progetto_da_raccogliere" }}</strong></span>
