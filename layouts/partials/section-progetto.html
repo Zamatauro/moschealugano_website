@@ -15,8 +15,11 @@
     <p class="eyebrow">Il progetto</p>
     <h2>{{ i18n "progetto_title" }}</h2>
 
-    {{/* 2b · Gallery carousel orizzontale (mobile swipe, desktop scroll) */}}
-    <div class="gallery" aria-label="Galleria progetto">
+    {{/* 2b · Gallery carousel orizzontale (frecce + dots, no scrollbar) */}}
+    <div class="gallery-wrap">
+      <button type="button" class="gallery-nav gallery-nav--prev" aria-label="Slide precedente" data-dir="-1">‹</button>
+      <button type="button" class="gallery-nav gallery-nav--next" aria-label="Slide successiva" data-dir="1">›</button>
+      <div class="gallery" id="gallery" aria-label="Galleria progetto">
       <figure class="gallery__item">
         <div class="gallery__frame"><img src="{{ $g1.RelPermalink }}" alt="Render esterno con alberi · Beier Cabrini Architetti" loading="lazy" width="{{ $g1.Width }}" height="{{ $g1.Height }}"></div>
         <figcaption>Vista esterna · Beier Cabrini</figcaption>
@@ -41,7 +44,62 @@
         <div class="gallery__frame"><img src="{{ $g6.RelPermalink }}" alt="Mappa catastale, mappale 253 RFD Pregassona evidenziato" loading="lazy" width="{{ $g6.Width }}" height="{{ $g6.Height }}"></div>
         <figcaption>Mappale 253 RFD Pregassona</figcaption>
       </figure>
+      </div>
+      {{/* Dots di posizione */}}
+      <div class="gallery-dots" id="gallery-dots" aria-label="Posizione slide">
+        {{ range seq 6 }}
+          <button type="button" class="gallery-dot" data-idx="{{ sub . 1 }}" aria-label="Vai alla slide {{ . }}"></button>
+        {{ end }}
+      </div>
     </div>
+
+    {{/* JS minimo per frecce + dots: scroll programmatico, niente librerie */}}
+    <script>
+    (function(){
+      var gallery = document.getElementById('gallery');
+      var dotsBox = document.getElementById('gallery-dots');
+      if(!gallery || !dotsBox) return;
+      var items = gallery.querySelectorAll('.gallery__item');
+      var dots = dotsBox.querySelectorAll('.gallery-dot');
+      var prev = document.querySelector('.gallery-nav--prev');
+      var next = document.querySelector('.gallery-nav--next');
+
+      function activate(idx){
+        idx = Math.max(0, Math.min(items.length - 1, idx));
+        items[idx].scrollIntoView({behavior:'smooth', block:'nearest', inline:'start'});
+      }
+
+      function currentIdx(){
+        // L'item più vicino al bordo sinistro della gallery
+        var galRect = gallery.getBoundingClientRect();
+        var best = 0, bestDist = Infinity;
+        items.forEach(function(it, i){
+          var r = it.getBoundingClientRect();
+          var d = Math.abs(r.left - galRect.left);
+          if (d < bestDist){ bestDist = d; best = i; }
+        });
+        return best;
+      }
+
+      prev && prev.addEventListener('click', function(){ activate(currentIdx() - 1); });
+      next && next.addEventListener('click', function(){ activate(currentIdx() + 1); });
+      dots.forEach(function(d){
+        d.addEventListener('click', function(){ activate(parseInt(d.dataset.idx, 10)); });
+      });
+
+      function syncDots(){
+        var idx = currentIdx();
+        dots.forEach(function(d, i){
+          d.classList.toggle('is-active', i === idx);
+        });
+      }
+      gallery.addEventListener('scroll', function(){
+        clearTimeout(gallery._t);
+        gallery._t = setTimeout(syncDots, 80);
+      }, {passive:true});
+      syncDots();
+    })();
+    </script>
 
     {{/* 2c · Numeri progetto */}}
     <div class="project-facts">
