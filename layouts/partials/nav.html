@@ -15,16 +15,29 @@
     </div>
 
     <div class="nav__cta-wrap">
-      <div class="nav__lang" aria-label="Lingua">
-        {{ $currentLang := site.Language.Lang }}
-        {{ range site.Languages }}
-          {{ $url := "/" }}
-          {{ if ne .Lang "it" }}
-            {{ $url = printf "/%s/" .Lang }}
+      {{ $currentLang := site.Language.Lang }}
+      <details class="lang-dropdown">
+        <summary class="lang-dropdown__current" aria-label="Cambia lingua">
+          <span>{{ site.Language.LanguageName }}</span>
+          <svg class="lang-dropdown__arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <div class="lang-dropdown__menu" role="menu">
+          {{ range site.Languages }}
+            {{ $url := "/" }}
+            {{ if ne .Lang "it" }}
+              {{ $url = printf "/%s/" .Lang }}
+            {{ end }}
+            <a href="{{ $url }}"
+               class="lang-dropdown__item{{ if eq .Lang $currentLang }} is-active{{ end }}"
+               role="menuitem"
+               {{ if eq .Lang $currentLang }}aria-current="true"{{ end }}>
+              {{ .LanguageName }}
+            </a>
           {{ end }}
-          <a href="{{ $url }}" {{ if eq .Lang $currentLang }}aria-current="true"{{ end }}>{{ .LanguageName }}</a>
-        {{ end }}
-      </div>
+        </div>
+      </details>
       <a href="#donare" class="btn btn--primary btn--small">{{ i18n "nav_dona_cta" }}</a>
     </div>
   </div>
