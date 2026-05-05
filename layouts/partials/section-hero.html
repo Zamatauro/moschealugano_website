@@ -4,12 +4,13 @@
 {{ $goal := $counter.goal }}
 {{ $pct := mul (div (float $raised) (float $goal)) 100 }}
 
-{{/* Hero images: Hugo image processing → WebP + resize */}}
-{{ $heroMain := resources.Get "img/hero/render-esterno.png" }}
-{{ $heroMainW := $heroMain.Resize "1200x webp q85" }}
-{{ $heroMainSm := $heroMain.Resize "640x webp q80" }}
-{{ $heroPolaroid := resources.Get "img/hero/aerea-lotto.png" }}
-{{ $heroPolaroidW := $heroPolaroid.Resize "480x webp q80" }}
+{{/* Hero images: foto comunità principale + render polaroid (pattern Cambridge Mosque) */}}
+{{/* Brandbook §6: la fotografia umana è il leader visivo. Render in posizione di servizio. */}}
+{{ $heroMain := resources.Get "img/stock/comunita-laptop.jpg" }}
+{{ $heroMainW := $heroMain.Resize "1200x webp q82" }}
+{{ $heroMainSm := $heroMain.Resize "640x webp q78" }}
+{{ $heroPolaroid := resources.Get "img/hero/render-esterno.png" }}
+{{ $heroPolaroidW := $heroPolaroid.Resize "480x webp q85" }}
 
 <section id="hero" class="hero section--ivory">
   <div class="container">
@@ -52,7 +53,7 @@
           src="{{ $heroMainW.RelPermalink }}"
           srcset="{{ $heroMainSm.RelPermalink }} 640w, {{ $heroMainW.RelPermalink }} 1200w"
           sizes="(min-width: 1024px) 50vw, 100vw"
-          alt="Render esterno del nuovo centro Dar al-Salam, Beier Cabrini Architetti"
+          alt="Comunità musulmana riunita"
           loading="eager"
           width="{{ $heroMainW.Width }}"
           height="{{ $heroMainW.Height }}">
@@ -60,12 +61,15 @@
         <div class="hero__polaroid">
           <img
             src="{{ $heroPolaroidW.RelPermalink }}"
-            alt="Vista aerea del lotto a Pregassona"
+            alt="Render esterno del nuovo centro Dar al-Salam"
             loading="lazy"
             width="{{ $heroPolaroidW.Width }}"
             height="{{ $heroPolaroidW.Height }}">
-          <p class="hero__polaroid-caption">Via Ceresio 53B · Pregassona</p>
+          <p class="hero__polaroid-caption">Render Beier Cabrini · Via Ceresio 53B</p>
         </div>
+
+        {{/* Disclaimer onesto: foto stock finché non abbiamo i volti reali della comunità LMT (post W7) */}}
+        <p class="hero__disclaimer">Foto rappresentativa · le voci della comunità di Lugano saranno aggiunte dopo il vetting e le liberatorie</p>
       </div>
 
     </div>

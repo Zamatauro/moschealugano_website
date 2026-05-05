@@ -1,36 +1,49 @@
-{{/* Footer — lockup V4 + dati legali */}}
+{{/* Footer — Wordmark V4 lockup completo + dati legali */}}
+{{ $logoLockup := resources.Get "img/logo/lmt-iconografico.png" }}
+{{ $logoLockupW := $logoLockup.Resize "240x webp q90" }}
+
 <footer class="footer">
   <div class="container">
-    <div class="footer__lockup">Dar al-Salam</div>
 
-    <p>{{ i18n "footer_promosso" }}</p>
-    <p>{{ .Site.Params.cheId }} · Esenzione fiscale {{ .Site.Params.esenzioneFiscaleAnno }}</p>
+    {{/* Lockup V4: logo iconografico + Dar al-Salam + endorser legale */}}
+    <div class="footer__lockup">
+      <img src="{{ $logoLockupW.RelPermalink }}" alt="Lega dei Musulmani in Ticino" class="footer__logo" width="120" height="120">
+      <div class="footer__lockup-text">
+        <div class="footer__wordmark">Dar al-Salam</div>
+        <div class="footer__endorser">{{ i18n "footer_promosso" }}</div>
+        <div class="footer__legal-id">{{ .Site.Params.cheId }} · Esenzione fiscale {{ .Site.Params.esenzioneFiscaleAnno }}</div>
+      </div>
+    </div>
 
     <div class="footer__divider"></div>
 
-    <p>
-      <strong>{{ i18n "footer_indirizzo_label" }}:</strong> {{ .Site.Params.indirizzoModeschea }}<br>
-      <strong>Email:</strong> <a href="mailto:{{ .Site.Params.emailContatto }}">{{ .Site.Params.emailContatto }}</a>
-    </p>
-
-    <p>
-      <strong>{{ i18n "footer_iban_label" }}:</strong>
-      <span class="tabular">{{ .Site.Params.ibanFormatted }}</span>
-      <br>
-      <strong>BIC:</strong> {{ .Site.Params.bic }}
-    </p>
+    <div class="footer__cols">
+      <div>
+        <p class="footer__label">{{ i18n "footer_indirizzo_label" }}</p>
+        <p>{{ .Site.Params.indirizzoModeschea }}</p>
+        <p><a href="mailto:{{ .Site.Params.emailContatto }}">{{ .Site.Params.emailContatto }}</a></p>
+      </div>
+      <div>
+        <p class="footer__label">{{ i18n "footer_iban_label" }}</p>
+        <p class="tabular">{{ .Site.Params.ibanFormatted }}</p>
+        <p><span class="footer__muted">BIC:</span> {{ .Site.Params.bic }}</p>
+      </div>
+    </div>
 
     <div class="footer__divider"></div>
 
     <div class="footer__legal">
-      {{ range site.Languages }}
-        {{ $url := "/" }}
-        {{ if ne .Lang "it" }}
-          {{ $url = printf "/%s/" .Lang }}
+      <div class="footer__langs">
+        {{ range site.Languages }}
+          {{ $url := "/" }}
+          {{ if ne .Lang "it" }}
+            {{ $url = printf "/%s/" .Lang }}
+          {{ end }}
+          <a href="{{ $url }}">{{ .LanguageName }}</a>
         {{ end }}
-        <a href="{{ $url }}">{{ .LanguageName }}</a>
-      {{ end }}
-      <span style="margin-left: auto;">© 2026 LMT</span>
+      </div>
+      <span class="footer__copyright">© 2026 LMT</span>
     </div>
+
   </div>
 </footer>
