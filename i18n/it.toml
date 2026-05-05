@@ -1,0 +1,125 @@
+# UI strings — Italiano
+
+[nav_progetto]
+other = "Il progetto"
+[nav_donare]
+other = "Donare"
+[nav_voci]
+other = "Voci"
+[nav_faq]
+other = "FAQ"
+[nav_dona_cta]
+other = "Dona ora"
+
+[hero_eyebrow]
+other = "Pregassona · Lugano · Fundraising 2026"
+[hero_cta_primary]
+other = "Dona la tua sadaqa"
+[hero_cta_secondary]
+other = "Scopri Dar al-Salam"
+
+[counter_raccolti]
+other = "raccolti"
+[counter_su]
+other = "su"
+[counter_obiettivo]
+other = "obiettivo"
+[counter_aggiornato]
+other = "Aggiornato il"
+[counter_alle]
+other = "alle"
+
+[progetto_title]
+other = "Cosa stiamo costruendo"
+[progetto_indirizzo]
+other = "Indirizzo"
+[progetto_particella]
+other = "Particella"
+[progetto_superficie]
+other = "Superficie"
+[progetto_architetto]
+other = "Architetto"
+[progetto_capienza]
+other = "Capienza"
+[progetto_inizio_cantiere]
+other = "Inizio cantiere"
+[progetto_dopo]
+other = "Dopo il 15.09.2026"
+[progetto_dove_vanno_soldi]
+other = "Dove vanno i tuoi soldi"
+[progetto_voce_terreno]
+other = "Acquisto terreno"
+[progetto_voce_permessi]
+other = "Progetto, permessi, atti"
+[progetto_totale_fase]
+other = "TOTALE FASE 1"
+[progetto_gia_coperto]
+other = "Già coperto da fedeli"
+[progetto_da_raccogliere]
+other = "Da raccogliere entro 15.09"
+
+[donare_title]
+other = "Come donare"
+[donare_tab_carta]
+other = "Carta"
+[donare_tab_bonifico]
+other = "Bonifico"
+[donare_tab_twint]
+other = "TWINT"
+[donare_tab_altre]
+other = "Altre piattaforme"
+[donare_dona_carta]
+other = "Dona con carta"
+[donare_metodi_carta]
+other = "Carta · Apple Pay · Google Pay · pagamento una tantum"
+[donare_copia]
+other = "Copia"
+[donare_copiato]
+other = "Copiato ✓"
+[donare_beneficiario]
+other = "Beneficiario"
+[donare_iban]
+other = "IBAN PostFinance"
+[donare_bic]
+other = "BIC"
+[donare_causale]
+other = "Causale"
+[donare_causale_default]
+other = "Dar al-Salam · Fase 1"
+[donare_mostra_qr]
+other = "Mostra QR-bill"
+[donare_la_tua_sadaqa]
+other = "La tua sadaqa jariya."
+
+[perche_ora_title]
+other = "Perché ora"
+
+[voci_title]
+other = "Voci della comunità"
+[voci_altre_arrivo]
+other = "Altre voci della comunità in arrivo nelle prossime settimane."
+
+[faq_title]
+other = "Domande frequenti"
+
+[trasparenza_title]
+other = "Trasparenza"
+[trasparenza_documenti]
+other = "DOCUMENTI"
+[trasparenza_stampa]
+other = "STAMPA"
+[trasparenza_contatto_stampa]
+other = "Contatto stampa"
+
+[footer_promosso]
+other = "Promosso da Lega dei Musulmani in Ticino"
+[footer_indirizzo_label]
+other = "Sede"
+[footer_iban_label]
+other = "IBAN PostFinance"
+[footer_privacy]
+other = "Privacy"
+[footer_cookie]
+other = "Cookie"
+[footer_statuto]
+other = "Statuto"

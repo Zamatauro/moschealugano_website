@@ -1,0 +1,29 @@
+{{/* Top nav sticky */}}
+<nav class="nav" aria-label="Navigazione principale">
+  <div class="container nav__inner">
+    <a href="#hero" class="nav__brand" aria-label="Dar al-Salam home">
+      <span>Dar al-Salam</span>
+    </a>
+
+    <div class="nav__links" aria-label="Sezioni">
+      <a href="#progetto">{{ i18n "nav_progetto" }}</a>
+      <a href="#donare">{{ i18n "nav_donare" }}</a>
+      <a href="#voci">{{ i18n "nav_voci" }}</a>
+      <a href="#faq">{{ i18n "nav_faq" }}</a>
+    </div>
+
+    <div class="nav__cta-wrap">
+      <div class="nav__lang" aria-label="Lingua">
+        {{ $currentLang := site.Language.Lang }}
+        {{ range site.Languages }}
+          {{ $url := "/" }}
+          {{ if ne .Lang "it" }}
+            {{ $url = printf "/%s/" .Lang }}
+          {{ end }}
+          <a href="{{ $url }}" {{ if eq .Lang $currentLang }}aria-current="true"{{ end }}>{{ .LanguageName }}</a>
+        {{ end }}
+      </div>
+      <a href="#donare" class="btn btn--primary btn--small">{{ i18n "nav_dona_cta" }}</a>
+    </div>
+  </div>
+</nav>

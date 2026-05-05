@@ -1,0 +1,58 @@
+{{/* § 1 · HERO con counter inline */}}
+{{ $counter := site.Data.counter }}
+{{ $raised := $counter.raised }}
+{{ $goal := $counter.goal }}
+{{ $pct := mul (div (float $raised) (float $goal)) 100 }}
+
+<section id="hero" class="hero section--ivory">
+  <div class="container">
+    <div class="hero__grid">
+
+      <div class="hero__left">
+        <p class="eyebrow">{{ i18n "hero_eyebrow" }}</p>
+
+        <h1 class="hero__wordmark">Dar al-Salam</h1>
+
+        <p class="hero__wordmark-ar" lang="ar" dir="rtl">{{ .Site.Params.wordmarkAR }}</p>
+
+        <p class="hero__claim">{{ .Params.hero_claim | default "Una nuova casa di pace." }}</p>
+
+        <div class="hero__body">
+          {{ .Params.hero_body | default "Bismillah ar-Rahman ar-Rahim. Cari fratelli e care sorelle, dopo vent'anni di affitto in via Bottogno Allah ci ha aperto una porta a Pregassona. Mancano CHF 940'360 per chiudere il terreno entro il 15 settembre." | markdownify }}
+        </div>
+
+        {{/* Counter inline */}}
+        <div class="counter" role="region" aria-label="Stato della raccolta">
+          <div class="counter__row">
+            <span class="counter__big tabular">CHF {{ $counter.raised_formatted }}</span>
+            <span class="counter__small">{{ i18n "counter_su" }} CHF {{ $counter.goal_formatted }}</span>
+          </div>
+          <div class="counter__bar" aria-hidden="true">
+            <div class="counter__bar-fill" style="width: {{ printf "%.0f" $pct }}%"></div>
+          </div>
+          <div class="counter__meta">
+            <span><span class="counter__pct">{{ printf "%.0f" $pct }}%</span> dell'obiettivo</span>
+            <span>{{ i18n "counter_aggiornato" }} {{ $counter.updated }}</span>
+          </div>
+        </div>
+
+        <div class="hero__cta-row">
+          <a href="#donare" class="btn btn--primary">{{ i18n "hero_cta_primary" }} →</a>
+          <a href="#progetto" class="btn btn--secondary">{{ i18n "hero_cta_secondary" }}</a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        {{/* TODO V1: render Beier Cabrini con overlay scuro 30% */}}
+        <div style="width:100%;height:100%;background:linear-gradient(135deg, #2E7474 0%, #735751 100%);display:flex;align-items:center;justify-content:center;color:#F5EDE6;font-family:Philosopher,serif;font-size:1.5rem;text-align:center;padding:2rem;">
+          <span>Render Beier Cabrini<br>(da inserire)</span>
+        </div>
+        <div class="hero__polaroid">
+          <div style="width:100%;aspect-ratio:4/3;background:#E3DDD8;display:flex;align-items:center;justify-content:center;color:#735751;font-size:0.75rem;">[planimetria]</div>
+          <p class="hero__polaroid-caption">Render Beier Cabrini · via Ceresio 53B</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

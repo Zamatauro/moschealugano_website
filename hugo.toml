@@ -1,0 +1,100 @@
+# Dar al-Salam — campagna fundraising 2026
+# Stack: Hugo extended + Cloudflare Pages
+
+baseURL = "https://nuovamoschealugano.ch/"
+title = "Dar al-Salam · Una nuova casa di pace"
+defaultContentLanguage = "it"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = false  # blocchiamo i bot finché non si lancia
+enableEmoji = false
+disableHugoGeneratorInject = true
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  minifyOutput = true
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+# ---------- LINGUE ----------
+# Ordine = ordine nello switcher
+# IT default → /
+# AR/EN/SQ → /ar/, /en/, /sq/
+# DE/FR aggiunte in V1.5
+
+[languages]
+
+  [languages.it]
+    languageCode = "it-IT"
+    languageName = "Italiano"
+    weight = 1
+    [languages.it.params]
+      htmlLang = "it"
+      htmlDir = "ltr"
+
+  [languages.ar]
+    languageCode = "ar"
+    languageName = "العربية"
+    weight = 2
+    [languages.ar.params]
+      htmlLang = "ar"
+      htmlDir = "rtl"
+
+  [languages.en]
+    languageCode = "en"
+    languageName = "English"
+    weight = 3
+    [languages.en.params]
+      htmlLang = "en"
+      htmlDir = "ltr"
+
+  [languages.sq]
+    languageCode = "sq"
+    languageName = "Shqip"
+    weight = 4
+    [languages.sq.params]
+      htmlLang = "sq"
+      htmlDir = "ltr"
+
+# ---------- PARAMS ----------
+# Counter manuale: aggiornato la sera con commit
+# data/counter.toml ha valori; qui solo fallback statici
+
+[params]
+
+  description = "Campagna fundraising 2026 per il nuovo centro culturale islamico a Lugano-Pregassona. Promosso da Lega dei Musulmani in Ticino."
+
+  # Wordmark e brand
+  wordmarkAR = "دار السلام"
+  claimAR = "دار سلام جديدة"
+
+  # Trust signals
+  cheId = "CHE-112.406.415"
+  esenzioneFiscaleAnno = "2014"
+  registrocommercioData = "20.06.2005"
+  comitatoData = "23.01.2019"
+
+  # IBAN
+  ibanFormatted = "CH44 0900 0000 6576 2899 3"
+  ibanRaw = "CH4409000000657628993"
+  bic = "POFICHBEXXX"
+
+  # Indirizzi
+  indirizzoModeschea = "Via Bottogno 12, 6926 Lugano-Viganello"
+  indirizzoProgetto = "Via Ceresio 53B, Pregassona"
+  mappale = "253 RFD Pregassona"
+  superficie = "550 m²"
+  architetto = "Beier Cabrini Architetti, Carabbia"
+  capienza = "500 (sala polivalente) · 100 (preghiera quotidiana)"
+
+  # Contatti
+  emailContatto = "info@lmticino.ch"
+
+  # URL pagamenti
+  sumupCarta = "https://pay.sumup.com/b2c/QG9XE1CT"
+
+  # Importi suggeriti (CHF)
+  importiSuggeriti = [50, 200, 1000]

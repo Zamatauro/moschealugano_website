@@ -1,0 +1,6 @@
+# UI strings — Arabo
+# Stub iniziale. Le chiavi non tradotte fallback su it.toml automaticamente.
+# Da popolare prima del lancio.
+
+[nav_dona_cta]
+other = "تبرّع الآن"

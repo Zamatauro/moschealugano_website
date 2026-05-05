@@ -1,0 +1,22 @@
+{{/* § 3 · COME DONARE — tab matrix */}}
+<section id="donare" class="section section--ivory">
+  <div class="container">
+    <p class="eyebrow">Come donare</p>
+    <h2>{{ i18n "donare_title" }}</h2>
+
+    <div class="section-placeholder">
+      <p>Tab: Carta (SumUp) → Bonifico → TWINT → Altre piattaforme · importi suggeriti 50/200/1000</p>
+      <small>Scaffold V0.4 — contenuti in arrivo</small>
+    </div>
+
+    {{/* CTA ponte temporaneo: link diretto SumUp finché tab non sono pronti */}}
+    <div style="text-align:center; margin-top: 2rem;">
+      <a href="{{ .Site.Params.sumupCarta }}" class="btn btn--primary" target="_blank" rel="noopener">
+        {{ i18n "donare_dona_carta" }} →
+      </a>
+      <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--c-text-muted);">
+        {{ i18n "donare_metodi_carta" }}
+      </p>
+    </div>
+  </div>
+</section>

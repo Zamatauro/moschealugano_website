@@ -1,0 +1,110 @@
+/* =========================================================================
+   Dar al-Salam — Design Tokens
+   Brandbook V1 BOZZA · 5 maggio 2026
+   ========================================================================= */
+
+:root {
+  /* ---------- PALETTE ---------- */
+  /* Anchor istituzionale */
+  --c-teal:        #2E7474;  /* Brand 01 — wordmark, titoli, link */
+  --c-teal-mid:    #37B1B1;  /* Brand 02 — dettagli, hover, badge */
+
+  /* Azione (CTA) */
+  --c-amber:       #D4923C;  /* CTA 01 — bottone donazione, counter */
+  --c-amber-dark:  #A4671E;  /* CTA 02 — hover, micro-accent */
+
+  /* Fondi e superfici */
+  --c-ivory:       #F5EDE6;  /* Surface 01 — sfondo principale */
+  --c-sand:        #E3DDD8;  /* Surface 02 — card, sezioni alternate */
+  --c-white:       #FFFFFF;  /* Surface 03 — card su avorio, modali */
+
+  /* Accento e testo */
+  --c-siena:       #735751;  /* Accent — eyebrow, payoff, didascalie */
+  --c-ink:         #3A3A3A;  /* Testo 01 — body principale */
+  --c-ink-soft:    #5A5A5A;  /* Testo 02 — secondari */
+  --c-muted:       #949494;  /* Testo 03 — hint, divisori, legali */
+
+  /* Stato (semantic alias) */
+  --c-bg:          var(--c-ivory);
+  --c-surface:     var(--c-sand);
+  --c-text:        var(--c-ink);
+  --c-text-soft:   var(--c-ink-soft);
+  --c-text-muted:  var(--c-muted);
+  --c-accent:      var(--c-siena);
+  --c-brand:       var(--c-teal);
+  --c-cta:         var(--c-amber);
+  --c-cta-hover:   var(--c-amber-dark);
+
+  /* ---------- TIPOGRAFIA ---------- */
+  --font-display:  "Philosopher", Georgia, serif;
+  --font-body:     "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-ui:       "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-arabic:   "Tajawal", "Amiri", "Noto Naskh Arabic", serif;
+  --font-arabic-display: "Amiri", "Noto Naskh Arabic", serif;
+  --font-mono:     ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Scala tipografica (rem base 16px) */
+  --fs-hero:       4rem;        /* 64px — hero claim desktop */
+  --fs-hero-mob:   2.5rem;      /* 40px — hero mobile */
+  --fs-h1:         2.5rem;      /* 40px */
+  --fs-h2:         1.75rem;     /* 28px */
+  --fs-h3:         1.25rem;     /* 20px */
+  --fs-body:       1.0625rem;   /* 17px */
+  --fs-small:      0.9375rem;   /* 15px */
+  --fs-caption:    0.875rem;    /* 14px */
+  --fs-cta:        0.875rem;    /* 14px — CTA */
+  --fs-eyebrow:    0.6875rem;   /* 11px — uppercase */
+
+  --fs-counter:    3.5rem;      /* 56px — numero counter */
+  --fs-counter-mob: 2rem;       /* 32px — counter mobile */
+
+  /* Line heights */
+  --lh-tight:      1.05;
+  --lh-snug:       1.25;
+  --lh-normal:     1.6;
+  --lh-loose:      1.7;
+
+  /* Letter spacing */
+  --ls-tight:      -0.01em;
+  --ls-normal:     0;
+  --ls-wide:       0.05em;
+  --ls-eyebrow:    0.18em;
+  --ls-cta:        0.05em;
+
+  /* ---------- SPAZIATURA (4px base) ---------- */
+  --sp-1:          0.25rem;
+  --sp-2:          0.5rem;
+  --sp-3:          0.75rem;
+  --sp-4:          1rem;
+  --sp-6:          1.5rem;
+  --sp-8:          2rem;
+  --sp-12:         3rem;
+  --sp-16:         4rem;
+  --sp-20:         5rem;
+  --sp-24:         6rem;
+
+  /* ---------- LAYOUT ---------- */
+  --content-max:   72rem;       /* 1152px — max width contenuto */
+  --content-pad-mob: 1.5rem;    /* 24px — padding orizzontale mobile */
+  --content-pad-desk: 4rem;     /* 64px — padding orizzontale desktop */
+
+  /* ---------- MISURE COMPONENTI ---------- */
+  --nav-height:    4rem;        /* 64px sticky nav */
+  --radius-sm:     4px;
+  --radius-md:     8px;
+  --radius-pill:   999px;
+
+  --shadow-sm:     0 1px 3px rgba(58,58,58,0.08);
+  --shadow-md:     0 4px 12px -4px rgba(58,58,58,0.12);
+  --shadow-cta:    0 12px 28px -10px rgba(212,146,60,0.55);
+
+  /* Easing */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast:      150ms;
+  --dur-normal:    300ms;
+}
+
+/* RTL support — quando html[dir="rtl"] */
+html[dir="rtl"] {
+  --font-body:     "Tajawal", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}

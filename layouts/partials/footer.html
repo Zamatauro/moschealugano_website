@@ -1,0 +1,36 @@
+{{/* Footer — lockup V4 + dati legali */}}
+<footer class="footer">
+  <div class="container">
+    <div class="footer__lockup">Dar al-Salam</div>
+
+    <p>{{ i18n "footer_promosso" }}</p>
+    <p>{{ .Site.Params.cheId }} · Esenzione fiscale {{ .Site.Params.esenzioneFiscaleAnno }}</p>
+
+    <div class="footer__divider"></div>
+
+    <p>
+      <strong>{{ i18n "footer_indirizzo_label" }}:</strong> {{ .Site.Params.indirizzoModeschea }}<br>
+      <strong>Email:</strong> <a href="mailto:{{ .Site.Params.emailContatto }}">{{ .Site.Params.emailContatto }}</a>
+    </p>
+
+    <p>
+      <strong>{{ i18n "footer_iban_label" }}:</strong>
+      <span class="tabular">{{ .Site.Params.ibanFormatted }}</span>
+      <br>
+      <strong>BIC:</strong> {{ .Site.Params.bic }}
+    </p>
+
+    <div class="footer__divider"></div>
+
+    <div class="footer__legal">
+      {{ range site.Languages }}
+        {{ $url := "/" }}
+        {{ if ne .Lang "it" }}
+          {{ $url = printf "/%s/" .Lang }}
+        {{ end }}
+        <a href="{{ $url }}">{{ .LanguageName }}</a>
+      {{ end }}
+      <span style="margin-left: auto;">© 2026 LMT</span>
+    </div>
+  </div>
+</footer>

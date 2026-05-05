@@ -1,0 +1,19 @@
+# Counter raccolta — aggiornato manualmente
+# Cambia raised + raised_formatted + updated, commit, push → deploy in 30s
+# IMPORTANTE: aggiornare ENTRAMBI i campi (numero e versione formattata)
+#
+# SEMANTICA:
+# raised = totale già coperto (donazioni storiche + promesse formalizzate + nuove dalla campagna)
+# goal   = totale Fase 1 (1'361'760: terreno + permessi)
+# Quindi % = raised / 1'361'760, sale man mano che la raccolta avanza.
+
+raised = 421400
+raised_formatted = "421'400"
+
+goal = 1361760
+goal_formatted = "1'361'760"
+
+# Gap da raccogliere = goal - raised (al 5 mag 2026: 940'360 CHF)
+
+deadline = "15 settembre 2026"
+updated = "5 maggio 2026 alle 22:30"
