@@ -441,13 +441,30 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   background: var(--c-white);
   padding: var(--sp-3);
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
 }
-@media (min-width: 768px) { .gallery__item { flex-basis: 360px; } }
-.gallery__item img {
+@media (min-width: 768px) { .gallery__item { flex-basis: 320px; } }
+
+/* Cornice immagine: altezza uniforme su tutta la galleria.
+   I render landscape e le planimetrie portrait stanno entrambi
+   centrati col loro orientamento naturale, su sfondo Avorio. */
+.gallery__item .gallery__frame {
   width: 100%;
-  aspect-ratio: 4/3;
+  height: 360px;
+  background: var(--c-ivory);
+  border: 1px solid rgba(46,116,116,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.gallery__item img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
-  background: #f8f5f0;
   display: block;
 }
 .gallery__item figcaption {
@@ -598,6 +615,280 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   color: var(--c-brand);
   margin-top: var(--sp-3);
   margin-bottom: 0;
+}
+
+/* ---------- TABS (§ 3 Donare) ---------- */
+/* CSS-only tab system: radio + ~ sibling selector */
+
+.tabs {
+  margin: var(--sp-8) 0;
+}
+.tabs > input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.tabs__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  border-bottom: 1px solid rgba(46,116,116,0.20);
+  margin-bottom: var(--sp-8);
+}
+.tabs__btn {
+  padding: var(--sp-3) var(--sp-4);
+  font-family: var(--font-ui);
+  font-size: var(--fs-cta);
+  font-weight: 600;
+  letter-spacing: var(--ls-cta);
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  transition: color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
+}
+.tabs__btn:hover { color: var(--c-text); }
+.tabs__btn small { font-weight: 400; opacity: 0.7; font-size: 0.7em; }
+
+#tab-carta:checked    ~ .tabs__nav label[for="tab-carta"],
+#tab-bonifico:checked ~ .tabs__nav label[for="tab-bonifico"],
+#tab-twint:checked    ~ .tabs__nav label[for="tab-twint"],
+#tab-altre:checked    ~ .tabs__nav label[for="tab-altre"] {
+  color: var(--c-brand);
+  border-bottom-color: var(--c-cta);
+}
+
+.tab-panel { display: none; }
+#tab-carta:checked    ~ .tabs__panels [data-tab="carta"],
+#tab-bonifico:checked ~ .tabs__panels [data-tab="bonifico"],
+#tab-twint:checked    ~ .tabs__panels [data-tab="twint"],
+#tab-altre:checked    ~ .tabs__panels [data-tab="altre"] {
+  display: block;
+}
+
+.tab-panel__intro {
+  font-size: var(--fs-body);
+  color: var(--c-text-soft);
+  margin-bottom: var(--sp-6);
+  max-width: 36rem;
+}
+.tab-panel__cta { margin-top: var(--sp-6); }
+.tab-panel__meta {
+  font-size: var(--fs-caption);
+  color: var(--c-text-muted);
+  margin-top: var(--sp-3);
+}
+
+/* Importi suggeriti */
+.amounts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-6);
+}
+.amount-btn {
+  background: var(--c-white);
+  border: 1.5px solid rgba(46,116,116,0.20);
+  border-radius: var(--radius-md);
+  padding: var(--sp-4);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  transition: border-color var(--dur-fast) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out);
+}
+.amount-btn:hover {
+  border-color: var(--c-cta);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.amount-btn__big {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--c-cta);
+  line-height: 1;
+}
+.amount-btn__big small {
+  font-size: 0.6em;
+  font-weight: 500;
+  margin-left: 0.2em;
+  color: var(--c-text-soft);
+}
+.amount-btn__label {
+  font-size: var(--fs-caption);
+  color: var(--c-text-soft);
+  font-style: italic;
+}
+
+/* Bonifico (IBAN copy + QR collapsable) */
+.iban {
+  background: var(--c-white);
+  padding: var(--sp-6);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(46,116,116,0.10);
+  max-width: 42rem;
+}
+.iban__details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+.iban__row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+.iban__row dt {
+  font-family: var(--font-ui);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+.iban__row dd {
+  margin: 0;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--c-text);
+}
+.iban__row--copy dd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--c-ivory);
+  border-radius: var(--radius-sm);
+  border: 1px dashed rgba(46,116,116,0.20);
+}
+.copy-btn {
+  background: var(--c-brand);
+  color: var(--c-white);
+  border: 0;
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+.copy-btn:hover { background: var(--c-teal-mid); }
+.copy-btn--copied { background: var(--c-cta); }
+
+.iban__qr {
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-4);
+  border-top: 1px solid rgba(46,116,116,0.10);
+}
+.iban__qr summary {
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  color: var(--c-brand);
+  padding: var(--sp-2) 0;
+}
+.iban__qr-content {
+  margin-top: var(--sp-4);
+  text-align: center;
+}
+.iban__qr-content img {
+  max-width: 240px;
+  height: auto;
+  margin: 0 auto var(--sp-3);
+}
+.iban__qr-content p {
+  font-size: var(--fs-caption);
+  color: var(--c-text-muted);
+}
+
+/* QR Large (Twint) */
+.qr-large {
+  text-align: center;
+  padding: var(--sp-8);
+  background: var(--c-white);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(46,116,116,0.10);
+  max-width: 28rem;
+  margin: 0 auto;
+}
+.qr-large img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto var(--sp-4);
+  display: block;
+}
+.qr-large__caption {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.125rem;
+  color: var(--c-brand);
+  margin: 0;
+}
+
+/* Altre piattaforme (link esterni) */
+.platforms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--sp-4);
+}
+.platform {
+  background: var(--c-white);
+  border: 1.5px solid rgba(46,116,116,0.15);
+  border-radius: var(--radius-md);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  text-decoration: none;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+.platform:not([aria-disabled]):hover {
+  border-color: var(--c-brand);
+  text-decoration: none;
+}
+.platform[aria-disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.platform__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--c-brand);
+}
+.platform__desc {
+  font-size: var(--fs-caption);
+  color: var(--c-text-soft);
+  line-height: 1.4;
+}
+.platform__status {
+  font-family: var(--font-ui);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--c-cta);
+  margin-top: auto;
+}
+
+/* Trust signal sotto i tab */
+.donare__trust {
+  margin-top: var(--sp-8);
+  font-size: var(--fs-caption);
+  color: var(--c-text-muted);
+  text-align: center;
 }
 
 /* ---------- PLACEHOLDER SECTIONS (in costruzione) ---------- */

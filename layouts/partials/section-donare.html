@@ -1,22 +1,174 @@
 {{/* § 3 · COME DONARE — tab matrix */}}
+{{ $qrTwint := resources.Get "img/qr/twint.svg" }}
+{{ $qrBonifico := resources.Get "img/qr/bonifico-ch.svg" }}
+{{ $sumup := .Site.Params.sumupCarta }}
+{{ $iban := .Site.Params.ibanFormatted }}
+{{ $ibanRaw := .Site.Params.ibanRaw }}
+{{ $bic := .Site.Params.bic }}
+{{ $cheId := .Site.Params.cheId }}
+{{ $emailContatto := .Site.Params.emailContatto }}
+
 <section id="donare" class="section section--ivory">
   <div class="container">
     <p class="eyebrow">Come donare</p>
     <h2>{{ i18n "donare_title" }}</h2>
 
-    <div class="section-placeholder">
-      <p>Tab: Carta (SumUp) → Bonifico → TWINT → Altre piattaforme · importi suggeriti 50/200/1000</p>
-      <small>Scaffold V0.4 — contenuti in arrivo</small>
+    <div class="tabs" role="region" aria-label="Modalità di donazione">
+      <input type="radio" name="donare-tab" id="tab-carta" checked>
+      <input type="radio" name="donare-tab" id="tab-bonifico">
+      <input type="radio" name="donare-tab" id="tab-twint">
+      <input type="radio" name="donare-tab" id="tab-altre">
+
+      <div class="tabs__nav" role="tablist">
+        <label for="tab-carta" class="tabs__btn">{{ i18n "donare_tab_carta" }}</label>
+        <label for="tab-bonifico" class="tabs__btn">{{ i18n "donare_tab_bonifico" }}</label>
+        <label for="tab-twint" class="tabs__btn">{{ i18n "donare_tab_twint" }} <small>(CH)</small></label>
+        <label for="tab-altre" class="tabs__btn">{{ i18n "donare_tab_altre" }}</label>
+      </div>
+
+      <div class="tabs__panels">
+
+        {{/* === TAB 1 · CARTA (SumUp) === */}}
+        <div class="tab-panel" data-tab="carta">
+          <p class="tab-panel__intro">
+            La via più semplice. Funziona da qualunque paese, accetta carta, Apple Pay e Google Pay.
+          </p>
+          <div class="amounts">
+            {{ range .Site.Params.importiSuggeriti }}
+              <a href="{{ printf "%s?amount=%d" $sumup . }}" class="amount-btn" target="_blank" rel="noopener">
+                <span class="amount-btn__big">{{ . }}<small>CHF</small></span>
+                <span class="amount-btn__label">
+                  {{ if eq . 50 }}sadaqa quotidiana{{ end }}
+                  {{ if eq . 200 }}una settimana di affitto della comunità{{ end }}
+                  {{ if eq . 1000 }}un mese di scuola coranica{{ end }}
+                </span>
+              </a>
+            {{ end }}
+          </div>
+          <div class="tab-panel__cta">
+            <a href="{{ $sumup }}" class="btn btn--primary" target="_blank" rel="noopener">
+              {{ i18n "donare_dona_carta" }} →
+            </a>
+            <p class="tab-panel__meta">{{ i18n "donare_metodi_carta" }}</p>
+          </div>
+        </div>
+
+        {{/* === TAB 2 · BONIFICO === */}}
+        <div class="tab-panel" data-tab="bonifico">
+          <p class="tab-panel__intro">
+            Niente commissioni. Per donatori in Svizzera o con conto compatibile SEPA. Su mobile, copia con un tap.
+          </p>
+
+          <div class="iban">
+            <div class="iban__details">
+              <div class="iban__row">
+                <dt>{{ i18n "donare_beneficiario" }}</dt>
+                <dd>Lega dei Musulmani in Ticino</dd>
+              </div>
+              <div class="iban__row iban__row--copy">
+                <dt>{{ i18n "donare_iban" }}</dt>
+                <dd>
+                  <span class="tabular" id="iban-value">{{ $iban }}</span>
+                  <button type="button" class="copy-btn" data-copy="{{ $ibanRaw }}" aria-label="Copia IBAN">
+                    <span class="copy-btn__label">{{ i18n "donare_copia" }}</span>
+                  </button>
+                </dd>
+              </div>
+              <div class="iban__row iban__row--copy">
+                <dt>{{ i18n "donare_bic" }}</dt>
+                <dd>
+                  <span class="tabular">{{ $bic }}</span>
+                  <button type="button" class="copy-btn" data-copy="{{ $bic }}" aria-label="Copia BIC">
+                    <span class="copy-btn__label">{{ i18n "donare_copia" }}</span>
+                  </button>
+                </dd>
+              </div>
+              <div class="iban__row iban__row--copy">
+                <dt>{{ i18n "donare_causale" }}</dt>
+                <dd>
+                  <span>{{ i18n "donare_causale_default" }}</span>
+                  <button type="button" class="copy-btn" data-copy="{{ i18n "donare_causale_default" }}" aria-label="Copia causale">
+                    <span class="copy-btn__label">{{ i18n "donare_copia" }}</span>
+                  </button>
+                </dd>
+              </div>
+            </div>
+
+            <details class="iban__qr">
+              <summary>{{ i18n "donare_mostra_qr" }}</summary>
+              <div class="iban__qr-content">
+                <img src="{{ $qrBonifico.RelPermalink }}" alt="QR-bill bonifico bancario CH" width="240" height="240">
+                <p>Inquadra il QR con la tua app e-banking svizzera.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        {{/* === TAB 3 · TWINT === */}}
+        <div class="tab-panel" data-tab="twint">
+          <p class="tab-panel__intro">
+            Per donatori in Svizzera con TWINT. Inquadra il QR con l'app TWINT del tuo telefono.
+          </p>
+          <div class="qr-large">
+            <img src="{{ $qrTwint.RelPermalink }}" alt="QR TWINT — Lega dei Musulmani in Ticino" width="320" height="320">
+            <p class="qr-large__caption">{{ i18n "donare_la_tua_sadaqa" }}</p>
+          </div>
+        </div>
+
+        {{/* === TAB 4 · ALTRE PIATTAFORME === */}}
+        <div class="tab-panel" data-tab="altre">
+          <p class="tab-panel__intro">
+            Hai un account su una piattaforma di crowdfunding che già conosci? Puoi donare anche da lì.
+          </p>
+          <div class="platforms">
+            <a href="#" class="platform" aria-disabled="true">
+              <span class="platform__name">Donorbox</span>
+              <span class="platform__desc">Piattaforma charity globale. Gestisce donazione ricorrente.</span>
+              <span class="platform__status">in attivazione</span>
+            </a>
+            <a href="#" class="platform" aria-disabled="true">
+              <span class="platform__name">LaunchGood</span>
+              <span class="platform__desc">Piattaforma musulmana internazionale, target diaspora MENA.</span>
+              <span class="platform__status">in attivazione</span>
+            </a>
+            <a href="#" class="platform" aria-disabled="true">
+              <span class="platform__name">lokalhelden.ch</span>
+              <span class="platform__desc">Crowdfunding Raiffeisen, target donatori in Svizzera.</span>
+              <span class="platform__status">in attivazione</span>
+            </a>
+            <a href="#" class="platform" aria-disabled="true">
+              <span class="platform__name">Rete del Dono</span>
+              <span class="platform__desc">Charity strutturato italiano.</span>
+              <span class="platform__status">in attivazione</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    {{/* CTA ponte temporaneo: link diretto SumUp finché tab non sono pronti */}}
-    <div style="text-align:center; margin-top: 2rem;">
-      <a href="{{ .Site.Params.sumupCarta }}" class="btn btn--primary" target="_blank" rel="noopener">
-        {{ i18n "donare_dona_carta" }} →
-      </a>
-      <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--c-text-muted);">
-        {{ i18n "donare_metodi_carta" }}
-      </p>
-    </div>
+    {{/* Trust signal sotto i tab */}}
+    <p class="donare__trust">
+      LMT è esente dalle imposte ({{ $cheId }}).
+      Per la <a href="#faq">deducibilità della donazione</a> vedi le FAQ.
+    </p>
   </div>
 </section>
+
+{{/* JS minimo per copy-to-clipboard */}}
+<script>
+  document.querySelectorAll('.copy-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var v = btn.getAttribute('data-copy');
+      var orig = btn.querySelector('.copy-btn__label').textContent;
+      navigator.clipboard.writeText(v).then(function() {
+        btn.querySelector('.copy-btn__label').textContent = '{{ i18n "donare_copiato" }}';
+        btn.classList.add('copy-btn--copied');
+        setTimeout(function() {
+          btn.querySelector('.copy-btn__label').textContent = orig;
+          btn.classList.remove('copy-btn--copied');
+        }, 2000);
+      });
+    });
+  });
+</script>
