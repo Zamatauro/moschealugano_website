@@ -1,12 +1,191 @@
-{{/* § 6 · FAQ — domande "persona normale", accordion */}}
+{{/* § 6 · FAQ — Copy V1 cowork (5 mag 2026), 8 domande Voce A */}}
 <section id="faq" class="section section--ivory">
-  <div class="container" style="max-width: 42rem;">
+  <div class="container container--narrow">
     <p class="eyebrow">FAQ</p>
-    <h2>{{ i18n "faq_title" }}</h2>
+    <h2>Domande frequenti</h2>
 
-    <div class="section-placeholder">
-      <p>8 domande "persona normale" in accordion: zakat · ricorrente · defunto · deducibilità · quando aprirà · cosa se non chiudiamo · visita · ricevuta</p>
-      <small>Scaffold V0.4 — contenuti in arrivo</small>
+    <div class="faq">
+
+      <details class="faq__item">
+        <summary>Posso pagare la zakat per Dar al-Salam?</summary>
+        <div class="faq__body">
+          <p>
+            La risposta dipende dalla scuola di pensiero a cui ti riferisci. La
+            maggioranza degli ulema delle quattro scuole classiche (Hanafi,
+            Maliki, Shafi'i, Hanbali) considera che la zakat sia destinata in
+            primo luogo alle otto categorie indicate nella Sura at-Tawba (60),
+            e che la costruzione di moschee non rientri direttamente fra
+            queste. Alcuni ulema contemporanei estendono invece la categoria
+            <em>fi sabilillah</em> a includerla.
+          </p>
+          <p>
+            Per evitare ambiguità ti suggeriamo di
+            <strong>destinare a Dar al-Salam una sadaqa volontaria</strong> —
+            non zakat — e di pagare la tua zakat secondo il parere del tuo
+            imam di riferimento o secondo l'organizzazione che già usi. La
+            sadaqa volontaria per un progetto come questo è considerata da
+            tutti gli ulema una forma di sadaqa jariya.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary>Posso fare una donazione ricorrente?</summary>
+        <div class="faq__body">
+          <p>
+            Sì, e per noi è la forma più preziosa. Sul tab "Carta" puoi
+            scegliere di trasformare la tua donazione in
+            <strong>ricorrente mensile</strong>, anche di soli 20 franchi al
+            mese. Quattro mesi di donazione ricorrente da 20 franchi sono
+            ottanta franchi che entrano sicuri nel piano di raccolta — per noi
+            che pianifichiamo, è più prezioso di una grande donazione una
+            tantum che non possiamo prevedere.
+          </p>
+          <p>
+            Una donazione ricorrente è inoltre una forma classica di
+            <strong>sadaqa jariya</strong>: continua a portare frutto mese
+            dopo mese, senza che tu debba fare niente.
+          </p>
+          <p>Puoi cancellarla in qualunque momento, senza domande.</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary>Posso donare in nome di un defunto?</summary>
+        <div class="faq__body">
+          <p>
+            Sì. È una delle forme più nobili di sadaqa jariya. Il Profeta
+            (s.a.w.s) ha detto: <em>«Quando il figlio di Adamo muore, le sue
+            opere si interrompono salvo per tre cose — una sadaqa jariya, una
+            conoscenza utile lasciata in eredità, o un figlio pio che fa du'a
+            per lui.»</em> (Muslim).
+          </p>
+          <p>
+            Quando doni con carta, nella causale del bonifico o nelle note
+            della donazione, puoi scrivere <em>«in memoria di [nome]»</em>.
+            Il consiglio LMT terrà un registro privato dei nomi e farà du'a
+            per loro durante l'apertura del centro. Nessun nome verrà
+            pubblicato senza permesso esplicito della famiglia.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary>La mia donazione è deducibile fiscalmente?</summary>
+        <div class="faq__body">
+          <p>
+            Sì, in Svizzera. La Lega dei Musulmani in Ticino è iscritta al
+            Registro di commercio dal 20 giugno 2005 con n.
+            <strong>{{ .Site.Params.cheId }}</strong>, ed è esente dalle
+            imposte cantonali e federali sui propri redditi dal 13 marzo
+            2014, ai sensi dell'art. 65 lett. g LT cantonale e dell'art. 56
+            lett. h LIFD federale. Le donazioni a un'associazione esente
+            sono deducibili dalla dichiarazione dei redditi nei limiti
+            previsti dal tuo cantone.
+          </p>
+          <p>
+            Per donatori italiani, francesi, tedeschi: la deducibilità
+            dipende dalla normativa del tuo paese e dagli accordi bilaterali
+            con la Svizzera. Conserva la ricevuta automatica che ricevi via
+            email — è il documento che ti serve.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary>Quando aprirà Dar al-Salam?</summary>
+        <div class="faq__body">
+          <p>
+            Le tappe in ordine. Entro <strong>15 settembre 2026</strong>
+            chiudiamo la raccolta della Fase 1 (terreno + permessi). Da
+            settembre 2026 a fine 2027 si depositano i permessi di
+            costruzione e si cerca la copertura finanziaria della Fase 2.
+            Da inizio 2027 in avanti — <em>insha'Allah</em> — comincia il
+            cantiere. La durata stimata della costruzione è di circa
+            diciotto mesi.
+          </p>
+          <p>
+            Realisticamente l'apertura del centro è prevista
+            <strong>fra il 2028 e il 2029</strong>.
+          </p>
+          <p>
+            Tutti gli aggiornamenti sulle tappe sono pubblicati
+            settimanalmente in questa landing e mensilmente nel rendiconto
+            pubblico.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary>E se non chiudessimo i 940'360 entro il 15 settembre?</summary>
+        <div class="faq__body">
+          <p>
+            La risposta sincera: la particella resterebbe nostra fino allo
+            scadere del termine concordato col venditore, ma rischieremmo di
+            perdere il diritto di acquisto e di tornare a cercare. Per questo
+            la scadenza non è simbolica — è reale.
+          </p>
+          <p>
+            In ogni caso,
+            <strong>ogni franco donato resta nel conto vincolato dedicato</strong>
+            (IBAN PostFinance separato dalla gestione corrente di LMT) e viene
+            impiegato esclusivamente per il progetto Dar al-Salam. Se la Fase
+            1 non chiude in tempo, il consiglio LMT decide insieme alla
+            comunità come reimpiegare i fondi — restituzione integrale ai
+            donatori che lo richiedono, o trasferimento alla Fase successiva
+            del progetto.
+          </p>
+          <p>
+            La nostra responsabilità verso chi dona viene prima del nostro
+            calendario.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary>Posso visitare la moschea attuale a Bottogno?</summary>
+        <div class="faq__body">
+          <p>
+            Sì, ti aspettiamo. La sala di Bottogno è aperta cinque volte al
+            giorno per le preghiere. La preghiera del venerdì (jumu'a) è
+            alle 13:00 in inverno e alle 13:30 in estate, ed è il momento
+            in cui la comunità è al completo. Se vuoi capire chi siamo prima
+            di donare, è il momento migliore per venire.
+          </p>
+          <p><strong>Indirizzo:</strong> {{ .Site.Params.indirizzoModeschea }}.</p>
+          <p>
+            Se preferisci un appuntamento privato per parlare del progetto
+            col presidente o con il consiglio, scrivi a
+            <a href="mailto:{{ .Site.Params.emailContatto }}">{{ .Site.Params.emailContatto }}</a>.
+            Rispondiamo entro 48 ore.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary>Riceverò una ricevuta?</summary>
+        <div class="faq__body">
+          <p>
+            Sì, automaticamente. Per donazioni con carta, Apple Pay e Google
+            Pay la ricevuta arriva via email entro pochi minuti. Per bonifici
+            bancari, il tesoriere Samir Gomaa registra ogni transazione e
+            invia ricevuta via email entro una settimana dall'arrivo del
+            bonifico — assicurati di indicare un indirizzo email come
+            riferimento nella causale.
+          </p>
+          <p>
+            Per donazioni TWINT la ricevuta arriva via email se hai associato
+            un indirizzo email al tuo account TWINT, altrimenti scrivici a
+            <a href="mailto:{{ .Site.Params.emailContatto }}">{{ .Site.Params.emailContatto }}</a>
+            con la data e l'importo della donazione, e te la inviamo manualmente.
+          </p>
+          <p>
+            Tutte le ricevute riportano {{ .Site.Params.cheId }} e l'estremo
+            dell'esenzione fiscale, validi per la dichiarazione dei redditi.
+          </p>
+        </div>
+      </details>
+
     </div>
   </div>
 </section>

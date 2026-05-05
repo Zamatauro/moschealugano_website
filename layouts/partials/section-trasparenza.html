@@ -1,22 +1,55 @@
-{{/* § 7 · TRASPARENZA — marginale, in fondo */}}
+{{/* § 7 · TRASPARENZA — Voce C fattuale · Copy V1 cowork (5 mag 2026) */}}
 <section id="trasparenza" class="section section--white">
-  <div class="container" style="max-width: 42rem;">
-    <p class="eyebrow">{{ i18n "trasparenza_title" }}</p>
+  <div class="container container--narrow">
+    <p class="eyebrow">Trasparenza</p>
+    <h2>Documenti, governance, conto vincolato</h2>
 
-    <p>
-      Lega dei Musulmani in Ticino · {{ .Site.Params.cheId }} ·
-      esente dalle imposte cantonali e federali sui propri redditi
-      dal 13 marzo {{ .Site.Params.esenzioneFiscaleAnno }}.
-    </p>
+    <div class="trasparenza__body">
+      <p>
+        La Lega dei Musulmani in Ticino è iscritta al Registro di commercio del
+        Cantone Ticino dal 20 giugno 2005 con numero
+        <strong>{{ .Site.Params.cheId }}</strong>. È esente dalle imposte cantonali
+        e federali sui propri redditi dal 13 marzo 2014, ai sensi dell'art. 65
+        lett. g della Legge tributaria cantonale e dell'art. 56 lett. h LIFD federale.
+      </p>
 
-    <p>
-      Comitato in carica dal {{ .Site.Params.comitatoData }}.
-      Presidente e tesoriere: <strong>Samir Gomaa</strong>.
-    </p>
+      <p>
+        Il comitato attualmente in carica è stato eletto il 23 gennaio 2019.
+        Presidente e tesoriere è <strong>Samir Gomaa</strong> (firma individuale).
+        Vicepresidente, <strong>Radouan Jelassi</strong>. Membro e segretario,
+        <strong>Adnan Al Hariri</strong>.
+      </p>
 
-    <div class="section-placeholder">
-      <p>Lista documenti scaricabili (statuto, esenzione, bilanci, rendiconto, codice etico) + media kit stampa PDF</p>
-      <small>Scaffold V0.4 — documenti in arrivo</small>
+      <p>
+        Le donazioni alla campagna Dar al-Salam confluiscono su un
+        <strong>conto IBAN PostFinance dedicato e separato</strong> dalla gestione
+        ordinaria dell'associazione, intestato alla Lega dei Musulmani in Ticino
+        con causale dedicata "Progetto Nuova Moschea". Tutte le movimentazioni
+        sono tracciabili e auditabili.
+      </p>
+
+      <p>
+        Il rendiconto della raccolta è pubblicato settimanalmente in questa
+        pagina. Il bilancio annuale completo dell'associazione è depositato e
+        disponibile.
+      </p>
     </div>
+
+    <h3 class="trasparenza__sub">Documenti</h3>
+    <ul class="trasparenza__docs">
+      <li><a href="#" aria-disabled="true">📄 Statuto associazione <span class="trasparenza__pending">in caricamento</span></a></li>
+      <li><a href="#" aria-disabled="true">📄 Estratto Registro di commercio <small>(aggiornato 03.04.2026)</small> <span class="trasparenza__pending">in caricamento</span></a></li>
+      <li><a href="#" aria-disabled="true">📄 Lettera di esenzione fiscale <small>(13.03.2014)</small> <span class="trasparenza__pending">in caricamento</span></a></li>
+      <li><a href="#" aria-disabled="true">📄 Bilancio 2023 depositato <span class="trasparenza__pending">in caricamento</span></a></li>
+      <li><a href="#" aria-disabled="true">📄 Rendiconto raccolta Dar al-Salam <small>— aggiornato settimanalmente</small> <span class="trasparenza__pending">in caricamento</span></a></li>
+      <li><a href="#" aria-disabled="true">📄 Codice etico campagna <span class="trasparenza__pending">in caricamento</span></a></li>
+      <li><a href="#" aria-disabled="true">📄 Media kit stampa (PDF) <span class="trasparenza__pending">in caricamento</span></a></li>
+    </ul>
+
+    <p class="trasparenza__contact">
+      Per la stampa, i revisori, le autorità di vigilanza:
+      <a href="mailto:{{ .Site.Params.emailContatto }}?subject=Stampa%20%E2%80%94%20Dar%20al-Salam">{{ .Site.Params.emailContatto }}</a>
+      <small>(indicare "Stampa" nell'oggetto).</small> Rispondiamo entro 24 ore lavorative.
+    </p>
   </div>
 </section>

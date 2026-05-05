@@ -59,6 +59,22 @@ disableKinds = ["taxonomy", "term", "RSS"]
       htmlLang = "sq"
       htmlDir = "ltr"
 
+  [languages.de]
+    languageCode = "de"
+    languageName = "Deutsch"
+    weight = 5
+    [languages.de.params]
+      htmlLang = "de"
+      htmlDir = "ltr"
+
+  [languages.fr]
+    languageCode = "fr"
+    languageName = "Français"
+    weight = 6
+    [languages.fr.params]
+      htmlLang = "fr"
+      htmlDir = "ltr"
+
 # ---------- PARAMS ----------
 # Counter manuale: aggiornato la sera con commit
 # data/counter.toml ha valori; qui solo fallback statici
@@ -82,15 +98,15 @@ disableKinds = ["taxonomy", "term", "RSS"]
   ibanRaw = "CH4409000000657628993"
   bic = "POFICHBEXXX"
 
-  # Indirizzi
-  indirizzoModeschea = "Via Bottogno 12, 6926 Lugano-Viganello"
+  # Indirizzi (CAP corretto 6962, da Copy V1 cowork)
+  indirizzoModeschea = "Via Bottogno 12, 6962 Lugano-Viganello"
   indirizzoProgetto = "Via Ceresio 53B, Pregassona"
   mappale = "253 RFD Pregassona"
   superficie = "550 m²"
   architetto = "Beier Cabrini Architetti, Carabbia"
   capienza = "500 (sala polivalente) · 100 (preghiera quotidiana)"
 
-  # Contatti
+  # Contatti — unico indirizzo ufficiale, niente alias inventati
   emailContatto = "info@lmticino.ch"
 
   # URL pagamenti

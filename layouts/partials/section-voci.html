@@ -1,12 +1,43 @@
-{{/* § 5 · VOCI DELLA COMUNITÀ */}}
+{{/* § 5 · VOCI DELLA COMUNITÀ — Copy V1 cowork (5 mag 2026) */}}
 <section id="voci" class="section section--sand">
   <div class="container">
     <p class="eyebrow">Voci della comunità</p>
-    <h2>{{ i18n "voci_title" }}</h2>
+    <h2>Le voci di Dar al-Salam</h2>
 
-    <div class="section-placeholder">
-      <p>Carousel — V1 con 1 voce (Samir Gomaa) + "altre in arrivo"</p>
-      <small>Scaffold V0.4 — contenuti in arrivo</small>
+    <p class="voci__intro">
+      Sono le persone che da vent'anni tengono in piedi questa comunità. Sono il
+      presidente, l'imam, le madri della scuola domenicale, i giovani nati a
+      Lugano, gli anziani che hanno aperto la moschea quando a Lugano la comunità
+      era ancora un pugno di famiglie. Sono loro che, in queste settimane, stanno
+      scegliendo di mettere la faccia davanti alla telecamera per raccontare cosa
+      sarà Dar al-Salam.
+    </p>
+
+    {{/* Voce 1 — Samir Gomaa (placeholder testuale, in attesa di vetting+foto) */}}
+    <div class="voci__list">
+      <figure class="voci__card">
+        <blockquote class="voci__quote">
+          «Quando sono arrivato a Lugano, in via Bottogno c'erano dieci fratelli
+          che pregavano la jumu'a. Oggi siamo settemila in tutto il Ticino.
+          Vent'anni dopo, è arrivato il momento di avere una casa nostra.»
+        </blockquote>
+        <figcaption class="voci__attrib">
+          <strong>Samir Gomaa</strong><br>
+          presidente Lega dei Musulmani in Ticino
+        </figcaption>
+      </figure>
     </div>
+
+    <p class="voci__placeholder">
+      Stiamo girando le altre voci della comunità — l'imam, le madri della scuola
+      El Nur, i giovani italofoni, i fratelli arrivati di recente in Ticino. Ogni
+      voce passa il vetting e firma la liberatoria prima di apparire qui.
+      Aggiornamento ogni venerdì.
+    </p>
+
+    <p class="voci__cta">
+      Vuoi essere una delle voci di Dar al-Salam?
+      <a href="mailto:{{ .Site.Params.emailContatto }}">Scrivici a {{ .Site.Params.emailContatto }}</a>
+    </p>
   </div>
 </section>

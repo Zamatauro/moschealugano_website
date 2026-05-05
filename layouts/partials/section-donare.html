@@ -1,4 +1,4 @@
-{{/* § 3 · COME DONARE — tab matrix */}}
+{{/* § 3 · COME DONARE — Copy V1 cowork (5 mag 2026) */}}
 {{ $qrTwint := resources.Get "img/qr/twint.svg" }}
 {{ $qrBonifico := resources.Get "img/qr/bonifico-ch.svg" }}
 {{ $sumup := .Site.Params.sumupCarta }}
@@ -31,69 +31,76 @@
         {{/* === TAB 1 · CARTA (SumUp) === */}}
         <div class="tab-panel" data-tab="carta">
           <p class="tab-panel__intro">
-            La via più semplice. Funziona da qualunque paese, accetta carta, Apple Pay e Google Pay.
+            La via più semplice per donare da qualunque paese. Carta di credito, Apple Pay, Google Pay. La tua sadaqa arriva subito sul conto del progetto.
           </p>
           <div class="amounts">
-            {{/* TODO[cowork-copy] §3 Importi: micro-storie editoriali Voce A
-                 da finalizzare (es. "una settimana di scuola coranica" ecc.).
-                 Per ora solo il numero, niente label inventate. */}}
-            {{ range .Site.Params.importiSuggeriti }}
-              <a href="{{ printf "%s?amount=%d" $sumup . }}" class="amount-btn" target="_blank" rel="noopener">
-                <span class="amount-btn__big">{{ . }}<small>CHF</small></span>
-              </a>
-            {{ end }}
+            <a href="{{ $sumup }}?amount=50" class="amount-btn" target="_blank" rel="noopener">
+              <span class="amount-btn__big">50<small>CHF</small></span>
+              <span class="amount-btn__label">sadaqa quotidiana</span>
+              <span class="amount-btn__sublabel">quanto la comunità spende ogni giorno per restare aperta</span>
+            </a>
+            <a href="{{ $sumup }}?amount=200" class="amount-btn" target="_blank" rel="noopener">
+              <span class="amount-btn__big">200<small>CHF</small></span>
+              <span class="amount-btn__label">una settimana di affitto</span>
+              <span class="amount-btn__sublabel">quello che paghiamo a Bottogno per tenere la sala in piedi sette giorni</span>
+            </a>
+            <a href="{{ $sumup }}?amount=1000" class="amount-btn" target="_blank" rel="noopener">
+              <span class="amount-btn__big">1000<small>CHF</small></span>
+              <span class="amount-btn__label">un mese di scuola coranica</span>
+              <span class="amount-btn__sublabel">un mese intero di lezioni per i bambini della scuola domenicale El Nur</span>
+            </a>
           </div>
           <div class="tab-panel__cta">
             <a href="{{ $sumup }}" class="btn btn--primary" target="_blank" rel="noopener">
-              {{ i18n "donare_dona_carta" }} →
+              Dona con carta →
             </a>
-            <p class="tab-panel__meta">{{ i18n "donare_metodi_carta" }}</p>
+            <p class="tab-panel__meta">Carta · Apple Pay · Google Pay · pagamento una tantum</p>
           </div>
         </div>
 
         {{/* === TAB 2 · BONIFICO === */}}
         <div class="tab-panel" data-tab="bonifico">
           <p class="tab-panel__intro">
-            Niente commissioni. Per donatori in Svizzera o con conto compatibile SEPA. Su mobile, copia con un tap.
+            Niente commissioni. Per i fratelli in Svizzera o con conto compatibile SEPA in Europa. Su mobile copi i dati con un tap.
           </p>
 
           <div class="iban">
             <div class="iban__details">
               <div class="iban__row">
-                <dt>{{ i18n "donare_beneficiario" }}</dt>
+                <dt>Beneficiario</dt>
                 <dd>Lega dei Musulmani in Ticino</dd>
               </div>
               <div class="iban__row iban__row--copy">
-                <dt>{{ i18n "donare_iban" }}</dt>
+                <dt>IBAN PostFinance</dt>
                 <dd>
                   <span class="tabular" id="iban-value">{{ $iban }}</span>
                   <button type="button" class="copy-btn" data-copy="{{ $ibanRaw }}" aria-label="Copia IBAN">
-                    <span class="copy-btn__label">{{ i18n "donare_copia" }}</span>
+                    <span class="copy-btn__label">Copia</span>
                   </button>
                 </dd>
               </div>
               <div class="iban__row iban__row--copy">
-                <dt>{{ i18n "donare_bic" }}</dt>
+                <dt>BIC</dt>
                 <dd>
                   <span class="tabular">{{ $bic }}</span>
                   <button type="button" class="copy-btn" data-copy="{{ $bic }}" aria-label="Copia BIC">
-                    <span class="copy-btn__label">{{ i18n "donare_copia" }}</span>
+                    <span class="copy-btn__label">Copia</span>
                   </button>
                 </dd>
               </div>
               <div class="iban__row iban__row--copy">
-                <dt>{{ i18n "donare_causale" }}</dt>
+                <dt>Causale</dt>
                 <dd>
-                  <span>{{ i18n "donare_causale_default" }}</span>
-                  <button type="button" class="copy-btn" data-copy="{{ i18n "donare_causale_default" }}" aria-label="Copia causale">
-                    <span class="copy-btn__label">{{ i18n "donare_copia" }}</span>
+                  <span>Dar al-Salam · Fase 1</span>
+                  <button type="button" class="copy-btn" data-copy="Dar al-Salam · Fase 1" aria-label="Copia causale">
+                    <span class="copy-btn__label">Copia</span>
                   </button>
                 </dd>
               </div>
             </div>
 
             <details class="iban__qr">
-              <summary>{{ i18n "donare_mostra_qr" }}</summary>
+              <summary>Mostra QR-bill</summary>
               <div class="iban__qr-content">
                 <img src="{{ $qrBonifico.RelPermalink }}" alt="QR-bill bonifico bancario CH" width="240" height="240">
                 <p>Inquadra il QR con la tua app e-banking svizzera.</p>
@@ -105,18 +112,18 @@
         {{/* === TAB 3 · TWINT === */}}
         <div class="tab-panel" data-tab="twint">
           <p class="tab-panel__intro">
-            Per donatori in Svizzera con TWINT. Inquadra il QR con l'app TWINT del tuo telefono.
+            Per i fratelli e le sorelle in Svizzera con TWINT. Inquadra il QR con l'app del tuo telefono e dona in dieci secondi.
           </p>
           <div class="qr-large">
             <img src="{{ $qrTwint.RelPermalink }}" alt="QR TWINT — Lega dei Musulmani in Ticino" width="320" height="320">
-            <p class="qr-large__caption">{{ i18n "donare_la_tua_sadaqa" }}</p>
+            <p class="qr-large__caption">La tua sadaqa jariya.</p>
           </div>
         </div>
 
         {{/* === TAB 4 · ALTRE PIATTAFORME === */}}
         <div class="tab-panel" data-tab="altre">
           <p class="tab-panel__intro">
-            Hai un account su una piattaforma di crowdfunding che già conosci? Puoi donare anche da lì.
+            Hai un account su una piattaforma di crowdfunding che già conosci e usi? Stiamo aprendo i canali principali. La tua donazione conta uguale, da qualunque ingresso passi.
           </p>
           <div class="platforms">
             <a href="#" class="platform" aria-disabled="true">
@@ -145,10 +152,10 @@
       </div>
     </div>
 
-    {{/* Trust signal sotto i tab */}}
+    {{/* Trust line — Copy V1 cowork */}}
     <p class="donare__trust">
-      LMT è esente dalle imposte ({{ $cheId }}).
-      Per la <a href="#faq">deducibilità della donazione</a> vedi le FAQ.
+      LMT è esente dalle imposte cantonali e federali ({{ $cheId }}).
+      Per la deducibilità della tua donazione vedi le <a href="#faq">FAQ</a>.
     </p>
   </div>
 </section>
@@ -160,7 +167,7 @@
       var v = btn.getAttribute('data-copy');
       var orig = btn.querySelector('.copy-btn__label').textContent;
       navigator.clipboard.writeText(v).then(function() {
-        btn.querySelector('.copy-btn__label').textContent = '{{ i18n "donare_copiato" }}';
+        btn.querySelector('.copy-btn__label').textContent = 'Copiato ✓';
         btn.classList.add('copy-btn--copied');
         setTimeout(function() {
           btn.querySelector('.copy-btn__label').textContent = orig;
