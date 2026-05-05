@@ -34,14 +34,12 @@
             La via più semplice. Funziona da qualunque paese, accetta carta, Apple Pay e Google Pay.
           </p>
           <div class="amounts">
+            {{/* TODO[cowork-copy] §3 Importi: micro-storie editoriali Voce A
+                 da finalizzare (es. "una settimana di scuola coranica" ecc.).
+                 Per ora solo il numero, niente label inventate. */}}
             {{ range .Site.Params.importiSuggeriti }}
               <a href="{{ printf "%s?amount=%d" $sumup . }}" class="amount-btn" target="_blank" rel="noopener">
                 <span class="amount-btn__big">{{ . }}<small>CHF</small></span>
-                <span class="amount-btn__label">
-                  {{ if eq . 50 }}sadaqa quotidiana{{ end }}
-                  {{ if eq . 200 }}una settimana di affitto della comunità{{ end }}
-                  {{ if eq . 1000 }}un mese di scuola coranica{{ end }}
-                </span>
               </a>
             {{ end }}
           </div>
