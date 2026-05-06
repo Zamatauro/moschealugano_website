@@ -15,10 +15,9 @@
       sarà Dar al-Salam.
     </p>
 
-    {{/* Carousel voci — stessa meccanica della galleria progetto */}}
-    <div class="gallery-wrap voci-carousel-wrap">
-      <button type="button" class="gallery-nav gallery-nav--prev" aria-label="Voce precedente" data-target="voci-carousel">‹</button>
-      <button type="button" class="gallery-nav gallery-nav--next" aria-label="Voce successiva" data-target="voci-carousel">›</button>
+    {{/* Carousel voci — frecce in flex layout ai lati del box (no overlap) */}}
+    <div class="voci-carousel-wrap">
+      <button type="button" class="voci-nav voci-nav--prev" aria-label="Voce precedente">‹</button>
 
       <div class="voci-carousel" id="voci-carousel" aria-label="Voci della comunità">
 
@@ -72,12 +71,14 @@
 
       </div>
 
-      {{/* Dots di posizione */}}
-      <div class="gallery-dots" id="voci-dots" aria-label="Posizione voce">
-        {{ range seq 2 }}
-          <button type="button" class="gallery-dot" data-idx="{{ sub . 1 }}" aria-label="Vai alla voce {{ . }}"></button>
-        {{ end }}
-      </div>
+      <button type="button" class="voci-nav voci-nav--next" aria-label="Voce successiva">›</button>
+    </div>
+
+    {{/* Dots di posizione (sotto, fuori dal flex) */}}
+    <div class="gallery-dots voci-dots-wrap" id="voci-dots" aria-label="Posizione voce">
+      {{ range seq 2 }}
+        <button type="button" class="gallery-dot" data-idx="{{ sub . 1 }}" aria-label="Vai alla voce {{ . }}"></button>
+      {{ end }}
     </div>
 
     <p class="voci__placeholder">
@@ -102,8 +103,8 @@
   if(!carousel || !dotsBox) return;
   var items = carousel.querySelectorAll('.voce-card');
   var dots = dotsBox.querySelectorAll('.gallery-dot');
-  var prev = carousel.parentElement.querySelector('.gallery-nav--prev');
-  var next = carousel.parentElement.querySelector('.gallery-nav--next');
+  var prev = carousel.parentElement.querySelector('.voci-nav--prev');
+  var next = carousel.parentElement.querySelector('.voci-nav--next');
 
   function activate(idx){
     idx = Math.max(0, Math.min(items.length - 1, idx));

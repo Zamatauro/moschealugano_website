@@ -488,11 +488,12 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   font-weight: 500;
 }
 .counter__bar {
-  margin: var(--sp-3) 0;
-  height: 8px;
+  margin: var(--sp-4) 0 var(--sp-3);
+  height: 14px;          /* più cicciotta, era 8px */
   background: var(--c-sand);
   border-radius: var(--radius-pill);
   overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(58,58,58,0.08);
 }
 .counter__bar-fill {
   height: 100%;
@@ -512,6 +513,12 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   letter-spacing: 0.02em;
 }
 .counter__pct { color: var(--c-cta); font-weight: 700; }
+.counter__days strong {
+  color: var(--c-cta);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+}
 
 /* ---------- FOOTER (Lockup V4) ---------- */
 
@@ -1407,30 +1414,69 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   margin: var(--sp-6) 0 var(--sp-8);
 }
 
-/* Carousel — wrapper riusa .gallery-wrap. Container interno ha la sua classe */
-.voci-carousel {
+/* Wrapper: flex orizzontale, frecce ai LATI esterni del carousel */
+.voci-carousel-wrap {
   display: flex;
-  gap: var(--sp-4);
+  align-items: center;
+  gap: var(--sp-2);
+  margin: var(--sp-8) 0 var(--sp-4);
+}
+@media (min-width: 768px) {
+  .voci-carousel-wrap { gap: var(--sp-4); }
+}
+
+/* Frecce a sinistra/destra del carousel, fuori dal contenuto della card */
+.voci-nav {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--c-white);
+  color: var(--c-brand);
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: var(--font-display);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--dur-fast) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out);
+  padding: 0;
+  line-height: 0;
+}
+.voci-nav:hover {
+  background: var(--c-brand);
+  color: var(--c-white);
+  transform: scale(1.05);
+}
+@media (min-width: 768px) {
+  .voci-nav { width: 48px; height: 48px; font-size: 1.75rem; }
+}
+
+/* Carousel: una card alla volta, scroll-snap center, niente peep di precedente/successiva */
+.voci-carousel {
+  flex: 1 1 auto;
+  min-width: 0;        /* permette al flex item di shrinkare */
+  display: flex;
+  gap: 0;              /* niente gap: card una alla volta, no peep */
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-padding: var(--content-pad-mob);
-  padding: var(--sp-2) var(--content-pad-mob);
-  margin: 0 calc(var(--content-pad-mob) * -1);
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 .voci-carousel::-webkit-scrollbar { display: none; height: 0; width: 0; }
-@media (min-width: 768px) {
-  .voci-carousel {
-    padding: var(--sp-2) var(--sp-12);
-    margin: 0;
-  }
-}
 
+/* Card: full width del carousel viewport */
 .voce-card {
-  flex: 0 0 90%;
-  scroll-snap-align: start;
+  flex: 0 0 100%;       /* una card per viewport, niente peep */
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
   display: grid;
   grid-template-columns: 1fr;
   background: var(--c-white);
@@ -1441,12 +1487,18 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
 }
 @media (min-width: 768px) {
   .voce-card {
-    flex-basis: 720px;
-    grid-template-columns: 280px 1fr;  /* foto sx, quote dx */
+    grid-template-columns: 280px 1fr;
   }
 }
 @media (min-width: 1024px) {
-  .voce-card { flex-basis: 800px; grid-template-columns: 320px 1fr; }
+  .voce-card {
+    grid-template-columns: 320px 1fr;
+  }
+}
+
+/* Dots fuori dal flex orizzontale, sotto */
+.voci-dots-wrap {
+  margin-top: var(--sp-4);
 }
 
 .voce-card__photo {

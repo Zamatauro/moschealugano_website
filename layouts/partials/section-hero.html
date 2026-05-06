@@ -42,7 +42,7 @@
               <span class="counter__big tabular">CHF {{ $counter.raised_formatted }}</span>
             </div>
             <div class="counter__col counter__col--gap">
-              <span class="counter__label">Mancano entro il 15 settembre</span>
+              <span class="counter__label">Mancano ancora</span>
               <span class="counter__big counter__big--gap tabular">CHF {{ $counter.gap_formatted }}</span>
             </div>
           </div>
@@ -51,7 +51,7 @@
           </div>
           <div class="counter__meta">
             <span><span class="counter__pct">{{ printf "%.0f" $pct }}%</span> dell'obiettivo</span>
-            <span><strong class="tabular">{{ $daysRemaining }}</strong> giorni rimanenti</span>
+            <span class="counter__days"><strong class="tabular">{{ $daysRemaining }} giorni rimanenti</strong></span>
             {{ if gt $counter.donors_count 0 }}
               <span><strong class="tabular">{{ $counter.donors_count }}</strong> fratelli e sorelle</span>
             {{ end }}
