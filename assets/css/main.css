@@ -1457,6 +1457,15 @@ html[dir="rtl"] .timeline__item::before {
   right: 2px;
 }
 
+/* RTL — forza LTR sui numeri di valuta (CHF e cifre con apostrofi)
+   altrimenti il browser li renderizza al contrario ("000'445'1" invece di "1'445'000") */
+html[dir="rtl"] .budget__chart svg text,
+html[dir="rtl"] .tabular,
+html[dir="rtl"] .counter__big {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
 /* ---------- CONTAINER NARROW ---------- */
 .container--narrow { max-width: 44rem; }
 
