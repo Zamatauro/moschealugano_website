@@ -7,6 +7,10 @@
 {{ $g4 := (resources.Get "img/progetto/04-sezione-verticale.png").Resize "1200x webp q85" }}
 {{ $g5 := (resources.Get "img/progetto/05-foto-aerea-lugano.png").Resize "1200x webp q85" }}
 {{ $g6 := (resources.Get "img/progetto/06-mappa-catastale.png").Resize "1200x webp q85" }}
+{{ $g7 := (resources.Get "img/progetto/07-render-interno-corridoio.png").Resize "1200x webp q85" }}
+{{ $g8 := (resources.Get "img/progetto/08-render-esterno-3quarti.png").Resize "1200x webp q85" }}
+{{ $g9 := (resources.Get "img/progetto/09-sezione-frontale.png").Resize "1200x webp q85" }}
+{{ $g10 := (resources.Get "img/progetto/10-sezione-laterale.png").Resize "1200x webp q85" }}
 
 <section id="progetto" class="section section--sand">
   <div class="container">
@@ -44,10 +48,26 @@
         <div class="gallery__frame"><img src="{{ $g6.RelPermalink }}" alt="Mappa catastale, mappale 253 RFD Pregassona evidenziato" loading="lazy" width="{{ $g6.Width }}" height="{{ $g6.Height }}"></div>
         <figcaption>Mappale 253 RFD Pregassona</figcaption>
       </figure>
+      <figure class="gallery__item">
+        <div class="gallery__frame"><img src="{{ $g7.RelPermalink }}" alt="Render interno corridoio con muri traforati a pattern islamico" loading="lazy" width="{{ $g7.Width }}" height="{{ $g7.Height }}"></div>
+        <figcaption>Corridoio interno · pattern islamici</figcaption>
+      </figure>
+      <figure class="gallery__item">
+        <div class="gallery__frame"><img src="{{ $g8.RelPermalink }}" alt="Render esterno vista 3/4 dell'edificio" loading="lazy" width="{{ $g8.Width }}" height="{{ $g8.Height }}"></div>
+        <figcaption>Vista esterna · 3/4</figcaption>
+      </figure>
+      <figure class="gallery__item">
+        <div class="gallery__frame"><img src="{{ $g9.RelPermalink }}" alt="Sezione architettonica frontale" loading="lazy" width="{{ $g9.Width }}" height="{{ $g9.Height }}"></div>
+        <figcaption>Sezione frontale</figcaption>
+      </figure>
+      <figure class="gallery__item">
+        <div class="gallery__frame"><img src="{{ $g10.RelPermalink }}" alt="Sezione architettonica laterale" loading="lazy" width="{{ $g10.Width }}" height="{{ $g10.Height }}"></div>
+        <figcaption>Sezione laterale</figcaption>
+      </figure>
       </div>
       {{/* Dots di posizione */}}
       <div class="gallery-dots" id="gallery-dots" aria-label="Posizione slide">
-        {{ range seq 6 }}
+        {{ range seq 10 }}
           <button type="button" class="gallery-dot" data-idx="{{ sub . 1 }}" aria-label="Vai alla slide {{ . }}"></button>
         {{ end }}
       </div>
@@ -218,13 +238,13 @@
       </div>
     </div>
 
-    {{/* 2e · Callout — Copy V1 cowork (5 mag 2026) */}}
+    {{/* 2e · Callout — Copy V1 cowork + revisioni Stefano */}}
     <div class="callouts">
       <div class="callout">
-        <p class="callout__eyebrow">CHIAREZZA</p>
+        <p class="callout__eyebrow">LE FASI DEL PROGETTO</p>
         <p>
           Questa è la <strong>Fase 1</strong> — acquisto del terreno e permessi di
-          costruzione. La costruzione vera del centro, stimata fra
+          costruzione. La costruzione del centro, stimata fra
           <strong>CHF 3.1 e 3.8 milioni</strong>, sarà oggetto di una raccolta
           separata a partire dal 2027.
         </p>
@@ -232,7 +252,7 @@
       </div>
 
       <div class="callout">
-        <p class="callout__eyebrow">COME PAGHEREMO IL FUNZIONAMENTO</p>
+        <p class="callout__eyebrow">UN ECOSISTEMA CHE SI AUTOSOSTIENE</p>
         <p>
           Sopra il centro culturale ci saranno <strong>sei appartamenti residenziali</strong>,
           in locazione a tariffa di mercato. I proventi degli affitti pagano utenze,

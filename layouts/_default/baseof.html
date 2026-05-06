@@ -45,5 +45,42 @@
   <div class="cta-sticky">
     <a href="#donare" class="btn btn--primary">{{ i18n "nav_dona_cta" }}</a>
   </div>
+
+  {{/* Lightbox modale per immagini galleria */}}
+  <dialog class="lightbox" id="lightbox" aria-label="Immagine ingrandita">
+    <button type="button" class="lightbox__close" aria-label="Chiudi">×</button>
+    <img class="lightbox__image" src="" alt="">
+    <p class="lightbox__caption"></p>
+  </dialog>
+
+  <script>
+  (function(){
+    var lightbox = document.getElementById('lightbox');
+    if (!lightbox || typeof lightbox.showModal !== 'function') return;
+    var lbImg = lightbox.querySelector('.lightbox__image');
+    var lbCaption = lightbox.querySelector('.lightbox__caption');
+    var closeBtn = lightbox.querySelector('.lightbox__close');
+
+    document.querySelectorAll('.gallery__item').forEach(function(item){
+      var img = item.querySelector('img');
+      var captionEl = item.querySelector('figcaption');
+      if (!img) return;
+      item.style.cursor = 'zoom-in';
+      item.addEventListener('click', function(e){
+        e.preventDefault();
+        lbImg.src = img.currentSrc || img.src;
+        lbImg.alt = img.alt || '';
+        lbCaption.textContent = captionEl ? captionEl.textContent : '';
+        lightbox.showModal();
+      });
+    });
+
+    // Click sul backdrop chiude
+    lightbox.addEventListener('click', function(e){
+      if (e.target === lightbox) lightbox.close();
+    });
+    closeBtn.addEventListener('click', function(){ lightbox.close(); });
+  })();
+  </script>
 </body>
 </html>
