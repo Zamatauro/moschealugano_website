@@ -1,65 +1,41 @@
 {{/* § 4 · PERCHÉ ORA — storytelling Voce A pura · Copy V1 cowork (5 mag 2026) */}}
 <section id="perche-ora" class="section section--ivory">
   <div class="container container--narrow">
-    <p class="eyebrow">Perché ora</p>
-    <h2>Una porta che si è aperta</h2>
+    <p class="eyebrow">{{ i18n "perche_eyebrow" }}</p>
+    <h2>{{ i18n "perche_h2" }}</h2>
 
     <div class="storytelling">
-      <p>Da vent'anni preghiamo in cento metri quadrati a Bottogno.</p>
+      <p>{{ i18n "perche_p1" }}</p>
+
+      <p>{{ i18n "perche_p2" }}</p>
 
       <p>
-        Una sala in affitto, dietro a una porta che a Lugano nessuno conosce. Lì,
-        ogni venerdì, settemila musulmani del Ticino sanno che possono fermarsi
-        a fare la jumu'a. Lì la nostra scuola domenicale El Nur insegna l'alif-ba
-        a una trentina di bambini, italofoni nati a Lugano. Lì spezziamo il digiuno
-        insieme nel mese di Ramadan, lì recitiamo il janazah quando un fratello
-        torna ad Allah, lì accogliamo le sorelle e i fratelli che arrivano in
-        Ticino e non hanno ancora una casa.
-      </p>
-
-      <p>
-        Per tenere quella sala in piedi abbiamo pagato, in vent'anni, circa
-        <strong>400'000 franchi di affitto</strong>. Soldi versati a un proprietario,
-        ogni mese, senza che restasse niente alla comunità.
+        {{ i18n "perche_p3_pre" }}<strong>{{ i18n "perche_p3_strong" }}</strong>{{ i18n "perche_p3_post" }}
       </p>
 
       <p class="storytelling__beat">
-        Quattrocentomila franchi. Le facce dei nostri figli. Le mani di chi ha
-        preparato cento iftar.
+        {{ i18n "perche_beat" }}
       </p>
 
       <p>
-        Quest'anno Allah ci ha aperto una porta. A
-        <strong>Pregassona, in via Ceresio 53B</strong>, c'è una particella.
-        È nostra. L'abbiamo comprata insieme allo studio dell'architetto
-        Beier Cabrini, che ha già il progetto pronto: sala polivalente, sala
-        di preghiera quotidiana, scuola, ufficio, sei appartamenti sopra che
-        pagheranno il funzionamento del centro per sempre.
+        {{ i18n "perche_p5_pre" }}<strong>{{ i18n "perche_p5_strong" }}</strong>{{ i18n "perche_p5_post" }}
       </p>
 
-      <p>L'abbiamo chiamata <strong>Dar al-Salam</strong>.</p>
+      <p>{{ i18n "perche_p6_pre" }}<strong>{{ i18n "perche_p6_strong" }}</strong>{{ i18n "perche_p6_post" }}</p>
 
-      <p class="storytelling__claim">Una nuova casa di pace.</p>
+      <p class="storytelling__claim">{{ i18n "perche_claim" }}</p>
 
       <p>
-        Ci servono <strong>{{ .Site.Data.counter.gap_formatted }} franchi entro il 15 settembre 2026</strong>
-        per chiudere l'acquisto del terreno, il progetto, l'atto notarile,
-        l'intermediazione e le spese legali. Una parte è già coperta dai fratelli
-        e dalle sorelle che hanno donato in questi anni — {{ .Site.Data.counter.raised_formatted }}
-        franchi. Quello che manca lo raccogliamo insieme nei prossimi quattro mesi.
+        {{ i18n "perche_p7_pre" }}<strong>CHF {{ .Site.Data.counter.gap_formatted }}{{ i18n "perche_p7_strong_pre" }}{{ i18n "perche_p7_strong_post" }}</strong>{{ i18n "perche_p7_post" }}{{ .Site.Data.counter.raised_formatted }}{{ i18n "perche_p7_raised_post" }}
       </p>
 
       <p>
-        Ogni franco che metti oggi è <strong>sadaqa jariya</strong>: un'opera
-        che continua a portare frutto ogni volta che un bambino imparerà a
-        leggere il Corano in quella sala, ogni volta che un fratello pregherà
-        tarawih in Ramadan, ogni volta che una sorella in difficoltà troverà
-        ascolto.
+        {{ i18n "perche_p8_pre" }}<strong>{{ i18n "perche_p8_strong" }}</strong>{{ i18n "perche_p8_post" }}
       </p>
     </div>
 
     <div class="storytelling__cta">
-      <a href="#donare" class="btn btn--primary">Dona la tua sadaqa →</a>
+      <a href="#donare" class="btn btn--primary">{{ i18n "perche_cta" }}</a>
     </div>
   </div>
 </section>

@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow"><!-- TOGLIERE AL LANCIO -->
 
-  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-  <meta name="description" content="{{ .Site.Params.description }}">
+  <title>{{ block "title" . }}{{ i18n "meta_title" }}{{ end }}</title>
+  <meta name="description" content="{{ i18n "meta_description" }}">
 
   {{/* Hreflang per SEO multilingua */}}
   {{ range .Translations }}
@@ -27,8 +27,8 @@
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 
   {{/* OpenGraph */}}
-  <meta property="og:title" content="{{ .Site.Title }}">
-  <meta property="og:description" content="{{ .Site.Params.description }}">
+  <meta property="og:title" content="{{ i18n "meta_og_title" }}">
+  <meta property="og:description" content="{{ i18n "meta_og_description" }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ .Permalink }}">
 </head>
@@ -43,12 +43,12 @@
 
   {{/* CTA sticky bottom mobile */}}
   <div class="cta-sticky">
-    <a href="#donare" class="btn btn--primary">{{ i18n "nav_dona_cta" }}</a>
+    <a href="#donare" class="btn btn--primary">{{ i18n "cta_dona_ora" }}</a>
   </div>
 
   {{/* Lightbox modale per immagini galleria */}}
-  <dialog class="lightbox" id="lightbox" aria-label="Immagine ingrandita">
-    <button type="button" class="lightbox__close" aria-label="Chiudi">×</button>
+  <dialog class="lightbox" id="lightbox" aria-label="{{ i18n "lightbox_aria" }}">
+    <button type="button" class="lightbox__close" aria-label="{{ i18n "lightbox_close" }}">×</button>
     <img class="lightbox__image" src="" alt="">
     <p class="lightbox__caption"></p>
   </dialog>

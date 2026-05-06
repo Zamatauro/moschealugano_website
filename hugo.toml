@@ -75,6 +75,14 @@ disableKinds = ["taxonomy", "term", "RSS"]
       htmlLang = "fr"
       htmlDir = "ltr"
 
+  [languages.tr]
+    languageCode = "tr"
+    languageName = "Türkçe"
+    weight = 7
+    [languages.tr.params]
+      htmlLang = "tr"
+      htmlDir = "ltr"
+
 # ---------- PARAMS ----------
 # Counter manuale: aggiornato la sera con commit
 # data/counter.toml ha valori; qui solo fallback statici

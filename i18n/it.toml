@@ -1,136 +1,369 @@
-# UI strings — Italiano
+# UI strings — Italiano (master)
+# Convenzione: chiave = "valore" (forma breve Hugo i18n)
+# Le chiavi sono ordinate per sezione: meta, nav, hero, progetto, donare, perche, voci, faq, trasp, footer, sticky, a11y
 
-[nav_progetto]
-other = "Il progetto"
-[nav_donare]
-other = "Donare"
-[nav_voci]
-other = "Voci"
-[nav_faq]
-other = "FAQ"
-[nav_dona_cta]
-other = "Dona ora"
+# ---------- META ----------
+meta_title = "Dar al-Salam · Una nuova casa di pace"
+meta_description = "Campagna fundraising 2026 per il nuovo centro culturale islamico a Lugano-Pregassona. Promosso da Lega dei Musulmani in Ticino."
+meta_og_title = "Dar al-Salam · Una nuova casa di pace"
+meta_og_description = "Campagna fundraising 2026 per il nuovo centro culturale islamico a Lugano-Pregassona."
 
-[hero_eyebrow]
-other = "Lugano · Fundraising 2026"
-[hero_cta_primary]
-other = "Dona la tua sadaqa"
-[hero_cta_secondary]
-other = "Scopri Dar al-Salam"
+# ---------- NAV ----------
+nav_aria_label = "Navigazione principale"
+nav_brand_aria = "Dar al-Salam home"
+nav_sections_aria = "Sezioni"
+nav_lang_change_aria = "Cambia lingua"
+nav_lang_current = "Italiano"
+nav_progetto = "Il progetto"
+nav_donare = "Donare"
+nav_voci = "Voci"
+nav_faq = "FAQ"
+nav_dona_cta = "Dona ora"
 
-[counter_raccolti]
-other = "raccolti"
-[counter_su]
-other = "su"
-[counter_obiettivo]
-other = "obiettivo"
-[counter_aggiornato]
-other = "Aggiornato il"
-[counter_alle]
-other = "alle"
+# ---------- HERO ----------
+hero_eyebrow = "Lugano · Fundraising 2026"
+hero_claim = "Una nuova casa di pace."
+hero_counter_aria = "Stato della raccolta"
+hero_counter_raccolti = "Raccolti finora"
+hero_counter_mancano = "Mancano ancora"
+hero_counter_pct_obiettivo = "dell'obiettivo"
+hero_counter_giorni_label = "giorni rimanenti"
+hero_counter_aggiornato = "Aggiornato"
+hero_cta_primary = "Dona la tua sadaqa"
+hero_cta_sadaqa = "Dona la tua sadaqa →"
+hero_cta_secondary = "Scopri Dar al-Salam"
+hero_polaroid_caption = "Render Beier Cabrini · Via Ceresio 53B"
+hero_img_alt_comunita = "Comunità musulmana riunita"
+hero_img_alt_render = "Render esterno del nuovo centro Dar al-Salam"
 
-[progetto_title]
-other = "Cosa stiamo costruendo"
-[progetto_indirizzo]
-other = "Indirizzo"
-[progetto_particella]
-other = "Particella"
-[progetto_superficie]
-other = "Superficie"
-[progetto_architetto]
-other = "Architetto"
-[progetto_capienza]
-other = "Capienza"
-[progetto_inizio_cantiere]
-other = "Inizio cantiere"
-[progetto_dopo]
-other = "Dopo il 15.09.2026"
-[progetto_dove_vanno_soldi]
-other = "Dove vanno i tuoi soldi"
-[progetto_voce_terreno]
-other = "Acquisto terreno"
-[progetto_voce_progetto]
-other = "Progetto e permessi"
-[progetto_voce_notarile]
-other = "Atto notarile"
-[progetto_voce_intermediazione]
-other = "Intermediazione"
-[progetto_voce_legali]
-other = "Spese legali"
-[progetto_voce_chiusura]
-other = "Spese di chiusura"
-# legacy — mantenuta per backward compat in altre lingue non ancora migrate
-[progetto_voce_permessi]
-other = "Progetto, permessi, atti"
-[progetto_totale_fase]
-other = "TOTALE FASE 1"
-[progetto_gia_coperto]
-other = "Già raccolto dalla comunità"
-[progetto_da_raccogliere]
-other = "Da raccogliere entro 15.09"
+# ---------- PROGETTO ----------
+progetto_eyebrow = "Il progetto"
+progetto_h2 = "Cosa stiamo costruendo"
+progetto_title = "Cosa stiamo costruendo"
 
-[donare_title]
-other = "Come donare"
-[donare_tab_carta]
-other = "Carta"
-[donare_tab_bonifico]
-other = "Bonifico"
-[donare_tab_twint]
-other = "TWINT"
-[donare_tab_altre]
-other = "Crowdfunding"
-[donare_dona_carta]
-other = "Dona con carta"
-[donare_metodi_carta]
-other = "Carta · Apple Pay · Google Pay · pagamento una tantum"
-[donare_copia]
-other = "Copia"
-[donare_copiato]
-other = "Copiato ✓"
-[donare_beneficiario]
-other = "Beneficiario"
-[donare_iban]
-other = "IBAN PostFinance"
-[donare_bic]
-other = "BIC"
-[donare_causale]
-other = "Causale"
-[donare_causale_default]
-other = "Dar al-Salam · Fase 1"
-[donare_mostra_qr]
-other = "Mostra QR-bill"
-[donare_la_tua_sadaqa]
-other = "La tua sadaqa jariya."
+# Gallery a11y
+gallery_aria_label = "Galleria progetto"
+gallery_prev_aria = "Slide precedente"
+gallery_next_aria = "Slide successiva"
+gallery_dots_aria = "Posizione slide"
+gallery_dot_aria = "Vai alla slide"
 
-[perche_ora_title]
-other = "Perché ora"
+# Gallery captions (10) e alt
+gallery_caption_1 = "Vista esterna · Beier Cabrini"
+gallery_alt_1 = "Render esterno con alberi · Beier Cabrini Architetti"
+gallery_caption_2 = "Pianta piano residenziale · 2 appartamenti"
+gallery_alt_2 = "Pianta del piano residenziale, due appartamenti per piano"
+gallery_caption_3 = "Sala polivalente sotterranea · capienza 500"
+gallery_alt_3 = "Sala polivalente sotterranea, vista interna"
+gallery_caption_4 = "Sezione verticale · 4 piani sopra il centro"
+gallery_alt_4 = "Sezione verticale dell'edificio, 4 piani residenziali sopra il centro"
+gallery_caption_5 = "Lugano · posizione del lotto"
+gallery_alt_5 = "Foto aerea di Lugano con la posizione del lotto evidenziata"
+gallery_caption_6 = "Mappale 253 RFD Pregassona"
+gallery_alt_6 = "Mappa catastale, mappale 253 RFD Pregassona evidenziato"
+gallery_caption_7 = "Corridoio interno"
+gallery_alt_7 = "Render interno corridoio con muri traforati"
+gallery_caption_8 = "Vista esterna · 3/4"
+gallery_alt_8 = "Render esterno vista 3/4 dell'edificio"
+gallery_caption_9 = "Sezione frontale"
+gallery_alt_9 = "Sezione architettonica frontale"
+gallery_caption_10 = "Sezione laterale"
+gallery_alt_10 = "Sezione architettonica laterale"
 
-[voci_title]
-other = "Voci della comunità"
-[voci_altre_arrivo]
-other = "Altre voci della comunità in arrivo nelle prossime settimane."
+# Project facts
+pf_indirizzo = "Indirizzo"
+pf_particella = "Particella"
+pf_superficie = "Superficie"
+pf_architetto = "Architetto"
+pf_capienza = "Capienza"
+pf_inizio_cantiere = "Inizio cantiere"
+pf_inizio_cantiere_value = "Dal 2027, dopo Fase 2"
+progetto_indirizzo = "Indirizzo"
+progetto_particella = "Particella"
+progetto_superficie = "Superficie"
+progetto_architetto = "Architetto"
+progetto_capienza = "Capienza"
+progetto_inizio_cantiere = "Inizio cantiere"
+progetto_dopo = "Dopo il 15.09.2026"
 
-[faq_title]
-other = "Domande frequenti"
+# Timeline
+timeline_eyebrow = "Le tappe"
+timeline_2026_oggi_date = "2026 · oggi"
+timeline_2026_oggi_label = "Raccolta Fase 1"
+timeline_2026_settembre_date = "15 settembre 2026"
+timeline_2026_settembre_label = "Acquisto del terreno"
+timeline_2027_date = "2027"
+timeline_2027_label = "Raccolta Fase 2"
+timeline_cantiere_date = "2027 → 2028"
+timeline_cantiere_label = "Avvio della costruzione · circa 18 mesi"
+timeline_apertura_date = "2028 → 2029"
+timeline_apertura_label_pre = "Apertura · "
+timeline_apertura_label_em = "insha'Allah"
 
-[trasparenza_title]
-other = "Trasparenza"
-[trasparenza_documenti]
-other = "DOCUMENTI"
-[trasparenza_stampa]
-other = "STAMPA"
-[trasparenza_contatto_stampa]
-other = "Contatto stampa"
+# Budget
+budget_h3 = "Dove vanno i tuoi soldi"
+progetto_dove_vanno_soldi = "Dove vanno i tuoi soldi"
+budget_row_terreno = "Acquisto terreno"
+budget_row_progetto = "Progetto e permessi"
+budget_row_intermediazione = "Intermediazione"
+budget_row_legali = "Spese legali"
+budget_row_legali_small = "(stima)"
+budget_row_notarile = "Atto notarile"
+budget_totale = "TOTALE FASE 1"
+budget_gia_raccolto = "Già raccolto dalla comunità"
+budget_details_summary = "Come è composto il già raccolto"
+budget_sub_fedeli = "Già raccolto da fedeli"
+budget_sub_promesso = "Promesso da fedeli"
+budget_sub_passato = "Raccolto nei 6 anni precedenti"
+budget_da_raccogliere = "Da raccogliere entro 15.09"
+budget_project_eyebrow = "PROGETTO"
+budget_project_text = "4 piani residenziali · 6 appartamenti · sala polivalente 500 posti · sala preghiera quotidiana 100 posti"
+# Legacy (mantenute per retrocompat)
+progetto_voce_terreno = "Acquisto terreno"
+progetto_voce_progetto = "Progetto e permessi"
+progetto_voce_notarile = "Atto notarile"
+progetto_voce_intermediazione = "Intermediazione"
+progetto_voce_legali = "Spese legali"
+progetto_voce_chiusura = "Spese di chiusura"
+progetto_voce_permessi = "Progetto, permessi, atti"
+progetto_totale_fase = "TOTALE FASE 1"
+progetto_gia_coperto = "Già raccolto dalla comunità"
+progetto_da_raccogliere = "Da raccogliere entro 15.09"
 
-[footer_promosso]
-other = "Promosso da Lega dei Musulmani in Ticino"
-[footer_indirizzo_label]
-other = "Sede"
-[footer_iban_label]
-other = "IBAN PostFinance"
-[footer_privacy]
-other = "Privacy"
-[footer_cookie]
-other = "Cookie"
-[footer_statuto]
-other = "Statuto"
+# Callouts
+callout1_eyebrow = "LE FASI DEL PROGETTO"
+callout1_body_pre = "Questa è la "
+callout1_body_strong1 = "Fase 1"
+callout1_body_mid = " — acquisto del terreno e permessi di costruzione. La costruzione del centro, stimata fra "
+callout1_body_strong2 = "CHF 3.1 e 3.8 milioni"
+callout1_body_post = ", sarà oggetto di una raccolta separata a partire dal 2027."
+callout1_quote = "Una raccolta alla volta, con i numeri pubblici."
+callout2_eyebrow = "UN ECOSISTEMA CHE SI AUTOSOSTIENE"
+callout2_body_pre = "Sopra il centro culturale ci saranno "
+callout2_body_strong = "sei appartamenti residenziali"
+callout2_body_post = ", in locazione a tariffa di mercato. I proventi degli affitti pagano utenze, manutenzione, scuola coranica, attività culturali della comunità."
+callout2_quote = "Senza sussidi pubblici, senza dipendenze esterne."
+
+# ---------- DONARE ----------
+donare_eyebrow = "Come donare"
+donare_h2 = "Come donare"
+donare_title = "Come donare"
+donare_tabs_aria = "Modalità di donazione"
+donare_tab_carta = "Carta"
+donare_tab_bonifico = "Bonifico"
+donare_tab_twint = "TWINT"
+donare_tab_altre = "Crowdfunding"
+
+# Carta
+carta_intro = "La via più semplice per donare da qualunque paese. Carta di credito, Apple Pay, Google Pay. La tua sadaqa arriva subito sul conto del progetto."
+amount_50_label = "una giornata di apertura"
+amount_50_sublabel = "quanto serve a tenere aperto il salone di Bottogno per un giorno"
+amount_200_label = "una settimana di apertura"
+amount_200_sublabel = "sette giorni di salone vivo, dalla preghiera dell'alba al taraweeh"
+amount_1000_label = "un mese di affitto a Bottogno"
+amount_1000_sublabel = "l'affitto che paghiamo da vent'anni per tenere il salone"
+carta_cta = "Dona con carta →"
+carta_meta = "Carta · Apple Pay · Google Pay · pagamento una tantum"
+donare_dona_carta = "Dona con carta"
+donare_metodi_carta = "Carta · Apple Pay · Google Pay · pagamento una tantum"
+
+# Bonifico
+bonifico_intro = "Senza commissioni. Per chi è in Svizzera o ha un conto SEPA-compatibile in Europa. Su mobile copi i dati con un tap."
+iban_beneficiario_dt = "Beneficiario"
+iban_beneficiario_dd = "Lega dei Musulmani in Ticino"
+iban_iban_dt = "IBAN PostFinance"
+iban_bic_dt = "BIC"
+iban_causale_dt = "Causale"
+iban_causale_dd = "Dar al-Salam · Fase 1"
+copy_copia = "Copia"
+copy_copiato = "Copiato ✓"
+copy_iban_aria = "Copia IBAN"
+copy_bic_aria = "Copia BIC"
+copy_causale_aria = "Copia causale"
+bonifico_qr_summary = "Mostra QR-bill"
+bonifico_qr_alt = "QR-bill per bonifico bancario svizzero"
+bonifico_qr_caption = "Scansiona il QR con la tua app di e-banking svizzera."
+donare_copia = "Copia"
+donare_copiato = "Copiato ✓"
+donare_beneficiario = "Beneficiario"
+donare_iban = "IBAN PostFinance"
+donare_bic = "BIC"
+donare_causale = "Causale"
+donare_causale_default = "Dar al-Salam · Fase 1"
+donare_mostra_qr = "Mostra QR-bill"
+
+# TWINT
+twint_intro = "Per fratelli e sorelle in Svizzera con TWINT. Scansiona il QR con la app del telefono e dona in dieci secondi."
+twint_qr_alt = "QR TWINT — Lega dei Musulmani in Ticino"
+twint_caption = "La tua sadaqa jariya."
+donare_la_tua_sadaqa = "La tua sadaqa jariya."
+
+# Crowdfunding
+altre_intro = "Hai un account su una piattaforma di crowdfunding che già conosci e usi? Stiamo aprendo i canali principali. La tua donazione conta uguale, da qualunque ingresso passi."
+platform_donorbox_desc = "Piattaforma charity globale. Gestisce donazione ricorrente."
+platform_launchgood_desc = "Piattaforma musulmana internazionale, target diaspora MENA."
+platform_lokalhelden_desc = "Crowdfunding Raiffeisen, target donatori in Svizzera."
+platform_retedeldono_desc = "Charity strutturato italiano."
+platform_status = "in attivazione"
+donare_trust = "LMT è esente dalle imposte cantonali e federali (CHE-112.406.415). Per la deducibilità della tua donazione vedi le"
+donare_trust_link = "FAQ"
+
+# ---------- COUNTER (legacy) ----------
+counter_raccolti = "raccolti"
+counter_su = "su"
+counter_obiettivo = "obiettivo"
+counter_aggiornato = "Aggiornato il"
+counter_alle = "alle"
+
+# ---------- PERCHE ORA ----------
+perche_eyebrow = "Perché ora"
+perche_h2 = "Una porta che si è aperta"
+perche_ora_title = "Perché ora"
+perche_p1 = "Vent'anni che preghiamo in cento metri quadri a Bottogno."
+perche_p2 = "Una sala in affitto, dietro una porta che a Lugano nessuno conosce. Lì, ogni venerdì, settemila musulmani in Ticino sanno che possono fermarsi a pregare la jumu'a. Lì la nostra scuola domenicale El Nur insegna l'alif-ba a una trentina di bambini, italofoni nati a Lugano. Lì spezziamo il digiuno insieme nel mese di Ramadan, lì preghiamo la janazah quando un fratello torna ad Allah, lì accogliamo le sorelle e i fratelli che arrivano in Ticino e non hanno ancora una casa."
+perche_p3_pre = "Per tenere in piedi quella sala abbiamo pagato, in vent'anni, circa "
+perche_p3_strong = "CHF 400'000 di affitto"
+perche_p3_post = ". Soldi versati a un proprietario, mese dopo mese, senza che restasse nulla alla comunità."
+perche_beat = "Quattrocento mila franchi. I volti dei nostri bambini. Le mani di chi ha preparato cento iftar."
+perche_p5_pre = "Quest'anno Allah ci ha aperto una porta. A "
+perche_p5_strong = "Pregassona, in via Ceresio 53B"
+perche_p5_post = ", c'è una particella. È nostra. L'abbiamo comprata insieme allo studio dell'architetto Beier Cabrini, che ha già il progetto pronto: sala polivalente, sala di preghiera quotidiana, scuola, ufficio, e sei appartamenti sopra che pagheranno il funzionamento del centro per sempre."
+perche_p6_pre = "L'abbiamo chiamata "
+perche_p6_strong = "Dar al-Salam"
+perche_p6_post = "."
+perche_claim = "Una nuova casa di pace."
+perche_p7_pre = "Ci servono "
+perche_p7_strong_pre = " franchi entro il 15 settembre 2026"
+perche_p7_strong_post = ""
+perche_p7_post = " per chiudere l'acquisto del terreno, il progetto, l'atto notarile, l'intermediazione e le spese legali. Una parte è già coperta dai fratelli e dalle sorelle che hanno donato in questi anni — "
+perche_p7_raised_post = " franchi. Quello che manca lo raccogliamo insieme nei prossimi quattro mesi."
+perche_p8_pre = "Ogni franco che metti oggi è "
+perche_p8_strong = "sadaqa jariya"
+perche_p8_post = ": un'opera che continua a portare frutto ogni volta che un bambino imparerà a leggere il Corano in quella sala, ogni volta che un fratello pregherà taraweeh nel mese di Ramadan, ogni volta che una sorella in difficoltà troverà chi la ascolta."
+perche_cta = "Dona la tua sadaqa →"
+
+# ---------- VOCI ----------
+voci_eyebrow = "Voci della comunità"
+voci_h2 = "Le voci di Dar al-Salam"
+voci_title = "Voci della comunità"
+voci_intro = "Sono le persone che da vent'anni tengono in piedi questa comunità. Sono il presidente, l'imam, le madri della scuola domenicale, i giovani nati a Lugano, gli anziani che hanno aperto la moschea quando a Lugano la comunità era ancora un pugno di famiglie. Sono loro che, in queste settimane, stanno scegliendo di mettere la faccia davanti alla telecamera per raccontare cosa sarà Dar al-Salam."
+voci_aria_label = "Voci della comunità"
+voci_prev_aria = "Voce precedente"
+voci_next_aria = "Voce successiva"
+voci_dot_aria = "Vai alla voce"
+voci_dots_aria = "Posizione voce"
+voci_altre_arrivo = "Altre voci della comunità in arrivo nelle prossime settimane."
+
+voce1_quote = "«Quando sono arrivato a Lugano, in via Bottogno c'erano dieci fratelli che pregavano la jumu'a. Oggi siamo settemila in tutto il Ticino. Vent'anni dopo, è arrivato il momento di avere una casa nostra.»"
+voce1_attrib_name = "Samir Gomaa"
+voce1_attrib_role = "presidente Lega dei Musulmani in Ticino"
+voce1_placeholder_label = "foto in arrivo"
+
+voce2_quote = "«Costruire una casa per Allah è sadaqa jariya — un'opera che continua a portare frutto fino al Giorno del Giudizio, ogni volta che un fratello vi prega, ogni volta che un bambino vi impara il Corano.»"
+voce2_attrib_name = "Sheik Samir Jelassi"
+voce2_attrib_role = "imam della comunità"
+voce2_alt = "Sheik Samir Jelassi, imam della Lega dei Musulmani in Ticino"
+
+voce3_quote = "«I nostri giovani sono tanti e ogni anno di più. Studiamo stretti, in spazi nati per altro. Dar al-Salam per loro significa un'aula vera — uno spazio dove imparare il Corano con la dignità che meritano.»"
+voce3_attrib_name = "Anes"
+voce3_attrib_role = "educatore"
+voce3_alt = "Anes, educatore della comunità"
+
+voci_cta_text = "Vuoi essere una delle voci di Dar al-Salam?"
+voci_cta_link_pre = "Scrivici a"
+
+# ---------- FAQ ----------
+faq_eyebrow = "FAQ"
+faq_h2 = "Domande frequenti"
+faq_title = "Domande frequenti"
+
+faq_q1 = "Posso pagare la zakat per Dar al-Salam?"
+faq_a1_p1 = "La risposta dipende dalla scuola di pensiero a cui ti riferisci. La maggioranza degli ulema delle quattro scuole classiche (Hanafi, Maliki, Shafi'i, Hanbali) considera che la zakat sia destinata in primo luogo alle otto categorie indicate nella Sura at-Tawba (60), e che la costruzione di moschee non rientri direttamente fra queste. Alcuni ulema contemporanei estendono invece la categoria <em>fi sabilillah</em> a includerla."
+faq_a1_p2 = "Per evitare ambiguità ti suggeriamo di <strong>destinare a Dar al-Salam una sadaqa volontaria</strong> — non zakat — e di pagare la tua zakat secondo il parere del tuo imam di riferimento o secondo l'organizzazione che già usi. La sadaqa volontaria per un progetto come questo è considerata da tutti gli ulema una forma di sadaqa jariya."
+
+faq_q2 = "Posso fare una donazione ricorrente?"
+faq_a2_p1 = "Sì, e per noi è la forma più preziosa. Sul tab \"Carta\" puoi scegliere di trasformare la tua donazione in <strong>ricorrente mensile</strong>, anche di soli 20 franchi al mese. Quattro mesi di donazione ricorrente da 20 franchi sono ottanta franchi che entrano sicuri nel piano di raccolta — per noi che pianifichiamo, è più prezioso di una grande donazione una tantum che non possiamo prevedere."
+faq_a2_p2 = "Una donazione ricorrente è inoltre una forma classica di <strong>sadaqa jariya</strong>: continua a portare frutto mese dopo mese, senza che tu debba fare niente."
+faq_a2_p3 = "Puoi cancellarla in qualunque momento, senza domande."
+
+faq_q3 = "Posso donare in nome di un defunto?"
+faq_a3_p1 = "Sì. È una delle forme più nobili di sadaqa jariya. Il Profeta (s.a.w.s) ha detto: <em>«Quando il figlio di Adamo muore, le sue opere si interrompono salvo per tre cose — una sadaqa jariya, una conoscenza utile lasciata in eredità, o un figlio pio che fa du'a per lui.»</em> (Muslim)."
+faq_a3_p2 = "Quando doni con carta, nella causale del bonifico o nelle note della donazione, puoi scrivere <em>«in memoria di [nome]»</em>. Il consiglio LMT terrà un registro privato dei nomi e farà du'a per loro durante l'apertura del centro. Nessun nome verrà pubblicato senza permesso esplicito della famiglia."
+
+faq_q4 = "La mia donazione è deducibile fiscalmente?"
+faq_a4_p1_pre = "La Lega dei Musulmani in Ticino è iscritta al Registro di commercio dal 20 giugno 2005 con n. "
+faq_a4_p1_post = ", ed è esente dalle imposte cantonali e federali <strong>sui propri redditi</strong> dal 13 marzo 2014."
+faq_a4_p2 = "<strong>Stiamo verificando</strong> se la stessa esenzione si estende alla deducibilità delle singole donazioni per il donatore. È una verifica diversa dall'esenzione dell'associazione e richiede conferma formale dalle autorità fiscali. Aggiorneremo questa pagina appena avremo la risposta scritta."
+faq_a4_p3 = "Per donatori italiani, francesi, tedeschi: la deducibilità dipende dalla normativa del tuo paese e dagli accordi bilaterali con la Svizzera. Conserva la ricevuta automatica che ricevi via email — è il documento che ti serve quando faremo la dichiarazione."
+
+faq_q5 = "Quando aprirà Dar al-Salam?"
+faq_a5_p1 = "Le tappe in ordine. Entro <strong>15 settembre 2026</strong> chiudiamo la raccolta della Fase 1 (terreno + permessi). Da settembre 2026 a fine 2027 si depositano i permessi di costruzione e si cerca la copertura finanziaria della Fase 2. Da inizio 2027 in avanti — <em>insha'Allah</em> — comincia il cantiere. La durata stimata della costruzione è di circa diciotto mesi."
+faq_a5_p2 = "Realisticamente l'apertura del centro è prevista <strong>fra il 2028 e il 2029</strong>."
+faq_a5_p3 = "Tutti gli aggiornamenti sulle tappe sono pubblicati settimanalmente in questa landing e mensilmente nel rendiconto pubblico."
+
+faq_q6 = "E se non chiudessimo la raccolta entro il 15 settembre?"
+faq_a6_p1 = "La risposta sincera: la particella resterebbe nostra fino allo scadere del termine concordato col venditore, ma rischieremmo di perdere il diritto di acquisto e di tornare a cercare. Per questo la scadenza non è simbolica — è reale."
+faq_a6_p2 = "In ogni caso, <strong>ogni franco donato resta nel conto vincolato dedicato</strong> (IBAN PostFinance separato dalla gestione corrente di LMT) e viene impiegato esclusivamente per il progetto Dar al-Salam. Se la Fase 1 non chiudesse in tempo, il consiglio LMT comunicherà alla comunità come procedere, in piena trasparenza."
+faq_a6_p3 = "La nostra responsabilità verso chi dona viene prima del nostro calendario."
+
+faq_q7 = "Posso visitare la moschea attuale a Bottogno?"
+faq_a7_p1 = "Sì, ti aspettiamo. La moschea di Bottogno è aperta tutto il giorno, spesso anche la notte. Puoi trovarci riuniti agli orari di preghiera — il momento migliore per capire chi siamo è il venerdì, alla jumu'a, quando la comunità è al completo."
+faq_a7_p2_pre = "<strong>Indirizzo:</strong> "
+faq_a7_p3 = "Se preferisci un appuntamento privato per parlare del progetto col presidente o con il consiglio, scrivi a"
+faq_a7_p3_post = ". Rispondiamo entro 48 ore."
+
+faq_q8 = "Riceverò una ricevuta?"
+faq_a8_p1 = "Per donazioni con carta, Apple Pay e Google Pay la ricevuta arriva via email automaticamente. Per le altre modalità, se non la ricevi, scrivici a"
+faq_a8_p1_post = "indicando data e importo della donazione e te la inviamo."
+faq_a8_p2 = "Tutte le ricevute riportano"
+faq_a8_p2_post = "e l'estremo dell'esenzione fiscale, validi per la dichiarazione dei redditi."
+
+# ---------- TRASPARENZA ----------
+trasp_eyebrow = "Trasparenza"
+trasp_h2 = "Documenti, governance, conto dedicato"
+trasparenza_title = "Trasparenza"
+trasparenza_documenti = "DOCUMENTI"
+trasparenza_stampa = "STAMPA"
+trasparenza_contatto_stampa = "Contatto stampa"
+
+trasp_body_p1_pre = "La Lega dei Musulmani in Ticino è iscritta al Registro di commercio del Cantone Ticino dal 20 giugno 2005 con il numero "
+trasp_body_p1_post = ". È esente dalle imposte cantonali e federali sui propri redditi dal 13 marzo 2014, ai sensi dell'art. 65 lett. g della Legge tributaria cantonale e dell'art. 56 lett. h LIFD federale."
+trasp_body_p2 = "Il comitato attualmente in carica è stato eletto il 23 gennaio 2019. Presidente e tesoriere è <strong>Samir Gomaa</strong> (firma individuale). Vicepresidente, <strong>Radouan Jelassi</strong>. Membro e segretario, <strong>Adnan Al Hariri</strong>."
+trasp_body_p3 = "Le donazioni alla campagna Dar al-Salam confluiscono su un <strong>conto IBAN PostFinance dedicato e separato</strong> dalla gestione ordinaria dell'associazione, intestato a Lega dei Musulmani in Ticino con causale dedicata \"Progetto Nuova Moschea\". Tutti i movimenti sono tracciabili e auditabili."
+trasp_body_p4 = "Il rendiconto della raccolta è pubblicato settimanalmente in questa pagina. Il bilancio annuale completo dell'associazione è depositato e disponibile."
+trasp_sub = "Documenti"
+doc_statuto = "Statuto dell'associazione"
+doc_registro = "Estratto Registro di commercio"
+doc_registro_small = "(aggiornato 03.04.2026)"
+doc_esenzione = "Lettera esenzione fiscale"
+doc_esenzione_small = "(13.03.2014)"
+doc_bilancio = "Bilancio 2023 depositato"
+doc_rendiconto = "Rendiconto raccolta Dar al-Salam"
+doc_rendiconto_small = "— aggiornato settimanalmente"
+doc_codice = "Codice etico della campagna"
+doc_media_kit = "Media kit stampa (PDF)"
+doc_pending = "in caricamento"
+trasp_contact_pre = "Per stampa, revisori e autorità di vigilanza:"
+trasp_contact_subject = "Stampa%20%E2%80%94%20Dar%20al-Salam"
+trasp_contact_note = "(indica \"Stampa\" nell'oggetto)."
+trasp_contact_response = "Rispondiamo entro 24 ore lavorative."
+
+# ---------- FOOTER ----------
+footer_endorser = "Promosso da Lega dei Musulmani in Ticino"
+footer_promosso = "Promosso da Lega dei Musulmani in Ticino"
+footer_legal_id = "CHE-112.406.415 · Esenzione fiscale 2014"
+footer_label_sede = "Sede"
+footer_indirizzo_label = "Sede"
+footer_email = "info@lmticino.ch"
+footer_label_iban = "IBAN PostFinance"
+footer_iban_label = "IBAN PostFinance"
+footer_bic_short = "BIC:"
+footer_copyright = "© 2026 LMT"
+footer_privacy = "Privacy"
+footer_cookie = "Cookie"
+footer_statuto = "Statuto"
+
+# ---------- STICKY CTA / Lightbox ----------
+cta_dona_ora = "Dona ora"
+lightbox_aria = "Immagine ingrandita"
+lightbox_close = "Chiudi"

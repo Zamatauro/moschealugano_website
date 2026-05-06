@@ -10,10 +10,10 @@
 
 <section id="donare" class="section section--ivory">
   <div class="container">
-    <p class="eyebrow">Come donare</p>
-    <h2>{{ i18n "donare_title" }}</h2>
+    <p class="eyebrow">{{ i18n "donare_eyebrow" }}</p>
+    <h2>{{ i18n "donare_h2" }}</h2>
 
-    <div class="tabs" role="region" aria-label="Modalità di donazione">
+    <div class="tabs" role="region" aria-label="{{ i18n "donare_tabs_aria" }}">
       <input type="radio" name="donare-tab" id="tab-carta" checked>
       <input type="radio" name="donare-tab" id="tab-bonifico">
       <input type="radio" name="donare-tab" id="tab-twint">
@@ -31,80 +31,79 @@
         {{/* === TAB 1 · CARTA (SumUp) === */}}
         <div class="tab-panel" data-tab="carta">
           <p class="tab-panel__intro">
-            La via più semplice per donare da qualunque paese. Carta di credito, Apple Pay, Google Pay. La tua sadaqa arriva subito sul conto del progetto.
+            {{ i18n "carta_intro" }}
           </p>
-          {{/* Micro-storie corrette su numeri verificabili dal bilancio LMT (review cowork P0.4) */}}
           <div class="amounts">
             <a href="{{ $sumup }}?amount=50" class="amount-btn" target="_blank" rel="noopener">
               <span class="amount-btn__big">50<small>CHF</small></span>
-              <span class="amount-btn__label">una giornata di apertura</span>
-              <span class="amount-btn__sublabel">quanto serve a tenere aperta la sala di Bottogno per un giorno</span>
+              <span class="amount-btn__label">{{ i18n "amount_50_label" }}</span>
+              <span class="amount-btn__sublabel">{{ i18n "amount_50_sublabel" }}</span>
             </a>
             <a href="{{ $sumup }}?amount=200" class="amount-btn" target="_blank" rel="noopener">
               <span class="amount-btn__big">200<small>CHF</small></span>
-              <span class="amount-btn__label">una settimana di apertura</span>
-              <span class="amount-btn__sublabel">sette giorni di sala viva, dalla preghiera dell'alba al taraweeh</span>
+              <span class="amount-btn__label">{{ i18n "amount_200_label" }}</span>
+              <span class="amount-btn__sublabel">{{ i18n "amount_200_sublabel" }}</span>
             </a>
             <a href="{{ $sumup }}?amount=1000" class="amount-btn" target="_blank" rel="noopener">
               <span class="amount-btn__big">1000<small>CHF</small></span>
-              <span class="amount-btn__label">un mese di affitto a Bottogno</span>
-              <span class="amount-btn__sublabel">l'affitto che paghiamo da vent'anni per tenere la sala</span>
+              <span class="amount-btn__label">{{ i18n "amount_1000_label" }}</span>
+              <span class="amount-btn__sublabel">{{ i18n "amount_1000_sublabel" }}</span>
             </a>
           </div>
           <div class="tab-panel__cta">
             <a href="{{ $sumup }}" class="btn btn--primary" target="_blank" rel="noopener">
-              Dona con carta →
+              {{ i18n "carta_cta" }}
             </a>
-            <p class="tab-panel__meta">Carta · Apple Pay · Google Pay · pagamento una tantum</p>
+            <p class="tab-panel__meta">{{ i18n "carta_meta" }}</p>
           </div>
         </div>
 
         {{/* === TAB 2 · BONIFICO === */}}
         <div class="tab-panel" data-tab="bonifico">
           <p class="tab-panel__intro">
-            Niente commissioni. Per i fratelli in Svizzera o con conto compatibile SEPA in Europa. Su mobile copi i dati con un tap.
+            {{ i18n "bonifico_intro" }}
           </p>
 
           <div class="iban">
             <div class="iban__details">
               <div class="iban__row">
-                <dt>Beneficiario</dt>
-                <dd>Lega dei Musulmani in Ticino</dd>
+                <dt>{{ i18n "iban_beneficiario_dt" }}</dt>
+                <dd>{{ i18n "iban_beneficiario_dd" }}</dd>
               </div>
               <div class="iban__row iban__row--copy">
-                <dt>IBAN PostFinance</dt>
+                <dt>{{ i18n "iban_iban_dt" }}</dt>
                 <dd>
                   <span class="tabular" id="iban-value">{{ $iban }}</span>
-                  <button type="button" class="copy-btn" data-copy="{{ $ibanRaw }}" aria-label="Copia IBAN">
-                    <span class="copy-btn__label">Copia</span>
+                  <button type="button" class="copy-btn" data-copy="{{ $ibanRaw }}" data-copy-label="{{ i18n "copy_copia" }}" data-copied-label="{{ i18n "copy_copiato" }}" aria-label="{{ i18n "copy_iban_aria" }}">
+                    <span class="copy-btn__label">{{ i18n "copy_copia" }}</span>
                   </button>
                 </dd>
               </div>
               <div class="iban__row iban__row--copy">
-                <dt>BIC</dt>
+                <dt>{{ i18n "iban_bic_dt" }}</dt>
                 <dd>
                   <span class="tabular">{{ $bic }}</span>
-                  <button type="button" class="copy-btn" data-copy="{{ $bic }}" aria-label="Copia BIC">
-                    <span class="copy-btn__label">Copia</span>
+                  <button type="button" class="copy-btn" data-copy="{{ $bic }}" data-copy-label="{{ i18n "copy_copia" }}" data-copied-label="{{ i18n "copy_copiato" }}" aria-label="{{ i18n "copy_bic_aria" }}">
+                    <span class="copy-btn__label">{{ i18n "copy_copia" }}</span>
                   </button>
                 </dd>
               </div>
               <div class="iban__row iban__row--copy">
-                <dt>Causale</dt>
+                <dt>{{ i18n "iban_causale_dt" }}</dt>
                 <dd>
-                  <span>Dar al-Salam · Fase 1</span>
-                  <button type="button" class="copy-btn" data-copy="Dar al-Salam · Fase 1" aria-label="Copia causale">
-                    <span class="copy-btn__label">Copia</span>
+                  <span>{{ i18n "iban_causale_dd" }}</span>
+                  <button type="button" class="copy-btn" data-copy="{{ i18n "iban_causale_dd" }}" data-copy-label="{{ i18n "copy_copia" }}" data-copied-label="{{ i18n "copy_copiato" }}" aria-label="{{ i18n "copy_causale_aria" }}">
+                    <span class="copy-btn__label">{{ i18n "copy_copia" }}</span>
                   </button>
                 </dd>
               </div>
             </div>
 
             <details class="iban__qr">
-              <summary>Mostra QR-bill</summary>
+              <summary>{{ i18n "bonifico_qr_summary" }}</summary>
               <div class="iban__qr-content">
-                <img src="{{ $qrBonifico.RelPermalink }}" alt="QR-bill bonifico bancario CH" width="240" height="240">
-                <p>Inquadra il QR con la tua app e-banking svizzera.</p>
+                <img src="{{ $qrBonifico.RelPermalink }}" alt="{{ i18n "bonifico_qr_alt" }}" width="240" height="240">
+                <p>{{ i18n "bonifico_qr_caption" }}</p>
               </div>
             </details>
           </div>
@@ -113,39 +112,39 @@
         {{/* === TAB 3 · TWINT === */}}
         <div class="tab-panel" data-tab="twint">
           <p class="tab-panel__intro">
-            Per i fratelli e le sorelle in Svizzera con TWINT. Inquadra il QR con l'app del tuo telefono e dona in dieci secondi.
+            {{ i18n "twint_intro" }}
           </p>
           <div class="qr-large">
-            <img src="{{ $qrTwint.RelPermalink }}" alt="QR TWINT — Lega dei Musulmani in Ticino" width="320" height="320">
-            <p class="qr-large__caption">La tua sadaqa jariya.</p>
+            <img src="{{ $qrTwint.RelPermalink }}" alt="{{ i18n "twint_qr_alt" }}" width="320" height="320">
+            <p class="qr-large__caption">{{ i18n "twint_caption" }}</p>
           </div>
         </div>
 
         {{/* === TAB 4 · ALTRE PIATTAFORME === */}}
         <div class="tab-panel" data-tab="altre">
           <p class="tab-panel__intro">
-            Hai un account su una piattaforma di crowdfunding che già conosci e usi? Stiamo aprendo i canali principali. La tua donazione conta uguale, da qualunque ingresso passi.
+            {{ i18n "altre_intro" }}
           </p>
           <div class="platforms">
             <a href="#" class="platform" aria-disabled="true">
               <span class="platform__name">Donorbox</span>
-              <span class="platform__desc">Piattaforma charity globale. Gestisce donazione ricorrente.</span>
-              <span class="platform__status">in attivazione</span>
+              <span class="platform__desc">{{ i18n "platform_donorbox_desc" }}</span>
+              <span class="platform__status">{{ i18n "platform_status" }}</span>
             </a>
             <a href="#" class="platform" aria-disabled="true">
               <span class="platform__name">LaunchGood</span>
-              <span class="platform__desc">Piattaforma musulmana internazionale, target diaspora MENA.</span>
-              <span class="platform__status">in attivazione</span>
+              <span class="platform__desc">{{ i18n "platform_launchgood_desc" }}</span>
+              <span class="platform__status">{{ i18n "platform_status" }}</span>
             </a>
             <a href="#" class="platform" aria-disabled="true">
               <span class="platform__name">lokalhelden.ch</span>
-              <span class="platform__desc">Crowdfunding Raiffeisen, target donatori in Svizzera.</span>
-              <span class="platform__status">in attivazione</span>
+              <span class="platform__desc">{{ i18n "platform_lokalhelden_desc" }}</span>
+              <span class="platform__status">{{ i18n "platform_status" }}</span>
             </a>
             <a href="#" class="platform" aria-disabled="true">
               <span class="platform__name">Rete del Dono</span>
-              <span class="platform__desc">Charity strutturato italiano.</span>
-              <span class="platform__status">in attivazione</span>
+              <span class="platform__desc">{{ i18n "platform_retedeldono_desc" }}</span>
+              <span class="platform__status">{{ i18n "platform_status" }}</span>
             </a>
           </div>
         </div>
@@ -155,23 +154,24 @@
 
     {{/* Trust line — Copy V1 cowork */}}
     <p class="donare__trust">
-      LMT è esente dalle imposte cantonali e federali ({{ $cheId }}).
-      Per la deducibilità della tua donazione vedi le <a href="#faq">FAQ</a>.
+      {{ i18n "donare_trust" }} <a href="#faq">{{ i18n "donare_trust_link" }}</a>.
     </p>
   </div>
 </section>
 
-{{/* JS minimo per copy-to-clipboard */}}
+{{/* JS minimo per copy-to-clipboard — usa data-attribute per label tradotti */}}
 <script>
   document.querySelectorAll('.copy-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var v = btn.getAttribute('data-copy');
-      var orig = btn.querySelector('.copy-btn__label').textContent;
+      var copyLabel = btn.getAttribute('data-copy-label') || 'Copia';
+      var copiedLabel = btn.getAttribute('data-copied-label') || 'Copiato ✓';
+      var labelEl = btn.querySelector('.copy-btn__label');
       navigator.clipboard.writeText(v).then(function() {
-        btn.querySelector('.copy-btn__label').textContent = 'Copiato ✓';
+        labelEl.textContent = copiedLabel;
         btn.classList.add('copy-btn--copied');
         setTimeout(function() {
-          btn.querySelector('.copy-btn__label').textContent = orig;
+          labelEl.textContent = copyLabel;
           btn.classList.remove('copy-btn--copied');
         }, 2000);
       });

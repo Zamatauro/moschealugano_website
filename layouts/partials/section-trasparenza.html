@@ -1,55 +1,34 @@
-{{/* § 7 · TRASPARENZA — Voce C fattuale · Copy V1 cowork (5 mag 2026) */}}
+{{/* § 7 · TRASPARENZA — Voce C fattuale — multilingua i18n */}}
 <section id="trasparenza" class="section section--white">
   <div class="container container--narrow">
-    <p class="eyebrow">Trasparenza</p>
-    <h2>Documenti, governance, conto vincolato</h2>
+    <p class="eyebrow">{{ i18n "trasp_eyebrow" }}</p>
+    <h2>{{ i18n "trasp_h2" }}</h2>
 
     <div class="trasparenza__body">
-      <p>
-        La Lega dei Musulmani in Ticino è iscritta al Registro di commercio del
-        Cantone Ticino dal 20 giugno 2005 con numero
-        <strong>{{ .Site.Params.cheId }}</strong>. È esente dalle imposte cantonali
-        e federali sui propri redditi dal 13 marzo 2014, ai sensi dell'art. 65
-        lett. g della Legge tributaria cantonale e dell'art. 56 lett. h LIFD federale.
-      </p>
+      <p>{{ i18n "trasp_body_p1_pre" | safeHTML }}<strong>{{ .Site.Params.cheId }}</strong>{{ i18n "trasp_body_p1_post" | safeHTML }}</p>
 
-      <p>
-        Il comitato attualmente in carica è stato eletto il 23 gennaio 2019.
-        Presidente e tesoriere è <strong>Samir Gomaa</strong> (firma individuale).
-        Vicepresidente, <strong>Radouan Jelassi</strong>. Membro e segretario,
-        <strong>Adnan Al Hariri</strong>.
-      </p>
+      <p>{{ i18n "trasp_body_p2" | safeHTML }}</p>
 
-      <p>
-        Le donazioni alla campagna Dar al-Salam confluiscono su un
-        <strong>conto IBAN PostFinance dedicato e separato</strong> dalla gestione
-        ordinaria dell'associazione, intestato alla Lega dei Musulmani in Ticino
-        con causale dedicata "Progetto Nuova Moschea". Tutte le movimentazioni
-        sono tracciabili e auditabili.
-      </p>
+      <p>{{ i18n "trasp_body_p3" | safeHTML }}</p>
 
-      <p>
-        Il rendiconto della raccolta è pubblicato settimanalmente in questa
-        pagina. Il bilancio annuale completo dell'associazione è depositato e
-        disponibile.
-      </p>
+      <p>{{ i18n "trasp_body_p4" | safeHTML }}</p>
     </div>
 
-    <h3 class="trasparenza__sub">Documenti</h3>
+    <h3 class="trasparenza__sub">{{ i18n "trasp_sub" }}</h3>
     <ul class="trasparenza__docs">
-      <li><a href="#" aria-disabled="true">📄 Statuto associazione <span class="trasparenza__pending">in caricamento</span></a></li>
-      <li><a href="#" aria-disabled="true">📄 Estratto Registro di commercio <small>(aggiornato 03.04.2026)</small> <span class="trasparenza__pending">in caricamento</span></a></li>
-      <li><a href="#" aria-disabled="true">📄 Lettera di esenzione fiscale <small>(13.03.2014)</small> <span class="trasparenza__pending">in caricamento</span></a></li>
-      <li><a href="#" aria-disabled="true">📄 Bilancio 2023 depositato <span class="trasparenza__pending">in caricamento</span></a></li>
-      <li><a href="#" aria-disabled="true">📄 Rendiconto raccolta Dar al-Salam <small>— aggiornato settimanalmente</small> <span class="trasparenza__pending">in caricamento</span></a></li>
-      <li><a href="#" aria-disabled="true">📄 Codice etico campagna <span class="trasparenza__pending">in caricamento</span></a></li>
-      <li><a href="#" aria-disabled="true">📄 Media kit stampa (PDF) <span class="trasparenza__pending">in caricamento</span></a></li>
+      <li><a href="#" aria-disabled="true">📄 {{ i18n "doc_statuto" }} <span class="trasparenza__pending">{{ i18n "doc_pending" }}</span></a></li>
+      <li><a href="#" aria-disabled="true">📄 {{ i18n "doc_registro" }} <small>{{ i18n "doc_registro_small" }}</small> <span class="trasparenza__pending">{{ i18n "doc_pending" }}</span></a></li>
+      <li><a href="#" aria-disabled="true">📄 {{ i18n "doc_esenzione" }} <small>{{ i18n "doc_esenzione_small" }}</small> <span class="trasparenza__pending">{{ i18n "doc_pending" }}</span></a></li>
+      <li><a href="#" aria-disabled="true">📄 {{ i18n "doc_bilancio" }} <span class="trasparenza__pending">{{ i18n "doc_pending" }}</span></a></li>
+      <li><a href="#" aria-disabled="true">📄 {{ i18n "doc_rendiconto" }} <small>{{ i18n "doc_rendiconto_small" }}</small> <span class="trasparenza__pending">{{ i18n "doc_pending" }}</span></a></li>
+      <li><a href="#" aria-disabled="true">📄 {{ i18n "doc_codice" }} <span class="trasparenza__pending">{{ i18n "doc_pending" }}</span></a></li>
+      <li><a href="#" aria-disabled="true">📄 {{ i18n "doc_media_kit" }} <span class="trasparenza__pending">{{ i18n "doc_pending" }}</span></a></li>
     </ul>
 
     <p class="trasparenza__contact">
-      Per la stampa, i revisori, le autorità di vigilanza:
-      <a href="mailto:{{ .Site.Params.emailContatto }}?subject=Stampa%20%E2%80%94%20Dar%20al-Salam">{{ .Site.Params.emailContatto }}</a>
-      <small>(indicare "Stampa" nell'oggetto).</small> Rispondiamo entro 24 ore lavorative.
+      {{ i18n "trasp_contact_pre" }}
+      <a href="mailto:{{ .Site.Params.emailContatto }}?subject={{ i18n "trasp_contact_subject" }}">{{ .Site.Params.emailContatto }}</a>
+      <small>{{ i18n "trasp_contact_note" | safeHTML }}</small> {{ i18n "trasp_contact_response" }}
     </p>
   </div>
 </section>

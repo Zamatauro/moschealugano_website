@@ -5,68 +5,54 @@
 
 <section id="voci" class="section section--sand">
   <div class="container">
-    <p class="eyebrow">Voci della comunità</p>
-    <h2>Le voci di Dar al-Salam</h2>
+    <p class="eyebrow">{{ i18n "voci_eyebrow" }}</p>
+    <h2>{{ i18n "voci_h2" }}</h2>
 
     <p class="voci__intro">
-      Sono le persone che da vent'anni tengono in piedi questa comunità. Sono il
-      presidente, l'imam, le madri della scuola domenicale, i giovani nati a
-      Lugano, gli anziani che hanno aperto la moschea quando a Lugano la comunità
-      era ancora un pugno di famiglie. Sono loro che, in queste settimane, stanno
-      scegliendo di mettere la faccia davanti alla telecamera per raccontare cosa
-      sarà Dar al-Salam.
+      {{ i18n "voci_intro" }}
     </p>
 
     {{/* Carousel voci — frecce in flex layout ai lati del box (no overlap) */}}
     <div class="voci-carousel-wrap">
-      <button type="button" class="voci-nav voci-nav--prev" aria-label="Voce precedente">‹</button>
+      <button type="button" class="voci-nav voci-nav--prev" aria-label="{{ i18n "voci_prev_aria" }}">‹</button>
 
-      <div class="voci-carousel" id="voci-carousel" aria-label="Voci della comunità">
+      <div class="voci-carousel" id="voci-carousel" aria-label="{{ i18n "voci_aria_label" }}">
 
         {{/* Voce 1 — Samir Gomaa (foto in arrivo, placeholder) */}}
         <article class="voce-card">
           <div class="voce-card__photo">
             <div class="voce-card__placeholder">
               <span class="voce-card__initials">SG</span>
-              <span class="voce-card__placeholder-label">foto in arrivo</span>
+              <span class="voce-card__placeholder-label">{{ i18n "voce1_placeholder_label" }}</span>
             </div>
           </div>
           <div class="voce-card__body">
             <blockquote class="voce-card__quote">
-              «Quando sono arrivato a Lugano, in via Bottogno c'erano dieci
-              fratelli che pregavano la jumu'a. Oggi siamo settemila in tutto
-              il Ticino. Vent'anni dopo, è arrivato il momento di avere una
-              casa nostra.»
+              {{ i18n "voce1_quote" }}
             </blockquote>
             <div class="voce-card__attrib">
-              <strong>Samir Gomaa</strong>
-              <span>presidente Lega dei Musulmani in Ticino</span>
+              <strong>{{ i18n "voce1_attrib_name" }}</strong>
+              <span>{{ i18n "voce1_attrib_role" }}</span>
             </div>
           </div>
         </article>
 
-        {{/* Voce 2 — Sheik Samir Jelassi
-             Pattern format voce corale (memoria project_moschea_format_voce_corale.md):
-             Jelassi NON come frontman, presente con citazione spirituale breve, mai dominante.
-             Decisione Stefano (6 mag 2026): figura apicale comunità, deve esserci con moderazione. */}}
+        {{/* Voce 2 — Sheik Samir Jelassi */}}
         <article class="voce-card">
           <div class="voce-card__photo">
             <img src="{{ $imamJelassi.RelPermalink }}"
-                 alt="Sheik Samir Jelassi, imam della Lega dei Musulmani in Ticino"
+                 alt="{{ i18n "voce2_alt" }}"
                  loading="lazy"
                  width="{{ $imamJelassi.Width }}"
                  height="{{ $imamJelassi.Height }}">
           </div>
           <div class="voce-card__body">
             <blockquote class="voce-card__quote">
-              «Costruire una casa per Allah è sadaqa jariya — un'opera che
-              continua a portare frutto fino al Giorno del Giudizio, ogni
-              volta che un fratello vi prega, ogni volta che un bambino vi
-              impara il Corano.»
+              {{ i18n "voce2_quote" }}
             </blockquote>
             <div class="voce-card__attrib">
-              <strong>Sheik Samir Jelassi</strong>
-              <span>imam della comunità</span>
+              <strong>{{ i18n "voce2_attrib_name" }}</strong>
+              <span>{{ i18n "voce2_attrib_role" }}</span>
             </div>
           </div>
         </article>
@@ -77,46 +63,43 @@
             {{ with $anesRes }}
               {{ $anes := .Resize "800x webp q85" }}
               <img src="{{ $anes.RelPermalink }}"
-                   alt="Anes, educatore della comunità"
+                   alt="{{ i18n "voce3_alt" }}"
                    loading="lazy"
                    width="{{ $anes.Width }}"
                    height="{{ $anes.Height }}">
             {{ else }}
               <div class="voce-card__placeholder">
                 <span class="voce-card__initials">A</span>
-                <span class="voce-card__placeholder-label">foto in arrivo</span>
+                <span class="voce-card__placeholder-label">{{ i18n "voce1_placeholder_label" }}</span>
               </div>
             {{ end }}
           </div>
           <div class="voce-card__body">
             <blockquote class="voce-card__quote">
-              «I nostri giovani sono tanti e ogni anno di più. Studiamo
-              stretti, in spazi nati per altro. Dar al-Salam per loro
-              significa un'aula vera — uno spazio dove imparare il Corano
-              con la dignità che meritano.»
+              {{ i18n "voce3_quote" }}
             </blockquote>
             <div class="voce-card__attrib">
-              <strong>Anes</strong>
-              <span>educatore</span>
+              <strong>{{ i18n "voce3_attrib_name" }}</strong>
+              <span>{{ i18n "voce3_attrib_role" }}</span>
             </div>
           </div>
         </article>
 
       </div>
 
-      <button type="button" class="voci-nav voci-nav--next" aria-label="Voce successiva">›</button>
+      <button type="button" class="voci-nav voci-nav--next" aria-label="{{ i18n "voci_next_aria" }}">›</button>
     </div>
 
     {{/* Dots di posizione (sotto, fuori dal flex) */}}
-    <div class="gallery-dots voci-dots-wrap" id="voci-dots" aria-label="Posizione voce">
+    <div class="gallery-dots voci-dots-wrap" id="voci-dots" aria-label="{{ i18n "voci_dots_aria" }}">
       {{ range seq 3 }}
-        <button type="button" class="gallery-dot" data-idx="{{ sub . 1 }}" aria-label="Vai alla voce {{ . }}"></button>
+        <button type="button" class="gallery-dot" data-idx="{{ sub . 1 }}" aria-label="{{ i18n "voci_dot_aria" }} {{ . }}"></button>
       {{ end }}
     </div>
 
     <p class="voci__cta">
-      Vuoi essere una delle voci di Dar al-Salam?
-      <a href="mailto:{{ .Site.Params.emailContatto }}">Scrivici a {{ .Site.Params.emailContatto }}</a>
+      {{ i18n "voci_cta_text" }}
+      <a href="mailto:{{ .Site.Params.emailContatto }}">{{ i18n "voci_cta_link_pre" }} {{ .Site.Params.emailContatto }}</a>
     </p>
   </div>
 </section>

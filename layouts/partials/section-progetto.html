@@ -16,59 +16,59 @@
   <div class="container">
 
     {{/* 2a · Header */}}
-    <p class="eyebrow">Il progetto</p>
-    <h2>{{ i18n "progetto_title" }}</h2>
+    <p class="eyebrow">{{ i18n "progetto_eyebrow" }}</p>
+    <h2>{{ i18n "progetto_h2" }}</h2>
 
     {{/* 2b · Gallery carousel orizzontale (frecce + dots, no scrollbar) */}}
     <div class="gallery-wrap">
-      <button type="button" class="gallery-nav gallery-nav--prev" aria-label="Slide precedente" data-dir="-1">‹</button>
-      <button type="button" class="gallery-nav gallery-nav--next" aria-label="Slide successiva" data-dir="1">›</button>
-      <div class="gallery" id="gallery" aria-label="Galleria progetto">
+      <button type="button" class="gallery-nav gallery-nav--prev" aria-label="{{ i18n "gallery_prev_aria" }}" data-dir="-1">‹</button>
+      <button type="button" class="gallery-nav gallery-nav--next" aria-label="{{ i18n "gallery_next_aria" }}" data-dir="1">›</button>
+      <div class="gallery" id="gallery" aria-label="{{ i18n "gallery_aria_label" }}">
       <figure class="gallery__item">
-        <div class="gallery__frame"><img src="{{ $g1.RelPermalink }}" alt="Render esterno con alberi · Beier Cabrini Architetti" loading="lazy" width="{{ $g1.Width }}" height="{{ $g1.Height }}"></div>
-        <figcaption>Vista esterna · Beier Cabrini</figcaption>
+        <div class="gallery__frame"><img src="{{ $g1.RelPermalink }}" alt="{{ i18n "gallery_alt_1" }}" loading="lazy" width="{{ $g1.Width }}" height="{{ $g1.Height }}"></div>
+        <figcaption>{{ i18n "gallery_caption_1" }}</figcaption>
       </figure>
       <figure class="gallery__item">
-        <div class="gallery__frame"><img src="{{ $g2.RelPermalink }}" alt="Planimetria piano residenziale, due appartamenti per piano" loading="lazy" width="{{ $g2.Width }}" height="{{ $g2.Height }}"></div>
-        <figcaption>Pianta piano residenziale · 2 appartamenti</figcaption>
+        <div class="gallery__frame"><img src="{{ $g2.RelPermalink }}" alt="{{ i18n "gallery_alt_2" }}" loading="lazy" width="{{ $g2.Width }}" height="{{ $g2.Height }}"></div>
+        <figcaption>{{ i18n "gallery_caption_2" }}</figcaption>
       </figure>
       <figure class="gallery__item">
-        <div class="gallery__frame"><img src="{{ $g3.RelPermalink }}" alt="Sala polivalente sotterranea, vista interna" loading="lazy" width="{{ $g3.Width }}" height="{{ $g3.Height }}"></div>
-        <figcaption>Sala polivalente sotterranea · capienza 500</figcaption>
+        <div class="gallery__frame"><img src="{{ $g3.RelPermalink }}" alt="{{ i18n "gallery_alt_3" }}" loading="lazy" width="{{ $g3.Width }}" height="{{ $g3.Height }}"></div>
+        <figcaption>{{ i18n "gallery_caption_3" }}</figcaption>
       </figure>
       <figure class="gallery__item">
-        <div class="gallery__frame"><img src="{{ $g4.RelPermalink }}" alt="Sezione verticale dell'edificio, 4 piani residenziali sopra il centro" loading="lazy" width="{{ $g4.Width }}" height="{{ $g4.Height }}"></div>
-        <figcaption>Sezione verticale · 4 piani sopra centro</figcaption>
+        <div class="gallery__frame"><img src="{{ $g4.RelPermalink }}" alt="{{ i18n "gallery_alt_4" }}" loading="lazy" width="{{ $g4.Width }}" height="{{ $g4.Height }}"></div>
+        <figcaption>{{ i18n "gallery_caption_4" }}</figcaption>
       </figure>
       <figure class="gallery__item">
-        <div class="gallery__frame"><img src="{{ $g5.RelPermalink }}" alt="Foto aerea di Lugano con la posizione del lotto evidenziata" loading="lazy" width="{{ $g5.Width }}" height="{{ $g5.Height }}"></div>
-        <figcaption>Lugano · posizione del lotto</figcaption>
+        <div class="gallery__frame"><img src="{{ $g5.RelPermalink }}" alt="{{ i18n "gallery_alt_5" }}" loading="lazy" width="{{ $g5.Width }}" height="{{ $g5.Height }}"></div>
+        <figcaption>{{ i18n "gallery_caption_5" }}</figcaption>
       </figure>
       <figure class="gallery__item">
-        <div class="gallery__frame"><img src="{{ $g6.RelPermalink }}" alt="Mappa catastale, mappale 253 RFD Pregassona evidenziato" loading="lazy" width="{{ $g6.Width }}" height="{{ $g6.Height }}"></div>
-        <figcaption>Mappale 253 RFD Pregassona</figcaption>
+        <div class="gallery__frame"><img src="{{ $g6.RelPermalink }}" alt="{{ i18n "gallery_alt_6" }}" loading="lazy" width="{{ $g6.Width }}" height="{{ $g6.Height }}"></div>
+        <figcaption>{{ i18n "gallery_caption_6" }}</figcaption>
       </figure>
       <figure class="gallery__item">
-        <div class="gallery__frame"><img src="{{ $g7.RelPermalink }}" alt="Render interno corridoio con muri traforati" loading="lazy" width="{{ $g7.Width }}" height="{{ $g7.Height }}"></div>
-        <figcaption>Corridoio interno</figcaption>
+        <div class="gallery__frame"><img src="{{ $g7.RelPermalink }}" alt="{{ i18n "gallery_alt_7" }}" loading="lazy" width="{{ $g7.Width }}" height="{{ $g7.Height }}"></div>
+        <figcaption>{{ i18n "gallery_caption_7" }}</figcaption>
       </figure>
       <figure class="gallery__item">
-        <div class="gallery__frame"><img src="{{ $g8.RelPermalink }}" alt="Render esterno vista 3/4 dell'edificio" loading="lazy" width="{{ $g8.Width }}" height="{{ $g8.Height }}"></div>
-        <figcaption>Vista esterna · 3/4</figcaption>
+        <div class="gallery__frame"><img src="{{ $g8.RelPermalink }}" alt="{{ i18n "gallery_alt_8" }}" loading="lazy" width="{{ $g8.Width }}" height="{{ $g8.Height }}"></div>
+        <figcaption>{{ i18n "gallery_caption_8" }}</figcaption>
       </figure>
       <figure class="gallery__item">
-        <div class="gallery__frame"><img src="{{ $g9.RelPermalink }}" alt="Sezione architettonica frontale" loading="lazy" width="{{ $g9.Width }}" height="{{ $g9.Height }}"></div>
-        <figcaption>Sezione frontale</figcaption>
+        <div class="gallery__frame"><img src="{{ $g9.RelPermalink }}" alt="{{ i18n "gallery_alt_9" }}" loading="lazy" width="{{ $g9.Width }}" height="{{ $g9.Height }}"></div>
+        <figcaption>{{ i18n "gallery_caption_9" }}</figcaption>
       </figure>
       <figure class="gallery__item">
-        <div class="gallery__frame"><img src="{{ $g10.RelPermalink }}" alt="Sezione architettonica laterale" loading="lazy" width="{{ $g10.Width }}" height="{{ $g10.Height }}"></div>
-        <figcaption>Sezione laterale</figcaption>
+        <div class="gallery__frame"><img src="{{ $g10.RelPermalink }}" alt="{{ i18n "gallery_alt_10" }}" loading="lazy" width="{{ $g10.Width }}" height="{{ $g10.Height }}"></div>
+        <figcaption>{{ i18n "gallery_caption_10" }}</figcaption>
       </figure>
       </div>
       {{/* Dots di posizione */}}
-      <div class="gallery-dots" id="gallery-dots" aria-label="Posizione slide">
+      <div class="gallery-dots" id="gallery-dots" aria-label="{{ i18n "gallery_dots_aria" }}">
         {{ range seq 10 }}
-          <button type="button" class="gallery-dot" data-idx="{{ sub . 1 }}" aria-label="Vai alla slide {{ . }}"></button>
+          <button type="button" class="gallery-dot" data-idx="{{ sub . 1 }}" aria-label="{{ i18n "gallery_dot_aria" }} {{ . }}"></button>
         {{ end }}
       </div>
     </div>
@@ -155,45 +155,45 @@
     {{/* 2c · Numeri progetto */}}
     <div class="project-facts">
       <dl>
-        <div><dt>{{ i18n "progetto_indirizzo" }}</dt><dd>{{ .Site.Params.indirizzoProgetto }}</dd></div>
-        <div><dt>{{ i18n "progetto_particella" }}</dt><dd>Mappale {{ .Site.Params.mappale }}</dd></div>
-        <div><dt>{{ i18n "progetto_superficie" }}</dt><dd>{{ .Site.Params.superficie }}</dd></div>
-        <div><dt>{{ i18n "progetto_architetto" }}</dt><dd>{{ .Site.Params.architetto }}</dd></div>
-        <div><dt>{{ i18n "progetto_capienza" }}</dt><dd>{{ .Site.Params.capienza }}</dd></div>
-        <div><dt>{{ i18n "progetto_inizio_cantiere" }}</dt><dd>Dal 2027, dopo Fase 2</dd></div>
+        <div><dt>{{ i18n "pf_indirizzo" }}</dt><dd>{{ .Site.Params.indirizzoProgetto }}</dd></div>
+        <div><dt>{{ i18n "pf_particella" }}</dt><dd>{{ .Site.Params.mappale }}</dd></div>
+        <div><dt>{{ i18n "pf_superficie" }}</dt><dd>{{ .Site.Params.superficie }}</dd></div>
+        <div><dt>{{ i18n "pf_architetto" }}</dt><dd>{{ .Site.Params.architetto }}</dd></div>
+        <div><dt>{{ i18n "pf_capienza" }}</dt><dd>{{ .Site.Params.capienza }}</dd></div>
+        <div><dt>{{ i18n "pf_inizio_cantiere" }}</dt><dd>{{ i18n "pf_inizio_cantiere_value" }}</dd></div>
       </dl>
     </div>
 
     {{/* 2c-bis · Timeline visiva del progetto (P1.4 review cowork) */}}
     <div class="timeline">
-      <p class="eyebrow">Le tappe</p>
+      <p class="eyebrow">{{ i18n "timeline_eyebrow" }}</p>
       <ol class="timeline__list">
         <li class="timeline__item is-current">
-          <span class="timeline__date">2026 · oggi</span>
-          <p class="timeline__label">Raccolta Fase 1</p>
+          <span class="timeline__date">{{ i18n "timeline_2026_oggi_date" }}</span>
+          <p class="timeline__label">{{ i18n "timeline_2026_oggi_label" }}</p>
         </li>
         <li class="timeline__item is-next">
-          <span class="timeline__date">15 settembre 2026</span>
-          <p class="timeline__label">Acquisto del terreno</p>
+          <span class="timeline__date">{{ i18n "timeline_2026_settembre_date" }}</span>
+          <p class="timeline__label">{{ i18n "timeline_2026_settembre_label" }}</p>
         </li>
         <li class="timeline__item">
-          <span class="timeline__date">2027</span>
-          <p class="timeline__label">Raccolta Fase 2</p>
+          <span class="timeline__date">{{ i18n "timeline_2027_date" }}</span>
+          <p class="timeline__label">{{ i18n "timeline_2027_label" }}</p>
         </li>
         <li class="timeline__item">
-          <span class="timeline__date">2027 → 2028</span>
-          <p class="timeline__label">Avvio della costruzione · circa 18 mesi</p>
+          <span class="timeline__date">{{ i18n "timeline_cantiere_date" }}</span>
+          <p class="timeline__label">{{ i18n "timeline_cantiere_label" }}</p>
         </li>
         <li class="timeline__item">
-          <span class="timeline__date">2028 → 2029</span>
-          <p class="timeline__label">Apertura · <em>insha'Allah</em></p>
+          <span class="timeline__date">{{ i18n "timeline_apertura_date" }}</span>
+          <p class="timeline__label">{{ i18n "timeline_apertura_label_pre" }}<em>{{ i18n "timeline_apertura_label_em" }}</em></p>
         </li>
       </ol>
     </div>
 
     {{/* 2d · Budget breakdown */}}
     <div class="budget">
-      <h3>{{ i18n "progetto_dove_vanno_soldi" }}</h3>
+      <h3>{{ i18n "budget_h3" }}</h3>
 
       <div class="budget__chart" aria-hidden="true">
         {{/* Donut SVG a 5 spicchi al 100%.
@@ -229,76 +229,76 @@
       <div class="budget__legend">
         <div class="budget__row">
           <span class="budget__dot" style="background:#2E7474"></span>
-          <span class="budget__label">{{ i18n "progetto_voce_terreno" }}</span>
+          <span class="budget__label">{{ i18n "budget_row_terreno" }}</span>
           <span class="budget__value tabular">CHF 1'200'000</span>
           <span class="budget__pct">83%</span>
         </div>
         <div class="budget__row">
           <span class="budget__dot" style="background:#D4923C"></span>
-          <span class="budget__label">{{ i18n "progetto_voce_progetto" }}</span>
+          <span class="budget__label">{{ i18n "budget_row_progetto" }}</span>
           <span class="budget__value tabular">CHF 160'000</span>
           <span class="budget__pct">11%</span>
         </div>
         <div class="budget__row">
           <span class="budget__dot" style="background:#735751"></span>
-          <span class="budget__label">{{ i18n "progetto_voce_intermediazione" }}</span>
+          <span class="budget__label">{{ i18n "budget_row_intermediazione" }}</span>
           <span class="budget__value tabular">CHF 40'000</span>
           <span class="budget__pct">3%</span>
         </div>
         <div class="budget__row">
           <span class="budget__dot" style="background:#A37A4F"></span>
-          <span class="budget__label">{{ i18n "progetto_voce_legali" }} <small>(stima)</small></span>
+          <span class="budget__label">{{ i18n "budget_row_legali" }} <small>{{ i18n "budget_row_legali_small" }}</small></span>
           <span class="budget__value tabular">CHF 30'000</span>
           <span class="budget__pct">2%</span>
         </div>
         <div class="budget__row">
           <span class="budget__dot" style="background:#C9A87C"></span>
-          <span class="budget__label">{{ i18n "progetto_voce_notarile" }}</span>
+          <span class="budget__label">{{ i18n "budget_row_notarile" }}</span>
           <span class="budget__value tabular">CHF 15'000</span>
           <span class="budget__pct">1%</span>
         </div>
         <div class="budget__row budget__row--total">
           <span class="budget__dot" style="background:transparent"></span>
-          <span class="budget__label"><strong>{{ i18n "progetto_totale_fase" }}</strong></span>
+          <span class="budget__label"><strong>{{ i18n "budget_totale" }}</strong></span>
           <span class="budget__value tabular"><strong>CHF 1'445'000</strong></span>
           <span class="budget__pct"></span>
         </div>
         <div class="budget__row budget__row--secondary">
           <span class="budget__dot" style="background:transparent"></span>
-          <span class="budget__label">{{ i18n "progetto_gia_coperto" }}</span>
+          <span class="budget__label">{{ i18n "budget_gia_raccolto" }}</span>
           <span class="budget__value tabular">CHF {{ .Site.Data.counter.raised_formatted }}</span>
           <span class="budget__pct"></span>
         </div>
 
         {{/* Scomposizione del 421'400 CHF già coperto, dal doc committente */}}
         <details class="budget__details">
-          <summary>Come è composto il già raccolto</summary>
+          <summary>{{ i18n "budget_details_summary" }}</summary>
           <div class="budget__sub">
             <div class="budget__sub-row">
-              <span>Già raccolto da fedeli</span>
+              <span>{{ i18n "budget_sub_fedeli" }}</span>
               <span class="tabular">CHF 132'020</span>
             </div>
             <div class="budget__sub-row">
-              <span>Promesso da fedeli</span>
+              <span>{{ i18n "budget_sub_promesso" }}</span>
               <span class="tabular">CHF 181'600</span>
             </div>
             <div class="budget__sub-row">
-              <span>Raccolto nei 6 anni precedenti</span>
+              <span>{{ i18n "budget_sub_passato" }}</span>
               <span class="tabular">CHF 107'780</span>
             </div>
           </div>
         </details>
         <div class="budget__row budget__row--highlight">
           <span class="budget__dot" style="background:transparent"></span>
-          <span class="budget__label"><strong>{{ i18n "progetto_da_raccogliere" }}</strong></span>
+          <span class="budget__label"><strong>{{ i18n "budget_da_raccogliere" }}</strong></span>
           <span class="budget__value tabular"><strong>CHF {{ .Site.Data.counter.gap_formatted }}</strong></span>
           <span class="budget__pct"></span>
         </div>
 
         {{/* Mini callout progetto, ispirato dal mockup Wave 2 */}}
         <div class="budget__project-mini">
-          <p class="budget__project-eyebrow">PROGETTO</p>
-          <p>4 piani residenziali · 6 appartamenti · sala polivalente 500 posti · sala preghiera quotidiana 100 posti</p>
+          <p class="budget__project-eyebrow">{{ i18n "budget_project_eyebrow" }}</p>
+          <p>{{ i18n "budget_project_text" }}</p>
         </div>
       </div>
     </div>
@@ -306,24 +306,19 @@
     {{/* 2e · Callout — Copy V1 cowork + revisioni Stefano */}}
     <div class="callouts">
       <div class="callout">
-        <p class="callout__eyebrow">LE FASI DEL PROGETTO</p>
+        <p class="callout__eyebrow">{{ i18n "callout1_eyebrow" }}</p>
         <p>
-          Questa è la <strong>Fase 1</strong> — acquisto del terreno e permessi di
-          costruzione. La costruzione del centro, stimata fra
-          <strong>CHF 3.1 e 3.8 milioni</strong>, sarà oggetto di una raccolta
-          separata a partire dal 2027.
+          {{ i18n "callout1_body_pre" }}<strong>{{ i18n "callout1_body_strong1" }}</strong>{{ i18n "callout1_body_mid" }}<strong>{{ i18n "callout1_body_strong2" }}</strong>{{ i18n "callout1_body_post" }}
         </p>
-        <p class="callout__quote">Una raccolta alla volta, con i numeri pubblici.</p>
+        <p class="callout__quote">{{ i18n "callout1_quote" }}</p>
       </div>
 
       <div class="callout">
-        <p class="callout__eyebrow">UN ECOSISTEMA CHE SI AUTOSOSTIENE</p>
+        <p class="callout__eyebrow">{{ i18n "callout2_eyebrow" }}</p>
         <p>
-          Sopra il centro culturale ci saranno <strong>sei appartamenti residenziali</strong>,
-          in locazione a tariffa di mercato. I proventi degli affitti pagano utenze,
-          manutenzione, scuola coranica, attività culturali della comunità.
+          {{ i18n "callout2_body_pre" }}<strong>{{ i18n "callout2_body_strong" }}</strong>{{ i18n "callout2_body_post" }}
         </p>
-        <p class="callout__quote">Senza sussidi pubblici, senza dipendenze esterne.</p>
+        <p class="callout__quote">{{ i18n "callout2_quote" }}</p>
       </div>
     </div>
 

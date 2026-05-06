@@ -1,182 +1,77 @@
-{{/* § 6 · FAQ — Copy V1 cowork (5 mag 2026), 8 domande Voce A */}}
+{{/* § 6 · FAQ — 8 domande Voce A — multilingua i18n */}}
 <section id="faq" class="section section--ivory">
   <div class="container container--narrow">
-    <p class="eyebrow">FAQ</p>
-    <h2>Domande frequenti</h2>
+    <p class="eyebrow">{{ i18n "faq_eyebrow" }}</p>
+    <h2>{{ i18n "faq_h2" }}</h2>
 
     <div class="faq">
 
       <details class="faq__item">
-        <summary>Posso pagare la zakat per Dar al-Salam?</summary>
+        <summary>{{ i18n "faq_q1" }}</summary>
         <div class="faq__body">
-          <p>
-            La risposta dipende dalla scuola di pensiero a cui ti riferisci. La
-            maggioranza degli ulema delle quattro scuole classiche (Hanafi,
-            Maliki, Shafi'i, Hanbali) considera che la zakat sia destinata in
-            primo luogo alle otto categorie indicate nella Sura at-Tawba (60),
-            e che la costruzione di moschee non rientri direttamente fra
-            queste. Alcuni ulema contemporanei estendono invece la categoria
-            <em>fi sabilillah</em> a includerla.
-          </p>
-          <p>
-            Per evitare ambiguità ti suggeriamo di
-            <strong>destinare a Dar al-Salam una sadaqa volontaria</strong> —
-            non zakat — e di pagare la tua zakat secondo il parere del tuo
-            imam di riferimento o secondo l'organizzazione che già usi. La
-            sadaqa volontaria per un progetto come questo è considerata da
-            tutti gli ulema una forma di sadaqa jariya.
-          </p>
+          <p>{{ i18n "faq_a1_p1" | safeHTML }}</p>
+          <p>{{ i18n "faq_a1_p2" | safeHTML }}</p>
         </div>
       </details>
 
       <details class="faq__item">
-        <summary>Posso fare una donazione ricorrente?</summary>
+        <summary>{{ i18n "faq_q2" }}</summary>
         <div class="faq__body">
-          <p>
-            Sì, e per noi è la forma più preziosa. Sul tab "Carta" puoi
-            scegliere di trasformare la tua donazione in
-            <strong>ricorrente mensile</strong>, anche di soli 20 franchi al
-            mese. Quattro mesi di donazione ricorrente da 20 franchi sono
-            ottanta franchi che entrano sicuri nel piano di raccolta — per noi
-            che pianifichiamo, è più prezioso di una grande donazione una
-            tantum che non possiamo prevedere.
-          </p>
-          <p>
-            Una donazione ricorrente è inoltre una forma classica di
-            <strong>sadaqa jariya</strong>: continua a portare frutto mese
-            dopo mese, senza che tu debba fare niente.
-          </p>
-          <p>Puoi cancellarla in qualunque momento, senza domande.</p>
+          <p>{{ i18n "faq_a2_p1" | safeHTML }}</p>
+          <p>{{ i18n "faq_a2_p2" | safeHTML }}</p>
+          <p>{{ i18n "faq_a2_p3" | safeHTML }}</p>
         </div>
       </details>
 
       <details class="faq__item">
-        <summary>Posso donare in nome di un defunto?</summary>
+        <summary>{{ i18n "faq_q3" }}</summary>
         <div class="faq__body">
-          <p>
-            Sì. È una delle forme più nobili di sadaqa jariya. Il Profeta
-            (s.a.w.s) ha detto: <em>«Quando il figlio di Adamo muore, le sue
-            opere si interrompono salvo per tre cose — una sadaqa jariya, una
-            conoscenza utile lasciata in eredità, o un figlio pio che fa du'a
-            per lui.»</em> (Muslim).
-          </p>
-          <p>
-            Quando doni con carta, nella causale del bonifico o nelle note
-            della donazione, puoi scrivere <em>«in memoria di [nome]»</em>.
-            Il consiglio LMT terrà un registro privato dei nomi e farà du'a
-            per loro durante l'apertura del centro. Nessun nome verrà
-            pubblicato senza permesso esplicito della famiglia.
-          </p>
+          <p>{{ i18n "faq_a3_p1" | safeHTML }}</p>
+          <p>{{ i18n "faq_a3_p2" | safeHTML }}</p>
         </div>
       </details>
 
       <details class="faq__item">
-        <summary>La mia donazione è deducibile fiscalmente?</summary>
+        <summary>{{ i18n "faq_q4" }}</summary>
         <div class="faq__body">
-          <p>
-            La Lega dei Musulmani in Ticino è iscritta al Registro di
-            commercio dal 20 giugno 2005 con n.
-            <strong>{{ .Site.Params.cheId }}</strong>, ed è esente dalle
-            imposte cantonali e federali <strong>sui propri redditi</strong>
-            dal 13 marzo 2014.
-          </p>
-          <p>
-            <strong>Stiamo verificando</strong> se la stessa esenzione si
-            estende alla deducibilità delle singole donazioni per il
-            donatore. È una verifica diversa dall'esenzione dell'associazione
-            e richiede conferma formale dalle autorità fiscali. Aggiorneremo
-            questa pagina appena avremo la risposta scritta.
-          </p>
-          <p>
-            Per donatori italiani, francesi, tedeschi: la deducibilità
-            dipende dalla normativa del tuo paese e dagli accordi bilaterali
-            con la Svizzera. Conserva la ricevuta automatica che ricevi via
-            email — è il documento che ti serve quando faremo la dichiarazione.
-          </p>
+          <p>{{ i18n "faq_a4_p1_pre" | safeHTML }}<strong>{{ .Site.Params.cheId }}</strong>{{ i18n "faq_a4_p1_post" | safeHTML }}</p>
+          <p>{{ i18n "faq_a4_p2" | safeHTML }}</p>
+          <p>{{ i18n "faq_a4_p3" | safeHTML }}</p>
         </div>
       </details>
 
       <details class="faq__item">
-        <summary>Quando aprirà Dar al-Salam?</summary>
+        <summary>{{ i18n "faq_q5" }}</summary>
         <div class="faq__body">
-          <p>
-            Le tappe in ordine. Entro <strong>15 settembre 2026</strong>
-            chiudiamo la raccolta della Fase 1 (terreno + permessi). Da
-            settembre 2026 a fine 2027 si depositano i permessi di
-            costruzione e si cerca la copertura finanziaria della Fase 2.
-            Da inizio 2027 in avanti — <em>insha'Allah</em> — comincia il
-            cantiere. La durata stimata della costruzione è di circa
-            diciotto mesi.
-          </p>
-          <p>
-            Realisticamente l'apertura del centro è prevista
-            <strong>fra il 2028 e il 2029</strong>.
-          </p>
-          <p>
-            Tutti gli aggiornamenti sulle tappe sono pubblicati
-            settimanalmente in questa landing e mensilmente nel rendiconto
-            pubblico.
-          </p>
+          <p>{{ i18n "faq_a5_p1" | safeHTML }}</p>
+          <p>{{ i18n "faq_a5_p2" | safeHTML }}</p>
+          <p>{{ i18n "faq_a5_p3" | safeHTML }}</p>
         </div>
       </details>
 
       <details class="faq__item">
-        <summary>E se non chiudessimo la raccolta entro il 15 settembre?</summary>
+        <summary>{{ i18n "faq_q6" }}</summary>
         <div class="faq__body">
-          <p>
-            La risposta sincera: la particella resterebbe nostra fino allo
-            scadere del termine concordato col venditore, ma rischieremmo di
-            perdere il diritto di acquisto e di tornare a cercare. Per questo
-            la scadenza non è simbolica — è reale.
-          </p>
-          <p>
-            In ogni caso,
-            <strong>ogni franco donato resta nel conto vincolato dedicato</strong>
-            (IBAN PostFinance separato dalla gestione corrente di LMT) e viene
-            impiegato esclusivamente per il progetto Dar al-Salam. Se la
-            Fase 1 non chiudesse in tempo, il consiglio LMT comunicherà alla
-            comunità come procedere, in piena trasparenza.
-          </p>
-          <p>
-            La nostra responsabilità verso chi dona viene prima del nostro
-            calendario.
-          </p>
+          <p>{{ i18n "faq_a6_p1" | safeHTML }}</p>
+          <p>{{ i18n "faq_a6_p2" | safeHTML }}</p>
+          <p>{{ i18n "faq_a6_p3" | safeHTML }}</p>
         </div>
       </details>
 
       <details class="faq__item">
-        <summary>Posso visitare la moschea attuale a Bottogno?</summary>
+        <summary>{{ i18n "faq_q7" }}</summary>
         <div class="faq__body">
-          <p>
-            Sì, ti aspettiamo. La moschea di Bottogno è aperta tutto il giorno,
-            spesso anche la notte. Puoi trovarci riuniti agli orari di preghiera —
-            il momento migliore per capire chi siamo è il venerdì, alla jumu'a,
-            quando la comunità è al completo.
-          </p>
-          <p><strong>Indirizzo:</strong> {{ .Site.Params.indirizzoModeschea }}.</p>
-          <p>
-            Se preferisci un appuntamento privato per parlare del progetto col
-            presidente o con il consiglio, scrivi a
-            <a href="mailto:{{ .Site.Params.emailContatto }}">{{ .Site.Params.emailContatto }}</a>.
-            Rispondiamo entro 48 ore.
-          </p>
+          <p>{{ i18n "faq_a7_p1" | safeHTML }}</p>
+          <p>{{ i18n "faq_a7_p2_pre" | safeHTML }}{{ .Site.Params.indirizzoModeschea }}.</p>
+          <p>{{ i18n "faq_a7_p3" | safeHTML }} <a href="mailto:{{ .Site.Params.emailContatto }}">{{ .Site.Params.emailContatto }}</a>{{ i18n "faq_a7_p3_post" | safeHTML }}</p>
         </div>
       </details>
 
       <details class="faq__item">
-        <summary>Riceverò una ricevuta?</summary>
+        <summary>{{ i18n "faq_q8" }}</summary>
         <div class="faq__body">
-          <p>
-            Per donazioni con carta, Apple Pay e Google Pay la ricevuta arriva
-            via email automaticamente. Per le altre modalità, se non la ricevi,
-            scrivici a
-            <a href="mailto:{{ .Site.Params.emailContatto }}">{{ .Site.Params.emailContatto }}</a>
-            indicando data e importo della donazione e te la inviamo.
-          </p>
-          <p>
-            Tutte le ricevute riportano {{ .Site.Params.cheId }} e l'estremo
-            dell'esenzione fiscale, validi per la dichiarazione dei redditi.
-          </p>
+          <p>{{ i18n "faq_a8_p1" | safeHTML }} <a href="mailto:{{ .Site.Params.emailContatto }}">{{ .Site.Params.emailContatto }}</a> {{ i18n "faq_a8_p1_post" | safeHTML }}</p>
+          <p>{{ i18n "faq_a8_p2" | safeHTML }} {{ .Site.Params.cheId }} {{ i18n "faq_a8_p2_post" | safeHTML }}</p>
         </div>
       </details>
 

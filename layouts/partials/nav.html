@@ -1,13 +1,13 @@
 {{/* Top nav sticky */}}
 {{ $logoMini := resources.Get "img/logo/lmt-icona.svg" }}
-<nav class="nav" aria-label="Navigazione principale">
+<nav class="nav" aria-label="{{ i18n "nav_aria_label" }}">
   <div class="container nav__inner">
-    <a href="#hero" class="nav__brand" aria-label="Dar al-Salam home">
+    <a href="#hero" class="nav__brand" aria-label="{{ i18n "nav_brand_aria" }}">
       <img src="{{ $logoMini.RelPermalink }}" alt="LMT" class="nav__brand-mark" width="32" height="32">
       <span>Dar al-Salam</span>
     </a>
 
-    <div class="nav__links" aria-label="Sezioni">
+    <div class="nav__links" aria-label="{{ i18n "nav_sections_aria" }}">
       <a href="#progetto">{{ i18n "nav_progetto" }}</a>
       <a href="#donare">{{ i18n "nav_donare" }}</a>
       <a href="#voci">{{ i18n "nav_voci" }}</a>
@@ -17,7 +17,7 @@
     <div class="nav__cta-wrap">
       {{ $currentLang := site.Language.Lang }}
       <details class="lang-dropdown">
-        <summary class="lang-dropdown__current" aria-label="Cambia lingua">
+        <summary class="lang-dropdown__current" aria-label="{{ i18n "nav_lang_change_aria" }}">
           <span>{{ site.Language.LanguageName }}</span>
           <svg class="lang-dropdown__arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
             <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

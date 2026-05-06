@@ -28,21 +28,21 @@
         <h1 class="hero__wordmark">Dar al-Salam</h1>
         <p class="hero__wordmark-ar"><span lang="ar" dir="rtl">{{ .Site.Params.wordmarkAR }}</span></p>
 
-        <p class="hero__claim">{{ .Params.hero_claim | default "Una nuova casa di pace." }}</p>
+        <p class="hero__claim">{{ .Params.hero_claim | default (i18n "hero_claim") }}</p>
 
         <div class="hero__body">
-          {{ .Params.hero_body | default "Bismillah ar-Rahman ar-Rahim. Cari fratelli e care sorelle, dopo vent'anni di affitto in via Bottogno, Allah ci ha aperto una porta a Pregassona. Mancano CHF 1'023'600 per chiudere il terreno entro il 15 settembre." | markdownify }}
+          {{ .Params.hero_body | markdownify }}
         </div>
 
         {{/* Counter inline — asse del GAP (P0.1 review cowork) */}}
-        <div class="counter" role="region" aria-label="Stato della raccolta">
+        <div class="counter" role="region" aria-label="{{ i18n "hero_counter_aria" }}">
           <div class="counter__pair">
             <div class="counter__col">
-              <span class="counter__label">Raccolti finora</span>
+              <span class="counter__label">{{ i18n "hero_counter_raccolti" }}</span>
               <span class="counter__big tabular"><span class="counter__currency">CHF</span>{{ $counter.raised_formatted }}</span>
             </div>
             <div class="counter__col counter__col--gap">
-              <span class="counter__label">Mancano ancora</span>
+              <span class="counter__label">{{ i18n "hero_counter_mancano" }}</span>
               <span class="counter__big counter__big--gap tabular"><span class="counter__currency">CHF</span>{{ $counter.gap_formatted }}</span>
             </div>
           </div>
@@ -50,17 +50,14 @@
             <div class="counter__bar-fill" style="width: {{ printf "%.0f" $pct }}%"></div>
           </div>
           <div class="counter__meta">
-            <span><span class="counter__pct">{{ printf "%.0f" $pct }}%</span> dell'obiettivo</span>
-            <span class="counter__days"><strong class="tabular">{{ $daysRemaining }} giorni rimanenti</strong></span>
-            {{ if gt $counter.donors_count 0 }}
-              <span><strong class="tabular">{{ $counter.donors_count }}</strong> fratelli e sorelle</span>
-            {{ end }}
-            <span class="counter__updated">Aggiornato {{ $counter.updated }}</span>
+            <span><span class="counter__pct">{{ printf "%.0f" $pct }}%</span> {{ i18n "hero_counter_pct_obiettivo" }}</span>
+            <span class="counter__days"><strong class="tabular">{{ $daysRemaining }} {{ i18n "hero_counter_giorni_label" }}</strong></span>
+            <span class="counter__updated">{{ i18n "hero_counter_aggiornato" }} {{ $counter.updated }}</span>
           </div>
         </div>
 
         <div class="hero__cta-row">
-          <a href="#donare" class="btn btn--primary">{{ i18n "hero_cta_primary" }} →</a>
+          <a href="#donare" class="btn btn--primary">{{ i18n "hero_cta_sadaqa" }}</a>
         </div>
       </div>
 
@@ -69,7 +66,7 @@
           src="{{ $heroMainW.RelPermalink }}"
           srcset="{{ $heroMainSm.RelPermalink }} 640w, {{ $heroMainW.RelPermalink }} 1200w"
           sizes="(min-width: 1024px) 50vw, 100vw"
-          alt="Comunità musulmana riunita"
+          alt="{{ i18n "hero_img_alt_comunita" }}"
           loading="eager"
           width="{{ $heroMainW.Width }}"
           height="{{ $heroMainW.Height }}">
@@ -77,11 +74,11 @@
         <div class="hero__polaroid">
           <img
             src="{{ $heroPolaroidW.RelPermalink }}"
-            alt="Render esterno del nuovo centro Dar al-Salam"
+            alt="{{ i18n "hero_img_alt_render" }}"
             loading="lazy"
             width="{{ $heroPolaroidW.Width }}"
             height="{{ $heroPolaroidW.Height }}">
-          <p class="hero__polaroid-caption">Render Beier Cabrini · Via Ceresio 53B</p>
+          <p class="hero__polaroid-caption">{{ i18n "hero_polaroid_caption" }}</p>
         </div>
 
       </div>

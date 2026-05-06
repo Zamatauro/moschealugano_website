@@ -10,8 +10,8 @@
       <img src="{{ $logoLockupW.RelPermalink }}" alt="Lega dei Musulmani in Ticino" class="footer__logo" width="120" height="120">
       <div class="footer__lockup-text">
         <div class="footer__wordmark">Dar al-Salam</div>
-        <div class="footer__endorser">{{ i18n "footer_promosso" }}</div>
-        <div class="footer__legal-id">{{ .Site.Params.cheId }} · Esenzione fiscale {{ .Site.Params.esenzioneFiscaleAnno }}</div>
+        <div class="footer__endorser">{{ i18n "footer_endorser" }}</div>
+        <div class="footer__legal-id">{{ i18n "footer_legal_id" }}</div>
       </div>
     </div>
 
@@ -19,14 +19,14 @@
 
     <div class="footer__cols">
       <div>
-        <p class="footer__label">{{ i18n "footer_indirizzo_label" }}</p>
+        <p class="footer__label">{{ i18n "footer_label_sede" }}</p>
         <p>{{ .Site.Params.indirizzoModeschea }}</p>
         <p><a href="mailto:{{ .Site.Params.emailContatto }}">{{ .Site.Params.emailContatto }}</a></p>
       </div>
       <div>
-        <p class="footer__label">{{ i18n "footer_iban_label" }}</p>
+        <p class="footer__label">{{ i18n "footer_label_iban" }}</p>
         <p class="tabular">{{ .Site.Params.ibanFormatted }}</p>
-        <p><span class="footer__muted">BIC:</span> {{ .Site.Params.bic }}</p>
+        <p><span class="footer__muted">{{ i18n "footer_bic_short" }}</span> {{ .Site.Params.bic }}</p>
       </div>
     </div>
 
@@ -42,7 +42,7 @@
           <a href="{{ $url }}">{{ .LanguageName }}</a>
         {{ end }}
       </div>
-      <span class="footer__copyright">© 2026 LMT</span>
+      <span class="footer__copyright">{{ i18n "footer_copyright" }}</span>
     </div>
 
   </div>
