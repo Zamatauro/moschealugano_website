@@ -65,7 +65,7 @@ other = "Progetto, permessi, atti"
 [progetto_totale_fase]
 other = "TOTALE FASE 1"
 [progetto_gia_coperto]
-other = "Già coperto da fedeli"
+other = "Già raccolto dalla comunità"
 [progetto_da_raccogliere]
 other = "Da raccogliere entro 15.09"
 
