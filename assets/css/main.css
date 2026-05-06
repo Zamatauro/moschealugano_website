@@ -454,7 +454,13 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
 @media (min-width: 640px) {
   .counter__pair { grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
 }
-.counter__col { display: flex; flex-direction: column; gap: var(--sp-1); }
+.counter__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  align-items: center;        /* label + cifra centrate nella propria metà del card */
+  text-align: center;
+}
 .counter__col--gap { padding-left: 0; }
 @media (min-width: 640px) {
   .counter__col--gap {
