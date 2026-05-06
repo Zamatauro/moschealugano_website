@@ -270,6 +270,8 @@ html[lang="ar"] .heading,
   left: 0;
   right: 0;
   padding: var(--sp-3) var(--sp-4);
+  /* safe-area iOS (notch + home indicator) */
+  padding-bottom: calc(var(--sp-3) + env(safe-area-inset-bottom, 0px));
   background: rgba(245,237,230,0.95);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(46,116,116,0.12);
@@ -279,6 +281,12 @@ html[lang="ar"] .heading,
 .cta-sticky .btn { width: 100%; }
 @media (min-width: 768px) {
   .cta-sticky { display: none; }
+}
+
+/* Quando lo sticky è visibile (mobile), il body ha bisogno di spazio sotto
+   altrimenti il CTA copre il footer/disclaimer/firma voci. */
+@media (max-width: 767px) {
+  body { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* ---------- SEZIONI ---------- */
@@ -362,13 +370,15 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
 }
 .hero__visual {
   position: relative;
-  aspect-ratio: 4/5;
   /* niente overflow:hidden: la polaroid esce volutamente */
   background: transparent;
 }
+/* iOS Safari fix: aspect-ratio sul parent + height:100% sul child stretcha l'immagine.
+   Mettere aspect-ratio direttamente sull'<img> con height:auto risolve. */
 .hero__visual > img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
   object-fit: cover;
   border-radius: var(--radius-md);
   display: block;
@@ -841,6 +851,24 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   min-width: 3rem;
   text-align: right;
 }
+/* Mobile: stack label sopra, value+pct sotto — evita spaccature orribili
+   quando label e cifra sono entrambe lunghe (es. "Da raccogliere entro 15.09" + "CHF 940'360") */
+@media (max-width: 599px) {
+  .budget__row {
+    grid-template-columns: 12px 1fr auto;
+    grid-template-areas:
+      "dot label label"
+      ".   value pct";
+    row-gap: var(--sp-1);
+    column-gap: var(--sp-2);
+  }
+  .budget__dot   { grid-area: dot; align-self: center; }
+  .budget__label { grid-area: label; }
+  .budget__value { grid-area: value; font-weight: 600; }
+  .budget__pct   { grid-area: pct; font-size: 1.2rem; min-width: 0; }
+  .budget__row--total .budget__label,
+  .budget__row--highlight .budget__label { white-space: normal; }
+}
 .budget__row--total { border-top: 2px solid var(--c-text); padding-top: var(--sp-3); margin-top: var(--sp-2); }
 .budget__row--secondary { color: var(--c-text-soft); }
 .budget__row--highlight {
@@ -971,6 +999,19 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   gap: var(--sp-2);
   border-bottom: 1px solid rgba(46,116,116,0.20);
   margin-bottom: var(--sp-8);
+}
+/* Mobile: scroll orizzontale invece di wrap, così i tab restano in una riga
+   anche su viewport stretti (Android 360px) */
+@media (max-width: 599px) {
+  .tabs__nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tabs__nav::-webkit-scrollbar { display: none; height: 0; }
+  .tabs__btn { flex: 0 0 auto; white-space: nowrap; }
 }
 .tabs__btn {
   padding: var(--sp-3) var(--sp-4);
@@ -1453,6 +1494,11 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   color: var(--c-white);
   transform: scale(1.05);
 }
+/* Mobile: nascondi le frecce, l'utente swipe + dots. Le frecce mangiano ~100px
+   di larghezza viewport e schiacciano la card. */
+@media (max-width: 767px) {
+  .voci-nav { display: none; }
+}
 @media (min-width: 768px) {
   .voci-nav { width: 48px; height: 48px; font-size: 1.75rem; }
 }
@@ -1505,16 +1551,22 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   position: relative;
   background: var(--c-sand);
   min-height: 220px;
-  aspect-ratio: 1/1;
+  /* niente aspect-ratio sul parent: bug iOS Safari con figli height:100% */
 }
 @media (min-width: 768px) {
-  .voce-card__photo { aspect-ratio: auto; min-height: 320px; }
+  .voce-card__photo { min-height: 320px; }
 }
+/* iOS Safari fix: aspect-ratio direttamente sull'<img>, non sul parent */
 .voce-card__photo img {
   width: 100%;
   height: 100%;
+  min-height: inherit;
+  aspect-ratio: 1/1;
   object-fit: cover;
   display: block;
+}
+@media (min-width: 768px) {
+  .voce-card__photo img { aspect-ratio: auto; height: 100%; min-height: 320px; }
 }
 
 .voce-card__placeholder {
