@@ -1,5 +1,7 @@
 {{/* § 5 · VOCI DELLA COMUNITÀ — carousel orizzontale, foto sx + quote dx */}}
 {{ $imamJelassi := (resources.Get "img/voci/imam-jelassi.jpg").Resize "800x webp q85" }}
+{{/* Anes (educatore) — foto opzionale: se assente, fallback su placeholder iniziali */}}
+{{ $anesRes := resources.Get "img/voci/anes.jpg" }}
 
 <section id="voci" class="section section--sand">
   <div class="container">
@@ -69,6 +71,37 @@
           </div>
         </article>
 
+        {{/* Voce 3 — Anes (educatore della scuola comunitaria) */}}
+        <article class="voce-card">
+          <div class="voce-card__photo">
+            {{ with $anesRes }}
+              {{ $anes := .Resize "800x webp q85" }}
+              <img src="{{ $anes.RelPermalink }}"
+                   alt="Anes, educatore della comunità"
+                   loading="lazy"
+                   width="{{ $anes.Width }}"
+                   height="{{ $anes.Height }}">
+            {{ else }}
+              <div class="voce-card__placeholder">
+                <span class="voce-card__initials">A</span>
+                <span class="voce-card__placeholder-label">foto in arrivo</span>
+              </div>
+            {{ end }}
+          </div>
+          <div class="voce-card__body">
+            <blockquote class="voce-card__quote">
+              «I nostri giovani sono tanti e ogni anno di più. Studiamo
+              stretti, in spazi nati per altro. Dar al-Salam per loro
+              significa un'aula vera — uno spazio dove imparare il Corano
+              con la dignità che meritano.»
+            </blockquote>
+            <div class="voce-card__attrib">
+              <strong>Anes</strong>
+              <span>educatore</span>
+            </div>
+          </div>
+        </article>
+
       </div>
 
       <button type="button" class="voci-nav voci-nav--next" aria-label="Voce successiva">›</button>
@@ -76,7 +109,7 @@
 
     {{/* Dots di posizione (sotto, fuori dal flex) */}}
     <div class="gallery-dots voci-dots-wrap" id="voci-dots" aria-label="Posizione voce">
-      {{ range seq 2 }}
+      {{ range seq 3 }}
         <button type="button" class="gallery-dot" data-idx="{{ sub . 1 }}" aria-label="Vai alla voce {{ . }}"></button>
       {{ end }}
     </div>

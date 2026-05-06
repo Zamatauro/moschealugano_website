@@ -39,11 +39,11 @@
           <div class="counter__pair">
             <div class="counter__col">
               <span class="counter__label">Raccolti finora</span>
-              <span class="counter__big tabular">CHF {{ $counter.raised_formatted }}</span>
+              <span class="counter__big tabular"><span class="counter__currency">CHF</span>{{ $counter.raised_formatted }}</span>
             </div>
             <div class="counter__col counter__col--gap">
               <span class="counter__label">Mancano ancora</span>
-              <span class="counter__big counter__big--gap tabular">CHF {{ $counter.gap_formatted }}</span>
+              <span class="counter__big counter__big--gap tabular"><span class="counter__currency">CHF</span>{{ $counter.gap_formatted }}</span>
             </div>
           </div>
           <div class="counter__bar" aria-hidden="true">
