@@ -84,13 +84,14 @@
       var prev = document.querySelector('.gallery-nav--prev');
       var next = document.querySelector('.gallery-nav--next');
 
+      // Loop wrapping: idx oltre i bordi → wraps al primo/ultimo
       function activate(idx){
-        idx = Math.max(0, Math.min(items.length - 1, idx));
+        var len = items.length;
+        idx = ((idx % len) + len) % len;
         items[idx].scrollIntoView({behavior:'smooth', block:'nearest', inline:'start'});
       }
 
       function currentIdx(){
-        // L'item più vicino al bordo sinistro della gallery
         var galRect = gallery.getBoundingClientRect();
         var best = 0, bestDist = Infinity;
         items.forEach(function(it, i){
@@ -101,10 +102,33 @@
         return best;
       }
 
-      prev && prev.addEventListener('click', function(){ activate(currentIdx() - 1); });
-      next && next.addEventListener('click', function(){ activate(currentIdx() + 1); });
+      // Auto-rotate: 5.5s per slide. Pausa su hover/touch + prefers-reduced-motion
+      var AUTO_INTERVAL = 5500;
+      var RESUME_AFTER_INTERACT = 12000;
+      var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var autoTimer = null;
+      var paused = prefersReduced;
+      function autoTick(){ if (!paused) activate(currentIdx() + 1); }
+      function autoStart(){ if (autoTimer || paused) return; autoTimer = setInterval(autoTick, AUTO_INTERVAL); }
+      function autoStop(){ if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
+      function autoPauseLong(){
+        paused = true; autoStop();
+        setTimeout(function(){ paused = false; autoStart(); }, RESUME_AFTER_INTERACT);
+      }
+      gallery.addEventListener('mouseenter', autoStop);
+      gallery.addEventListener('mouseleave', autoStart);
+      gallery.addEventListener('touchstart', function(){ autoStop(); paused = true; }, {passive:true});
+      gallery.addEventListener('touchend', function(){
+        setTimeout(function(){ paused = false; autoStart(); }, 4000);
+      }, {passive:true});
+      document.addEventListener('visibilitychange', function(){
+        if (document.hidden) autoStop(); else autoStart();
+      });
+
+      prev && prev.addEventListener('click', function(){ activate(currentIdx() - 1); autoPauseLong(); });
+      next && next.addEventListener('click', function(){ activate(currentIdx() + 1); autoPauseLong(); });
       dots.forEach(function(d){
-        d.addEventListener('click', function(){ activate(parseInt(d.dataset.idx, 10)); });
+        d.addEventListener('click', function(){ activate(parseInt(d.dataset.idx, 10)); autoPauseLong(); });
       });
 
       function syncDots(){
@@ -118,6 +142,7 @@
         gallery._t = setTimeout(syncDots, 80);
       }, {passive:true});
       syncDots();
+      autoStart();
     })();
     </script>
 

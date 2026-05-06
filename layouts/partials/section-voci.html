@@ -132,8 +132,10 @@
   var prev = carousel.parentElement.querySelector('.voci-nav--prev');
   var next = carousel.parentElement.querySelector('.voci-nav--next');
 
+  // Loop wrapping: idx oltre i bordi → wraps al primo/ultimo
   function activate(idx){
-    idx = Math.max(0, Math.min(items.length - 1, idx));
+    var len = items.length;
+    idx = ((idx % len) + len) % len;
     items[idx].scrollIntoView({behavior:'smooth', block:'nearest', inline:'start'});
   }
   function currentIdx(){
@@ -146,10 +148,35 @@
     });
     return best;
   }
-  prev && prev.addEventListener('click', function(){ activate(currentIdx() - 1); });
-  next && next.addEventListener('click', function(){ activate(currentIdx() + 1); });
+
+  // Auto-rotate: 9s per voce (le citazioni richiedono lettura).
+  // Pausa su hover desktop / touch mobile / tab nascosto / prefers-reduced-motion
+  var AUTO_INTERVAL = 9000;
+  var RESUME_AFTER_INTERACT = 18000;
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var autoTimer = null;
+  var paused = prefersReduced;
+  function autoTick(){ if (!paused) activate(currentIdx() + 1); }
+  function autoStart(){ if (autoTimer || paused) return; autoTimer = setInterval(autoTick, AUTO_INTERVAL); }
+  function autoStop(){ if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
+  function autoPauseLong(){
+    paused = true; autoStop();
+    setTimeout(function(){ paused = false; autoStart(); }, RESUME_AFTER_INTERACT);
+  }
+  carousel.addEventListener('mouseenter', autoStop);
+  carousel.addEventListener('mouseleave', autoStart);
+  carousel.addEventListener('touchstart', function(){ autoStop(); paused = true; }, {passive:true});
+  carousel.addEventListener('touchend', function(){
+    setTimeout(function(){ paused = false; autoStart(); }, 6000);
+  }, {passive:true});
+  document.addEventListener('visibilitychange', function(){
+    if (document.hidden) autoStop(); else autoStart();
+  });
+
+  prev && prev.addEventListener('click', function(){ activate(currentIdx() - 1); autoPauseLong(); });
+  next && next.addEventListener('click', function(){ activate(currentIdx() + 1); autoPauseLong(); });
   dots.forEach(function(d){
-    d.addEventListener('click', function(){ activate(parseInt(d.dataset.idx, 10)); });
+    d.addEventListener('click', function(){ activate(parseInt(d.dataset.idx, 10)); autoPauseLong(); });
   });
   function syncDots(){
     var idx = currentIdx();
@@ -160,5 +187,6 @@
     carousel._t = setTimeout(syncDots, 80);
   }, {passive:true});
   syncDots();
+  autoStart();
 })();
 </script>
