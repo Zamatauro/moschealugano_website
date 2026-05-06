@@ -1443,6 +1443,20 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   font-weight: 600;
 }
 
+/* RTL — specchia la timeline: barra e pallini a destra invece che a sinistra */
+html[dir="rtl"] .timeline__list::before {
+  left: auto;
+  right: 8px;
+}
+html[dir="rtl"] .timeline__item {
+  padding-left: 0;
+  padding-right: var(--sp-8);
+}
+html[dir="rtl"] .timeline__item::before {
+  left: auto;
+  right: 2px;
+}
+
 /* ---------- CONTAINER NARROW ---------- */
 .container--narrow { max-width: 44rem; }
 
