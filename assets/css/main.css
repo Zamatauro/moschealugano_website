@@ -481,16 +481,16 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
 .counter__big {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.75rem, 6vw, 2.75rem); /* responsive: cresce fluido senza sbordare */
+  /* Cifra fino a 9 caratteri ("1'023'600") deve stare in una riga.
+     Clamp tarato per: mobile 360px col piena, tablet 600px due colonne */
+  font-size: clamp(1.4rem, 5vw, 2.5rem);
   color: var(--c-cta);
   letter-spacing: var(--ls-tight);
-  line-height: 0.95;
-  word-break: break-word;       /* evita overflow su container stretti */
-  overflow-wrap: anywhere;
+  line-height: 1.0;
+  white-space: nowrap;          /* la cifra NON va mai a capo (era break-word: rompeva in mezzo al numero) */
 }
 @media (min-width: 1280px) {
-  /* Solo su desktop largo arriviamo al 4rem pieno */
-  .counter__big { font-size: 3.25rem; }
+  .counter__big { font-size: 3rem; }
 }
 .counter__small {
   font-size: var(--fs-caption);
