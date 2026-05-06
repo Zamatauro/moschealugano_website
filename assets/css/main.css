@@ -1398,7 +1398,7 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   text-align: center;
 }
 
-/* ---------- VOCI (§ 5) ---------- */
+/* ---------- VOCI (§ 5) — carousel orizzontale foto+quote ---------- */
 .voci__intro {
   font-size: 1.0625rem;
   line-height: 1.6;
@@ -1406,32 +1406,129 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   max-width: 44rem;
   margin: var(--sp-6) 0 var(--sp-8);
 }
-.voci__list {
-  margin: var(--sp-8) 0;
+
+/* Carousel — wrapper riusa .gallery-wrap. Container interno ha la sua classe */
+.voci-carousel {
+  display: flex;
+  gap: var(--sp-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: var(--content-pad-mob);
+  padding: var(--sp-2) var(--content-pad-mob);
+  margin: 0 calc(var(--content-pad-mob) * -1);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.voci__card {
+.voci-carousel::-webkit-scrollbar { display: none; height: 0; width: 0; }
+@media (min-width: 768px) {
+  .voci-carousel {
+    padding: var(--sp-2) var(--sp-12);
+    margin: 0;
+  }
+}
+
+.voce-card {
+  flex: 0 0 90%;
+  scroll-snap-align: start;
+  display: grid;
+  grid-template-columns: 1fr;
   background: var(--c-white);
-  padding: var(--sp-8);
   border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
   border-left: 4px solid var(--c-cta);
-  margin: 0;
-  max-width: 44rem;
 }
-.voci__quote {
+@media (min-width: 768px) {
+  .voce-card {
+    flex-basis: 720px;
+    grid-template-columns: 280px 1fr;  /* foto sx, quote dx */
+  }
+}
+@media (min-width: 1024px) {
+  .voce-card { flex-basis: 800px; grid-template-columns: 320px 1fr; }
+}
+
+.voce-card__photo {
+  position: relative;
+  background: var(--c-sand);
+  min-height: 220px;
+  aspect-ratio: 1/1;
+}
+@media (min-width: 768px) {
+  .voce-card__photo { aspect-ratio: auto; min-height: 320px; }
+}
+.voce-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.voce-card__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  background: linear-gradient(135deg, var(--c-teal) 0%, var(--c-siena) 100%);
+  color: var(--c-ivory);
+}
+.voce-card__initials {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.voce-card__placeholder-label {
+  font-family: var(--font-ui);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.voce-card__body {
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp-4);
+}
+@media (min-width: 768px) {
+  .voce-card__body { padding: var(--sp-8); }
+}
+.voce-card__quote {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 1.5rem;
-  line-height: 1.45;
+  font-size: 1.25rem;
+  line-height: 1.5;
   color: var(--c-text);
-  margin: 0 0 var(--sp-4);
+  margin: 0;
 }
-.voci__attrib {
+@media (min-width: 768px) {
+  .voce-card__quote { font-size: 1.4rem; line-height: 1.45; }
+}
+.voce-card__attrib {
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-ui);
   font-size: var(--fs-caption);
-  color: var(--c-text-soft);
   line-height: 1.5;
+  color: var(--c-text-soft);
 }
-.voci__attrib strong { color: var(--c-brand); font-weight: 600; }
+.voce-card__attrib strong {
+  color: var(--c-brand);
+  font-weight: 700;
+  font-size: var(--fs-body);
+  margin-bottom: var(--sp-1);
+}
+
 .voci__placeholder {
   margin: var(--sp-8) 0;
   padding: var(--sp-4) var(--sp-6);

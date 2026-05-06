@@ -1,4 +1,6 @@
-{{/* § 5 · VOCI DELLA COMUNITÀ — Copy V1 cowork (5 mag 2026) */}}
+{{/* § 5 · VOCI DELLA COMUNITÀ — carousel orizzontale, foto sx + quote dx */}}
+{{ $imamJelassi := (resources.Get "img/voci/imam-jelassi.jpg").Resize "800x webp q85" }}
+
 <section id="voci" class="section section--sand">
   <div class="container">
     <p class="eyebrow">Voci della comunità</p>
@@ -13,26 +15,76 @@
       sarà Dar al-Salam.
     </p>
 
-    {{/* Voce 1 — Samir Gomaa (placeholder testuale, in attesa di vetting+foto) */}}
-    <div class="voci__list">
-      <figure class="voci__card">
-        <blockquote class="voci__quote">
-          «Quando sono arrivato a Lugano, in via Bottogno c'erano dieci fratelli
-          che pregavano la jumu'a. Oggi siamo settemila in tutto il Ticino.
-          Vent'anni dopo, è arrivato il momento di avere una casa nostra.»
-        </blockquote>
-        <figcaption class="voci__attrib">
-          <strong>Samir Gomaa</strong><br>
-          presidente Lega dei Musulmani in Ticino
-        </figcaption>
-      </figure>
+    {{/* Carousel voci — stessa meccanica della galleria progetto */}}
+    <div class="gallery-wrap voci-carousel-wrap">
+      <button type="button" class="gallery-nav gallery-nav--prev" aria-label="Voce precedente" data-target="voci-carousel">‹</button>
+      <button type="button" class="gallery-nav gallery-nav--next" aria-label="Voce successiva" data-target="voci-carousel">›</button>
+
+      <div class="voci-carousel" id="voci-carousel" aria-label="Voci della comunità">
+
+        {{/* Voce 1 — Samir Gomaa (foto in arrivo, placeholder) */}}
+        <article class="voce-card">
+          <div class="voce-card__photo">
+            <div class="voce-card__placeholder">
+              <span class="voce-card__initials">SG</span>
+              <span class="voce-card__placeholder-label">foto in arrivo</span>
+            </div>
+          </div>
+          <div class="voce-card__body">
+            <blockquote class="voce-card__quote">
+              «Quando sono arrivato a Lugano, in via Bottogno c'erano dieci
+              fratelli che pregavano la jumu'a. Oggi siamo settemila in tutto
+              il Ticino. Vent'anni dopo, è arrivato il momento di avere una
+              casa nostra.»
+            </blockquote>
+            <div class="voce-card__attrib">
+              <strong>Samir Gomaa</strong>
+              <span>presidente Lega dei Musulmani in Ticino</span>
+            </div>
+          </div>
+        </article>
+
+        {{/* Voce 2 — Sheik Samir Jelassi
+             Pattern format voce corale (memoria project_moschea_format_voce_corale.md):
+             Jelassi NON come frontman, presente con citazione spirituale breve, mai dominante.
+             Decisione Stefano (6 mag 2026): figura apicale comunità, deve esserci con moderazione. */}}
+        <article class="voce-card">
+          <div class="voce-card__photo">
+            <img src="{{ $imamJelassi.RelPermalink }}"
+                 alt="Sheik Samir Jelassi, imam della Lega dei Musulmani in Ticino"
+                 loading="lazy"
+                 width="{{ $imamJelassi.Width }}"
+                 height="{{ $imamJelassi.Height }}">
+          </div>
+          <div class="voce-card__body">
+            <blockquote class="voce-card__quote">
+              «Costruire una casa per Allah è sadaqa jariya — un'opera che
+              continua a portare frutto fino al Giorno del Giudizio, ogni
+              volta che un fratello vi prega, ogni volta che un bambino vi
+              impara il Corano.»
+            </blockquote>
+            <div class="voce-card__attrib">
+              <strong>Sheik Samir Jelassi</strong>
+              <span>imam della comunità</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      {{/* Dots di posizione */}}
+      <div class="gallery-dots" id="voci-dots" aria-label="Posizione voce">
+        {{ range seq 2 }}
+          <button type="button" class="gallery-dot" data-idx="{{ sub . 1 }}" aria-label="Vai alla voce {{ . }}"></button>
+        {{ end }}
+      </div>
     </div>
 
     <p class="voci__placeholder">
-      Stiamo girando le altre voci della comunità — l'imam, le madri della scuola
-      El Nur, i giovani italofoni, i fratelli arrivati di recente in Ticino. Ogni
-      voce passa il vetting e firma la liberatoria prima di apparire qui.
-      Aggiornamento ogni venerdì.
+      Stiamo girando le altre voci della comunità — le madri della scuola
+      El Nur, i giovani italofoni nati a Lugano, i fratelli arrivati di
+      recente in Ticino. Ogni voce passa il vetting e firma la liberatoria
+      prima di apparire qui. Aggiornamento ogni venerdì.
     </p>
 
     <p class="voci__cta">
@@ -41,3 +93,45 @@
     </p>
   </div>
 </section>
+
+{{/* JS carousel voci — stessa meccanica della gallery progetto */}}
+<script>
+(function(){
+  var carousel = document.getElementById('voci-carousel');
+  var dotsBox = document.getElementById('voci-dots');
+  if(!carousel || !dotsBox) return;
+  var items = carousel.querySelectorAll('.voce-card');
+  var dots = dotsBox.querySelectorAll('.gallery-dot');
+  var prev = carousel.parentElement.querySelector('.gallery-nav--prev');
+  var next = carousel.parentElement.querySelector('.gallery-nav--next');
+
+  function activate(idx){
+    idx = Math.max(0, Math.min(items.length - 1, idx));
+    items[idx].scrollIntoView({behavior:'smooth', block:'nearest', inline:'start'});
+  }
+  function currentIdx(){
+    var rect = carousel.getBoundingClientRect();
+    var best = 0, bestDist = Infinity;
+    items.forEach(function(it, i){
+      var r = it.getBoundingClientRect();
+      var d = Math.abs(r.left - rect.left);
+      if (d < bestDist){ bestDist = d; best = i; }
+    });
+    return best;
+  }
+  prev && prev.addEventListener('click', function(){ activate(currentIdx() - 1); });
+  next && next.addEventListener('click', function(){ activate(currentIdx() + 1); });
+  dots.forEach(function(d){
+    d.addEventListener('click', function(){ activate(parseInt(d.dataset.idx, 10)); });
+  });
+  function syncDots(){
+    var idx = currentIdx();
+    dots.forEach(function(d, i){ d.classList.toggle('is-active', i === idx); });
+  }
+  carousel.addEventListener('scroll', function(){
+    clearTimeout(carousel._t);
+    carousel._t = setTimeout(syncDots, 80);
+  }, {passive:true});
+  syncDots();
+})();
+</script>
