@@ -132,11 +132,15 @@
   var prev = carousel.parentElement.querySelector('.voci-nav--prev');
   var next = carousel.parentElement.querySelector('.voci-nav--next');
 
-  // Loop wrapping: idx oltre i bordi → wraps al primo/ultimo
+  // Loop wrapping + scroll SOLO orizzontale del container.
+  // scrollIntoView() scrollava verticalmente la pagina se il carousel era
+  // fuori viewport — questo causava jump all'header durante auto-rotate.
   function activate(idx){
     var len = items.length;
     idx = ((idx % len) + len) % len;
-    items[idx].scrollIntoView({behavior:'smooth', block:'nearest', inline:'start'});
+    var item = items[idx];
+    var offset = item.offsetLeft - carousel.offsetLeft;
+    carousel.scrollTo({ left: offset, behavior: 'smooth' });
   }
   function currentIdx(){
     var rect = carousel.getBoundingClientRect();

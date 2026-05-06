@@ -84,11 +84,15 @@
       var prev = document.querySelector('.gallery-nav--prev');
       var next = document.querySelector('.gallery-nav--next');
 
-      // Loop wrapping: idx oltre i bordi → wraps al primo/ultimo
+      // Loop wrapping + scroll SOLO orizzontale del container.
+      // scrollIntoView() scrollava verticalmente la pagina se il carousel
+      // era fuori viewport — bug noto, causa jump all'header.
       function activate(idx){
         var len = items.length;
         idx = ((idx % len) + len) % len;
-        items[idx].scrollIntoView({behavior:'smooth', block:'nearest', inline:'start'});
+        var item = items[idx];
+        var offset = item.offsetLeft - gallery.offsetLeft;
+        gallery.scrollTo({ left: offset, behavior: 'smooth' });
       }
 
       function currentIdx(){
