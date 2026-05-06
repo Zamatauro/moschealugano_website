@@ -1217,8 +1217,14 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
 /* Altre piattaforme (link esterni) */
 .platforms {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: 1fr;          /* mobile: 1 colonna */
   gap: var(--sp-4);
+}
+@media (min-width: 600px) {
+  .platforms {
+    grid-template-columns: repeat(2, 1fr);   /* tablet+: 2x2 simmetrico */
+    gap: var(--sp-5);
+  }
 }
 .platform {
   background: var(--c-white);
