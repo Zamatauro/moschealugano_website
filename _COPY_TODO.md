@@ -15,7 +15,7 @@ voce e registro — non versioni civiche o sobrie.
 ## § 1 · HERO
 
 ### Hero body (≤ 50 parole)
-**Attuale**: *"Bismillah ar-Rahman ar-Rahim. Cari fratelli e care sorelle, dopo vent'anni di affitto in via Bottogno Allah ci ha aperto una porta a Pregassona. Mancano CHF 940'360 per chiudere il terreno entro il 15 settembre."*
+**Attuale**: *"Bismillah ar-Rahman ar-Rahim. Cari fratelli e care sorelle, dopo vent'anni di affitto in via Bottogno, Allah ci ha aperto una porta a Pregassona. La nostra particella esiste. Mancano 1'023'600 franchi per acquistare il nostro terreno entro il 15 settembre. Aiutaci a realizzare il sogno di una casa per la nostra comunità."*
 
 **Da rivedere**: probabilmente OK come abbozzo (deriva dai Messaggi pilota v2
 già validati), ma cowork dia il timbro finale. Lunghezza target rispettata.
@@ -35,7 +35,7 @@ già validati), ma cowork dia il timbro finale. Lunghezza target rispettata.
 ### Callout 1 · Fase 1 vs costruzione futura
 **Attuale (fattuale, no claim)**:
 > *FASE 1 — TERRENO E PERMESSI*
-> *Questa raccolta finanzia l'acquisto del terreno e i permessi di costruzione (CHF 1'361'760). La costruzione dell'edificio, stimata fra CHF 3.1 e 3.8 milioni, sarà oggetto di una raccolta successiva a partire dal 2027.*
+> *Questa raccolta finanzia la chiusura della Fase 1 — terreno + progetto + atto notarile + intermediazione + spese legali (CHF 1'445'000 totali). La costruzione dell'edificio, stimata fra CHF 3.1 e 3.8 milioni, sarà oggetto di una raccolta successiva a partire dal 2027.*
 
 **Da rivedere**:
 - Eyebrow appropriato (es. *CHIAREZZA*, *FASE 1*, *PRIMA TAPPA*)
@@ -124,7 +124,7 @@ Storytelling 200-300 parole in Voce A pura, registro spirituale.
 - Storia: 20 anni in via Bottogno, 100 m², 400'000 CHF di affitto cumulato, 7'000 persone
 - Particella di Pregassona, mappale 253, vivamente descritta
 - Citazione hadith breve (sadaqa jariya)
-- Urgenza concreta: settembre 2026, 940'360 CHF
+- Urgenza concreta: settembre 2026, 1'023'600 CHF
 - Chiusura calda, *Wa salamun alaykum* + firma "Il consiglio della Lega dei Musulmani in Ticino"
 
 Versione AR + TR del **medesimo copy** in `<details>` collapsabile dentro la pagina IT.

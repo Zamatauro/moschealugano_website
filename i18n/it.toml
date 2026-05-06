@@ -49,6 +49,17 @@ other = "Dopo il 15.09.2026"
 other = "Dove vanno i tuoi soldi"
 [progetto_voce_terreno]
 other = "Acquisto terreno"
+[progetto_voce_progetto]
+other = "Progetto e permessi"
+[progetto_voce_notarile]
+other = "Atto notarile"
+[progetto_voce_intermediazione]
+other = "Intermediazione"
+[progetto_voce_legali]
+other = "Spese legali"
+[progetto_voce_chiusura]
+other = "Spese di chiusura"
+# legacy — mantenuta per backward compat in altre lingue non ancora migrate
 [progetto_voce_permessi]
 other = "Progetto, permessi, atti"
 [progetto_totale_fase]
