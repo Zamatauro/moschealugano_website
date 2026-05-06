@@ -482,29 +482,34 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   font-family: var(--font-display);
   font-weight: 700;
   /* La cifra (fino a 9 caratteri "1'023'600") deve stare in una riga.
+     Tarato per stare in colonna stretta del counter pair (~220px desktop hero).
      CHF è in span separato più piccolo per liberare spazio. */
-  font-size: clamp(1.6rem, 5.5vw, 2.5rem);
+  font-size: clamp(1.35rem, 4.5vw, 2rem);
   color: var(--c-cta);
   letter-spacing: var(--ls-tight);
   line-height: 1.0;
-  white-space: nowrap;          /* la cifra NON va mai a capo */
-  display: inline-flex;
+  white-space: nowrap;
+  display: flex;
   align-items: baseline;
-  gap: 0.25em;
+  gap: 0.2em;
+  min-width: 0;
 }
 @media (min-width: 1280px) {
-  .counter__big { font-size: 3rem; }
+  .counter__big { font-size: 2.4rem; }
 }
+/* La colonna deve poter shrinkare nei flex/grid per non spingere il fratello */
+.counter__col { min-width: 0; }
 /* CHF come label di valuta — più piccolo, allineato in alto al numero */
 .counter__currency {
-  font-size: 0.55em;
+  font-size: 0.5em;
   font-weight: 600;
   font-family: var(--font-ui);
   letter-spacing: 0.04em;
   color: inherit;
   opacity: 0.85;
   align-self: flex-start;
-  padding-top: 0.15em;
+  padding-top: 0.2em;
+  flex: 0 0 auto;
 }
 .counter__small {
   font-size: var(--fs-caption);
