@@ -1323,6 +1323,13 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   object-fit: contain;
   display: block;
 }
+/* Modifier per loghi con aspect-ratio quasi quadrato (es. Rete del Dono):
+   serve max-height più alta per pareggiare la presenza visiva dei loghi
+   "orizzontali" (Donorbox/LaunchGood/Lokalhelden 4-10:1) */
+.platform__logo--tall {
+  max-height: 84px;
+  max-width: 60%;
+}
 /* Fallback se logo manca (Rete del Dono in caricamento) */
 .platform__name {
   font-family: var(--font-display);

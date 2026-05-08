@@ -147,8 +147,11 @@
             </a>
             <a href="#" class="platform" aria-disabled="true" aria-label="Rete del Dono">
               {{ with $logoReteDelDono }}
-                {{/* WebP già ottimizzato — niente Resize per non riprocessarlo */}}
-                <img class="platform__logo" src="{{ .RelPermalink }}" alt="Rete del Dono" loading="lazy">
+                {{/* WebP già ottimizzato — niente Resize per non riprocessarlo.
+                     Modifier --tall: aspect-ratio 1.9:1 (quasi quadrato), serve
+                     altezza maggiore per pareggiare la presenza visiva degli
+                     altri 3 loghi che sono molto più orizzontali (4-10:1) */}}
+                <img class="platform__logo platform__logo--tall" src="{{ .RelPermalink }}" alt="Rete del Dono" loading="lazy">
               {{ else }}
                 <span class="platform__name">Rete del Dono</span>
               {{ end }}
