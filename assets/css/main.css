@@ -1549,13 +1549,18 @@ html[dir="rtl"] .counter__big {
 }
 
 /* ---------- VOCI (§ 5) — carousel orizzontale foto+quote ---------- */
+/* Wrapper head: eyebrow + h2 + intro come blocco unico narrow e centrato.
+   Stessa larghezza di perche-ora che la segue. Carousel resta full-width. */
+.voci__head {
+  max-width: 44rem;
+  margin: 0 auto var(--sp-8);
+}
+
 .voci__intro {
   font-size: 1.0625rem;
   line-height: 1.6;
   color: var(--c-text-soft);
-  max-width: 44rem;
-  /* Allineato a sinistra come eyebrow/h2 (margin-left:0). Carousel resta full-width sotto. */
-  margin: var(--sp-6) 0 var(--sp-8);
+  margin: var(--sp-6) 0 0;
 }
 
 /* Wrapper: flex orizzontale, frecce ai LATI esterni del carousel */

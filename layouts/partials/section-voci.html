@@ -5,12 +5,16 @@
 
 <section id="voci" class="section section--sand">
   <div class="container">
-    <p class="eyebrow">{{ i18n "voci_eyebrow" }}</p>
-    <h2>{{ i18n "voci_h2" }}</h2>
-
-    <p class="voci__intro">
-      {{ i18n "voci_intro" }}
-    </p>
+    {{/* Head block (eyebrow + h2 + intro) narrow e centrato nel viewport,
+         coerente con la sezione perche-ora che la segue. Il carousel sotto
+         resta full-width nel container largo. */}}
+    <div class="voci__head">
+      <p class="eyebrow">{{ i18n "voci_eyebrow" }}</p>
+      <h2>{{ i18n "voci_h2" }}</h2>
+      <p class="voci__intro">
+        {{ i18n "voci_intro" }}
+      </p>
+    </div>
 
     {{/* Carousel voci — frecce in flex layout ai lati del box (no overlap) */}}
     <div class="voci-carousel-wrap">
