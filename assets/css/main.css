@@ -1630,26 +1630,28 @@ html[dir="rtl"] .counter__big {
   margin-top: var(--sp-4);
 }
 
+/* Mobile: tutte le voci hanno la stessa altezza (1:1) — placeholder e foto
+   reali devono essere identiche, altrimenti lo scroll del carousel "salta".
+   Su desktop il layout è grid 2 colonne (foto sx + body dx) e la foto si
+   adatta all'altezza del body, quindi nessun aspect-ratio. */
 .voce-card__photo {
   position: relative;
   background: var(--c-sand);
-  min-height: 220px;
-  /* niente aspect-ratio sul parent: bug iOS Safari con figli height:100% */
+  aspect-ratio: 1/1;          /* uniforma altezza tra placeholder e foto */
 }
 @media (min-width: 768px) {
-  .voce-card__photo { min-height: 320px; }
+  .voce-card__photo { aspect-ratio: auto; min-height: 320px; }
 }
-/* iOS Safari fix: aspect-ratio direttamente sull'<img>, non sul parent */
+/* iOS Safari fix: aspect-ratio anche sull'<img> evita lo stretching del volto */
 .voce-card__photo img {
   width: 100%;
   height: 100%;
-  min-height: inherit;
   aspect-ratio: 1/1;
   object-fit: cover;
   display: block;
 }
 @media (min-width: 768px) {
-  .voce-card__photo img { aspect-ratio: auto; height: 100%; min-height: 320px; }
+  .voce-card__photo img { aspect-ratio: auto; }
 }
 
 .voce-card__placeholder {
