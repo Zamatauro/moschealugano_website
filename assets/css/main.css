@@ -1553,8 +1553,9 @@ html[dir="rtl"] .counter__big {
   font-size: 1.0625rem;
   line-height: 1.6;
   color: var(--c-text-soft);
-  max-width: 44rem;            /* solo intro narrow, carousel resta full-width */
-  margin: var(--sp-6) auto var(--sp-8);   /* centrato orizzontalmente nel container */
+  max-width: 44rem;
+  /* Allineato a sinistra come eyebrow/h2 (margin-left:0). Carousel resta full-width sotto. */
+  margin: var(--sp-6) 0 var(--sp-8);
 }
 
 /* Wrapper: flex orizzontale, frecce ai LATI esterni del carousel */
