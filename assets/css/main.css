@@ -1105,7 +1105,10 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   /* niente max-width: il testo segue la larghezza del container,
      coerente con i box sottostanti (.platforms, .amounts, .iban) */
 }
-.tab-panel__cta { margin-top: var(--sp-6); }
+.tab-panel__cta {
+  margin-top: var(--sp-6);
+  text-align: center;       /* centra il bottone CTA + meta sotto */
+}
 .tab-panel__meta {
   font-size: var(--fs-caption);
   color: var(--c-text-muted);
@@ -1421,7 +1424,10 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
 
 /* ---------- TIMELINE (§ 2 review cowork P1.4) ---------- */
 .timeline {
-  margin: var(--sp-12) 0 var(--sp-8);
+  display: block;
+  width: 100%;
+  max-width: 44rem;
+  margin: var(--sp-12) auto var(--sp-8);
 }
 .timeline__list {
   list-style: none;
