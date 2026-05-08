@@ -1554,7 +1554,7 @@ html[dir="rtl"] .counter__big {
   line-height: 1.6;
   color: var(--c-text-soft);
   max-width: 44rem;            /* solo intro narrow, carousel resta full-width */
-  margin: var(--sp-6) 0 var(--sp-8);
+  margin: var(--sp-6) auto var(--sp-8);   /* centrato orizzontalmente nel container */
 }
 
 /* Wrapper: flex orizzontale, frecce ai LATI esterni del carousel */
