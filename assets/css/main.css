@@ -1183,6 +1183,8 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   border-radius: var(--radius-md);
   border: 1px solid rgba(46,116,116,0.10);
   max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .iban__details {
   display: flex;
