@@ -116,6 +116,8 @@ disableKinds = ["taxonomy", "term", "RSS"]
 
   # Contatti — unico indirizzo ufficiale, niente alias inventati
   emailContatto = "info@lmticino.ch"
+  # Email dedicata stampa/media (usata in sezione trasparenza)
+  emailStampa = "stampa.lmt@gmail.com"
 
   # URL pagamenti
   sumupCarta = "https://pay.sumup.com/b2c/QG9XE1CT"
