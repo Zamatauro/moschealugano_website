@@ -114,6 +114,8 @@ html[lang="ar"] .heading,
   font-size: 1.125rem;
   color: var(--c-brand);
   letter-spacing: -0.005em;
+  white-space: nowrap;       /* "Dar al-Salam" non va a capo */
+  min-width: 0;
 }
 .nav__brand-mark {
   width: 36px;
@@ -138,6 +140,11 @@ html[lang="ar"] .heading,
 .nav__links a { color: var(--c-text); }
 .nav__cta-wrap { display: flex; align-items: center; gap: var(--sp-3); }
 @media (min-width: 768px) { .nav__cta-wrap { gap: var(--sp-4); } }
+/* Mobile: nascondi il "Dona ora" del nav — c'è già lo sticky CTA in basso.
+   Evita double CTA + libera spazio per logo/wordmark in viewport stretti */
+@media (max-width: 767px) {
+  .nav__cta-wrap .btn { display: none; }
+}
 
 /* Dropdown lingue */
 .lang-dropdown {
