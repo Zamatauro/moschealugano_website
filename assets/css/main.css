@@ -1552,8 +1552,12 @@ html[dir="rtl"] .counter__big {
 /* Wrapper head: eyebrow + h2 + intro come blocco unico narrow e centrato.
    Stessa larghezza di perche-ora che la segue. Carousel resta full-width. */
 .voci__head {
+  display: block;
+  width: 100%;
   max-width: 44rem;
-  margin: 0 auto var(--sp-8);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--sp-8);
 }
 
 .voci__intro {
