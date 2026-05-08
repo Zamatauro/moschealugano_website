@@ -1,37 +1,15 @@
-{{/* § 4 · PERCHÉ ORA — storytelling Voce A pura · Copy V1 cowork (5 mag 2026) */}}
+{{/* § 4 · PERCHÉ ORA — versione V2 (8 mag 2026): testo statico più asciutto,
+     senza ambiguità sull'avvenuto acquisto del terreno. 4 paragrafi. */}}
 <section id="perche-ora" class="section section--ivory">
   <div class="container container--narrow">
     <p class="eyebrow">{{ i18n "perche_eyebrow" }}</p>
     <h2>{{ i18n "perche_h2" }}</h2>
 
     <div class="storytelling">
-      <p>{{ i18n "perche_p1" }}</p>
-
-      <p>{{ i18n "perche_p2" }}</p>
-
-      <p>
-        {{ i18n "perche_p3_pre" }}<strong>{{ i18n "perche_p3_strong" }}</strong>{{ i18n "perche_p3_post" }}
-      </p>
-
-      <p class="storytelling__beat">
-        {{ i18n "perche_beat" }}
-      </p>
-
-      <p>
-        {{ i18n "perche_p5_pre" }}<strong>{{ i18n "perche_p5_strong" }}</strong>{{ i18n "perche_p5_post" }}
-      </p>
-
-      <p>{{ i18n "perche_p6_pre" }}<strong>{{ i18n "perche_p6_strong" }}</strong>{{ i18n "perche_p6_post" }}</p>
-
-      <p class="storytelling__claim">{{ i18n "perche_claim" }}</p>
-
-      <p>
-        {{ i18n "perche_p7_pre" }}<strong>CHF {{ .Site.Data.counter.gap_formatted }}{{ i18n "perche_p7_strong_pre" }}{{ i18n "perche_p7_strong_post" }}</strong>{{ i18n "perche_p7_post" }}{{ .Site.Data.counter.raised_formatted }}{{ i18n "perche_p7_raised_post" }}
-      </p>
-
-      <p>
-        {{ i18n "perche_p8_pre" }}<strong>{{ i18n "perche_p8_strong" }}</strong>{{ i18n "perche_p8_post" }}
-      </p>
+      <p>{{ i18n "perche_v2_p1" | safeHTML }}</p>
+      <p>{{ i18n "perche_v2_p2" | safeHTML }}</p>
+      <p>{{ i18n "perche_v2_p3" | safeHTML }}</p>
+      <p>{{ i18n "perche_v2_p4" | safeHTML }}</p>
     </div>
 
     <div class="storytelling__cta">

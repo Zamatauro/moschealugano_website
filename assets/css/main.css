@@ -1112,11 +1112,21 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
 }
 
 /* Importi suggeriti */
+/* .amounts — grid esplicita a 3 breakpoint per 4 tier senza orfano:
+   - mobile <600px: 1 colonna piena
+   - tablet 600-899px: 2x2 (2 righe simmetriche)
+   - desktop ≥900px: 4 colonne in linea */
 .amounts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--sp-3);
   margin-bottom: var(--sp-6);
+}
+@media (min-width: 600px) {
+  .amounts { grid-template-columns: repeat(2, 1fr); gap: var(--sp-4); }
+}
+@media (min-width: 900px) {
+  .amounts { grid-template-columns: repeat(4, 1fr); }
 }
 .amount-btn {
   background: var(--c-white);

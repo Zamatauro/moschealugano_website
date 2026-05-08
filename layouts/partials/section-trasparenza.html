@@ -7,12 +7,14 @@
     <div class="trasparenza__body">
       <p>{{ i18n "trasp_body_p1_pre" | safeHTML }}<strong>{{ .Site.Params.cheId }}</strong>{{ i18n "trasp_body_p1_post" | safeHTML }}</p>
 
-      <p>{{ i18n "trasp_body_p2" | safeHTML }}</p>
-
       <p>{{ i18n "trasp_body_p3" | safeHTML }}</p>
 
       <p>{{ i18n "trasp_body_p4" | safeHTML }}</p>
     </div>
+
+    {{/* Blocco governance — pattern h3 + lista, posizionato prima dei Documenti */}}
+    <h3 class="trasparenza__sub">{{ i18n "trasp_committee_h3" }}</h3>
+    <p class="trasparenza__committee">{{ i18n "trasp_committee_body" | safeHTML }}</p>
 
     <h3 class="trasparenza__sub">{{ i18n "trasp_sub" }}</h3>
     <ul class="trasparenza__docs">
