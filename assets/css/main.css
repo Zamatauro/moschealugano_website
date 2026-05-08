@@ -1432,9 +1432,15 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
 
 /* ---------- TIMELINE (§ 2 review cowork P1.4) ---------- */
 .timeline {
-  /* Full-width nel container largo: stessa larghezza del box project-facts
-     sovrastante, allineata su entrambi i bordi */
-  margin: var(--sp-12) 0 var(--sp-8);
+  /* Blocco centrato orizzontalmente nel viewport (stesso asse del box
+     project-facts sovrastante che è full-width centered) */
+  display: block;
+  width: 100%;
+  max-width: 44rem;
+  margin-top: var(--sp-12);
+  margin-bottom: var(--sp-8);
+  margin-left: auto;
+  margin-right: auto;
 }
 .timeline__list {
   list-style: none;
