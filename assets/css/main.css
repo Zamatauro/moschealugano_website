@@ -1553,8 +1553,7 @@ html[dir="rtl"] .counter__big {
   font-size: 1.0625rem;
   line-height: 1.6;
   color: var(--c-text-soft);
-  /* niente max-width: il testo segue la larghezza del container,
-     coerente con il carousel voci sottostante */
+  max-width: 44rem;            /* solo intro narrow, carousel resta full-width */
   margin: var(--sp-6) 0 var(--sp-8);
 }
 
