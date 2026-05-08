@@ -1102,7 +1102,8 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   font-size: var(--fs-body);
   color: var(--c-text-soft);
   margin-bottom: var(--sp-6);
-  max-width: 36rem;
+  /* niente max-width: il testo segue la larghezza del container,
+     coerente con i box sottostanti (.platforms, .amounts, .iban) */
 }
 .tab-panel__cta { margin-top: var(--sp-6); }
 .tab-panel__meta {
@@ -1552,7 +1553,8 @@ html[dir="rtl"] .counter__big {
   font-size: 1.0625rem;
   line-height: 1.6;
   color: var(--c-text-soft);
-  max-width: 44rem;
+  /* niente max-width: il testo segue la larghezza del container,
+     coerente con il carousel voci sottostante */
   margin: var(--sp-6) 0 var(--sp-8);
 }
 
