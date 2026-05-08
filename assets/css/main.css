@@ -1288,47 +1288,48 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
     gap: var(--sp-6);
   }
 }
-/* NOTA: --sp-5 non esiste nel design system, era ignorato silenziosamente
-   facendo padding/gap = 0. Sostituito con sp-6 (1.5rem) per i box. */
+/* Box piattaforma — solo logo centrato (no testo). Altezza fissa per uniformità.
+   I 4 loghi hanno aspect-ratio molto diversi: object-fit:contain + max-height
+   ne scala la larghezza al massimo del box rispettando le proporzioni native */
 .platform {
   background: var(--c-white);
   border: 1.5px solid rgba(46,116,116,0.15);
   border-radius: var(--radius-md);
-  padding: var(--sp-6);
+  padding: var(--sp-6) var(--sp-4);
   display: flex;
-  flex-direction: column;
-  gap: var(--sp-2);
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
   text-decoration: none;
-  transition: border-color var(--dur-fast) var(--ease-out);
+  transition: border-color var(--dur-fast) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out);
 }
 .platform:not([aria-disabled]):hover {
   border-color: var(--c-brand);
+  transform: translateY(-2px);
   text-decoration: none;
 }
 .platform[aria-disabled] {
-  opacity: 0.6;
+  opacity: 0.55;
   cursor: not-allowed;
   pointer-events: none;
+  filter: grayscale(0.3);
 }
+.platform__logo {
+  max-width: 80%;
+  max-height: 56px;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+/* Fallback se logo manca (Rete del Dono in caricamento) */
 .platform__name {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.25rem;
   color: var(--c-brand);
-}
-.platform__desc {
-  font-size: var(--fs-caption);
-  color: var(--c-text-soft);
-  line-height: 1.4;
-}
-.platform__status {
-  font-family: var(--font-ui);
-  font-size: var(--fs-eyebrow);
-  font-weight: 600;
-  letter-spacing: var(--ls-eyebrow);
-  text-transform: uppercase;
-  color: var(--c-cta);
-  margin-top: auto;
+  text-align: center;
 }
 
 /* Trust signal sotto i tab */
