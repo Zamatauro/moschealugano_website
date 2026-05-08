@@ -110,8 +110,18 @@
   var prev = carousel.parentElement.querySelector('.voci-nav--prev');
   var next = carousel.parentElement.querySelector('.voci-nav--next');
 
-  // Loop wrapping + scroll SOLO orizzontale del container.
-  // Usa getBoundingClientRect (affidabile) invece di offsetLeft.
+  // Smooth scroll custom: 400ms con easing cubic (più rapido del browser
+  // default ~600-1000ms che faceva sembrare il carousel "statico").
+  function smoothScrollX(el, to, duration){
+    var start = el.scrollLeft, dist = to - start, t0 = performance.now();
+    function step(now){
+      var t = Math.min((now - t0) / duration, 1);
+      var eased = 1 - Math.pow(1 - t, 3);   // ease-out cubic
+      el.scrollLeft = start + dist * eased;
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
   function activate(idx){
     var len = items.length;
     idx = ((idx % len) + len) % len;
@@ -119,7 +129,7 @@
     var rect = carousel.getBoundingClientRect();
     var itemRect = item.getBoundingClientRect();
     var target = carousel.scrollLeft + (itemRect.left - rect.left);
-    carousel.scrollTo({ left: target, behavior: 'smooth' });
+    smoothScrollX(carousel, target, 400);
   }
   function currentIdx(){
     var rect = carousel.getBoundingClientRect();

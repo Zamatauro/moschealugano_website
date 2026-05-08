@@ -84,9 +84,18 @@
       var prev = document.querySelector('.gallery-nav--prev');
       var next = document.querySelector('.gallery-nav--next');
 
-      // Loop wrapping + scroll SOLO orizzontale del container.
-      // Usa getBoundingClientRect (affidabile a prescindere da offsetParent
-      // e padding) invece di offsetLeft.
+      // Smooth scroll custom: 350ms con easing cubic (più rapido del browser
+      // default ~600-1000ms che faceva sembrare il carousel "statico").
+      function smoothScrollX(el, to, duration){
+        var start = el.scrollLeft, dist = to - start, t0 = performance.now();
+        function step(now){
+          var t = Math.min((now - t0) / duration, 1);
+          var eased = 1 - Math.pow(1 - t, 3);   // ease-out cubic
+          el.scrollLeft = start + dist * eased;
+          if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
       function activate(idx){
         var len = items.length;
         idx = ((idx % len) + len) % len;
@@ -94,7 +103,7 @@
         var rect = gallery.getBoundingClientRect();
         var itemRect = item.getBoundingClientRect();
         var target = gallery.scrollLeft + (itemRect.left - rect.left);
-        gallery.scrollTo({ left: target, behavior: 'smooth' });
+        smoothScrollX(gallery, target, 350);
       }
 
       function currentIdx(){
