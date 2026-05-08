@@ -1432,15 +1432,14 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
 
 /* ---------- TIMELINE (§ 2 review cowork P1.4) ---------- */
 .timeline {
-  /* Blocco centrato orizzontalmente nel viewport (stesso asse del box
-     project-facts sovrastante che è full-width centered) */
-  display: block;
-  width: 100%;
-  max-width: 44rem;
-  margin-top: var(--sp-12);
-  margin-bottom: var(--sp-8);
-  margin-left: auto;
-  margin-right: auto;
+  /* Flex column con align-items center: il <ol> e l'eyebrow occupano
+     solo la larghezza del loro contenuto e sono CENTRATI nel viewport.
+     Il problema con max-width+margin auto era che il blocco era invisibile
+     e il testo dentro appariva a sinistra. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: var(--sp-12) 0 var(--sp-8);
 }
 .timeline__list {
   list-style: none;
