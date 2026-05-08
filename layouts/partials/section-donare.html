@@ -9,9 +9,13 @@
 {{ $emailContatto := .Site.Params.emailContatto }}
 
 <section id="donare" class="section section--ivory">
-  <div class="container container--narrow">
-    <p class="eyebrow">{{ i18n "donare_eyebrow" }}</p>
-    <h2>{{ i18n "donare_h2" }}</h2>
+  <div class="container">
+    {{/* Head narrow centrato (come voci/perche-ora). Tabs/amounts/iban
+         restano full-width nel container largo */}}
+    <div class="donare__head">
+      <p class="eyebrow">{{ i18n "donare_eyebrow" }}</p>
+      <h2>{{ i18n "donare_h2" }}</h2>
+    </div>
 
     <div class="tabs" role="region" aria-label="{{ i18n "donare_tabs_aria" }}">
       <input type="radio" name="donare-tab" id="tab-carta" checked>

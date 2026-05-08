@@ -1028,6 +1028,7 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
 .tabs__nav {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;     /* tabs centrate orizzontalmente nel container largo */
   gap: var(--sp-2);
   border-bottom: 1px solid rgba(46,116,116,0.20);
   margin-bottom: var(--sp-8);
@@ -1098,12 +1099,19 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   display: block;
 }
 
+/* Head sezione donare: narrow centrato come voci__head */
+.donare__head {
+  display: block;
+  width: 100%;
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
 .tab-panel__intro {
   font-size: var(--fs-body);
   color: var(--c-text-soft);
-  margin-bottom: var(--sp-6);
-  /* niente max-width: il testo segue la larghezza del container,
-     coerente con i box sottostanti (.platforms, .amounts, .iban) */
+  margin: 0 auto var(--sp-6);
+  max-width: 44rem;        /* testo intro narrow centrato; box sotto restano full-width */
 }
 .tab-panel__cta {
   margin-top: var(--sp-6);
