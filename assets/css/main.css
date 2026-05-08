@@ -1032,18 +1032,38 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   border-bottom: 1px solid rgba(46,116,116,0.20);
   margin-bottom: var(--sp-8);
 }
-/* Mobile: scroll orizzontale invece di wrap, così i tab restano in una riga
-   anche su viewport stretti (Android 360px) */
+/* Mobile: grid 2x2 invece di scroll orizzontale.
+   Le 4 modalità di donazione sono il cuore della pagina — devono essere
+   tutte visibili a colpo d'occhio (lo scroll-x le nascondeva oltre la 3a). */
 @media (max-width: 599px) {
   .tabs__nav {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    -webkit-overflow-scrolling: touch;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-2);
+    border-bottom: none;          /* la underline-style non funziona su 2 righe */
+    margin-bottom: var(--sp-6);
   }
-  .tabs__nav::-webkit-scrollbar { display: none; height: 0; }
-  .tabs__btn { flex: 0 0 auto; white-space: nowrap; }
+  .tabs__btn {
+    text-align: center;
+    border: 1.5px solid rgba(46,116,116,0.20);
+    border-radius: var(--radius-md);
+    padding: var(--sp-4) var(--sp-3);
+    background: var(--c-white);
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    line-height: 1.2;
+  }
+  /* Override: la tab attiva su mobile è una card piena ambra (più riconoscibile
+     della underline su layout 2x2) */
+  #tab-carta:checked    ~ .tabs__nav label[for="tab-carta"],
+  #tab-bonifico:checked ~ .tabs__nav label[for="tab-bonifico"],
+  #tab-twint:checked    ~ .tabs__nav label[for="tab-twint"],
+  #tab-altre:checked    ~ .tabs__nav label[for="tab-altre"] {
+    background: var(--c-cta);
+    color: var(--c-white);
+    border-color: var(--c-cta);
+    box-shadow: 0 2px 8px rgba(212,146,60,0.25);
+  }
 }
 .tabs__btn {
   padding: var(--sp-3) var(--sp-4);
