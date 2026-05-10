@@ -1,4 +1,5 @@
 {{/* § 5 · VOCI DELLA COMUNITÀ — carousel orizzontale, foto sx + quote dx */}}
+{{ $samirGomaa := (resources.Get "img/voci/samirgomaa.jpeg").Resize "800x webp q85" }}
 {{ $imamJelassi := (resources.Get "img/voci/imam-jelassi.jpg").Resize "800x webp q85" }}
 {{/* Anes (educatore) — foto opzionale: se assente, fallback su placeholder iniziali */}}
 {{ $anesRes := resources.Get "img/voci/anes.jpg" }}
@@ -22,13 +23,14 @@
 
       <div class="voci-carousel" id="voci-carousel" aria-label="{{ i18n "voci_aria_label" }}">
 
-        {{/* Voce 1 — Samir Gomaa (foto in arrivo, placeholder) */}}
+        {{/* Voce 1 — Samir Gomaa */}}
         <article class="voce-card">
           <div class="voce-card__photo">
-            <div class="voce-card__placeholder">
-              <span class="voce-card__initials">SG</span>
-              <span class="voce-card__placeholder-label">{{ i18n "voce1_placeholder_label" }}</span>
-            </div>
+            <img src="{{ $samirGomaa.RelPermalink }}"
+                 alt="{{ i18n "voce1_alt" }}"
+                 loading="lazy"
+                 width="{{ $samirGomaa.Width }}"
+                 height="{{ $samirGomaa.Height }}">
           </div>
           <div class="voce-card__body">
             <blockquote class="voce-card__quote">
