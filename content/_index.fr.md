@@ -5,6 +5,6 @@ hero_body: |
   Bismillah ar-Rahman ar-Rahim. Chers frères et chères sœurs,
   après vingt ans de location en via Bottogno, Allah nous a
   ouvert une porte à Pregassona. Notre parcelle existe. Il manque
-  1'023'600 francs pour acquérir notre propre terrain avant le
+  983'600 francs pour acquérir notre propre terrain avant le
   15 septembre.
 ---

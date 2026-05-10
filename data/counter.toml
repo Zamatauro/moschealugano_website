@@ -4,18 +4,18 @@
 #
 # SEMANTICA:
 # raised = totale già coperto (donazioni storiche + promesse + nuove dalla campagna)
-# goal   = totale Fase 1 (1'445'000: terreno 1.2M + progetto 160k + notarile 15k +
-#          intermediazione 40k + spese legali 30k stima prudenziale)
+# goal   = totale Fase 1 (1'405'000: terreno 1.2M + progetto 160k + notarile 15k +
+#          spese legali 30k stima prudenziale) — intermediazione rimossa
 # gap    = goal - raised = quanto manca da raccogliere ora
 
 raised = 421400
 raised_formatted = "421'400"
 
-goal = 1445000
-goal_formatted = "1'445'000"
+goal = 1405000
+goal_formatted = "1'405'000"
 
-gap = 1023600
-gap_formatted = "1'023'600"
+gap = 983600
+gap_formatted = "983'600"
 
 donors_count = 0   # SOSTITUIRE con cifra reale al lancio (es. 421)
 
