@@ -134,11 +134,11 @@
           <p class="tab-panel__intro">
             {{ i18n "altre_intro" }}
           </p>
-          {{/* Box piattaforme con logo solo (no testo). Loghi in assets/img/platforms/ */}}
+          {{/* Box piattaforme con logo solo (no testo). Loghi in assets/img/platforms/.
+               Rete del Dono rimossa: piattaforma italiana, non utilizzabile in CH. */}}
           {{ $logoDonorbox := resources.Get "img/platforms/donorbox.svg" }}
           {{ $logoLaunchGood := resources.Get "img/platforms/launchgood.svg" }}
           {{ $logoLokalhelden := resources.Get "img/platforms/lokalhelden.svg" }}
-          {{ $logoReteDelDono := resources.Get "img/platforms/rete-del-dono.webp" }}
           <div class="platforms">
             <a href="#" class="platform" aria-disabled="true" aria-label="Donorbox">
               <img class="platform__logo" src="{{ $logoDonorbox.RelPermalink }}" alt="Donorbox" loading="lazy">
@@ -148,17 +148,6 @@
             </a>
             <a href="#" class="platform" aria-disabled="true" aria-label="lokalhelden.ch">
               <img class="platform__logo" src="{{ $logoLokalhelden.RelPermalink }}" alt="lokalhelden.ch" loading="lazy">
-            </a>
-            <a href="#" class="platform" aria-disabled="true" aria-label="Rete del Dono">
-              {{ with $logoReteDelDono }}
-                {{/* WebP già ottimizzato — niente Resize per non riprocessarlo.
-                     Modifier --tall: aspect-ratio 1.9:1 (quasi quadrato), serve
-                     altezza maggiore per pareggiare la presenza visiva degli
-                     altri 3 loghi che sono molto più orizzontali (4-10:1) */}}
-                <img class="platform__logo platform__logo--tall" src="{{ .RelPermalink }}" alt="Rete del Dono" loading="lazy">
-              {{ else }}
-                <span class="platform__name">Rete del Dono</span>
-              {{ end }}
             </a>
           </div>
         </div>

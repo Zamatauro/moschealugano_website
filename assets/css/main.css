@@ -1298,7 +1298,7 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
 }
 @media (min-width: 600px) {
   .platforms {
-    grid-template-columns: repeat(2, 1fr);   /* tablet+: 2x2 simmetrico */
+    grid-template-columns: repeat(3, 1fr);   /* tablet+: 3 piattaforme in riga (Donorbox/LaunchGood/Lokalhelden) */
     gap: var(--sp-6);
   }
 }
