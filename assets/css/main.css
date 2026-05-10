@@ -393,7 +393,7 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
 .hero__polaroid {
   position: absolute;
   bottom: 4%;       /* dentro il box, non fuori */
-  left: 4%;
+  right: 4%;        /* spostata a destra per non coprire il bambino nella foto comunita-laptop2 */
   width: 42%;
   max-width: 240px;
   background: var(--c-ivory);
