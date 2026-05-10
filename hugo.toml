@@ -112,7 +112,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
   mappale = "253 RFD Pregassona"
   superficie = "550 m²"
   architetto = "Beier Cabrini Architetti, Carabbia"
-  capienza = "500 (sala polivalente) · 100 (preghiera quotidiana)"
+  capienza = "Sala polivalente · sala di preghiera quotidiana"
 
   # Contatti — unico indirizzo ufficiale, niente alias inventati
   emailContatto = "info@lmticino.ch"
