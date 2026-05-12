@@ -1306,6 +1306,7 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
    I 4 loghi hanno aspect-ratio molto diversi: object-fit:contain + max-height
    ne scala la larghezza al massimo del box rispettando le proporzioni native */
 .platform {
+  position: relative;
   background: var(--c-white);
   border: 1.5px solid rgba(46,116,116,0.15);
   border-radius: var(--radius-md);
@@ -1323,11 +1324,30 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
   transform: translateY(-2px);
   text-decoration: none;
 }
+/* Disabled: opacity/filter applicati al solo logo per non sbiadire il badge "coming soon" */
 .platform[aria-disabled] {
-  opacity: 0.55;
   cursor: not-allowed;
   pointer-events: none;
+}
+.platform[aria-disabled] .platform__logo {
+  opacity: 0.55;
   filter: grayscale(0.3);
+}
+/* Badge "coming soon" in alto a destra, stile coerente col pattern .trasparenza__pending */
+.platform__pending {
+  position: absolute;
+  top: var(--sp-2);
+  right: var(--sp-2);
+  font-family: var(--font-ui);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--c-cta);
+  background: var(--c-ivory);
+  padding: 2px 6px;
+  border-radius: 3px;
+  pointer-events: none;
 }
 .platform__logo {
   max-width: 80%;
