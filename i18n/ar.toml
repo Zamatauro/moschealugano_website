@@ -358,6 +358,7 @@ cookie_body = "نستخدم Meta Pixel لقياس فعالية الحملة. ل�
 cookie_accept = "قبول"
 cookie_reject = "رفض"
 cookie_manage = "إدارة ملفات الارتباط"
+footer_label_social = "تابعنا على وسائل التواصل"
 footer_promosso = "بمبادرة من Lega dei Musulmani in Ticino"
 footer_legal_id = "CHE-112.406.415 · إعفاء ضريبي 2014"
 footer_label_sede = "المقرّ"

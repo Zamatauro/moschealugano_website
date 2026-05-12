@@ -372,6 +372,7 @@ cookie_body = "Usiamo Meta Pixel per misurare l'efficacia della campagna. Nessun
 cookie_accept = "Accetta"
 cookie_reject = "Rifiuta"
 cookie_manage = "Gestisci cookie"
+footer_label_social = "Seguici sui social"
 footer_promosso = "Promosso da Lega dei Musulmani in Ticino"
 footer_legal_id = "CHE-112.406.415 · Esenzione fiscale 2014"
 footer_label_sede = "Sede"

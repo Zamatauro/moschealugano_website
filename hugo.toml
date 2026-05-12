@@ -125,6 +125,10 @@ disableKinds = ["taxonomy", "term", "RSS"]
   # Sito ufficiale Lega dei Musulmani in Ticino (LMT) — per link di autorevolezza
   lmtWebsite = "https://islam-lugano.ch/"
 
+  # Social Dar al-Salam Lugano (link puliti, senza tracking params)
+  facebook = "https://www.facebook.com/people/Dar-Al-Salam-Lugano/61589136853286/"
+  instagram = "https://www.instagram.com/daralsalam.lugano/"
+
   # Indicizzazione SEO: false = noindex,nofollow (default per develop/preview).
   # AL LANCIO portare a true per produzione + flip enableRobotsTXT a true (riga 8).
   indexable = false

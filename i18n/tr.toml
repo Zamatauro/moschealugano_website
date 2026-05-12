@@ -358,6 +358,7 @@ cookie_body = "Kampanyanın etkinliğini ölçmek için Meta Pixel kullanıyoruz
 cookie_accept = "Kabul et"
 cookie_reject = "Reddet"
 cookie_manage = "Çerezleri yönet"
+footer_label_social = "Bizi takip et"
 footer_promosso = "Lega dei Musulmani in Ticino tarafından yürütülmektedir"
 footer_legal_id = "CHE-112.406.415 · 2014 vergi muafiyeti"
 footer_label_sede = "Merkez"
