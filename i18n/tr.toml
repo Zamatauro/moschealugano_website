@@ -321,7 +321,7 @@ trasparenza_documenti = "BELGELER"
 trasparenza_stampa = "BASIN"
 trasparenza_contatto_stampa = "Basın iletişimi"
 
-trasp_body_p1_pre = "Lega dei Musulmani in Ticino, 20 Haziran 2005 tarihinden itibaren "
+trasp_body_p1_pre = "<a href=\"https://islam-lugano.ch/\" target=\"_blank\" rel=\"noopener\">Lega dei Musulmani in Ticino</a>, 20 Haziran 2005 tarihinden itibaren "
 trasp_body_p1_post = " numarası ile Tiçino Kantonu Ticari Sicili'ne kayıtlıdır. 13 Mart 2014'ten itibaren, Kanton Vergi Kanunu'nun 65. maddesinin g bendine ve federal LIFD'nin 56. maddesinin h bendine göre kendi gelirleri üzerinde kanton ve federal vergilerden muaftır."
 trasp_body_p2 = "Hâlihazırda görevdeki komite 23 Ocak 2019'da seçildi. Başkan ve sayman <strong>Samir Gomaa</strong>'dır (münferit imza). Başkan yardımcısı, <strong>Radouan Jelassi</strong>. Üye ve sekreter, <strong>Adnan Al Hariri</strong>."
 trasp_body_p3 = "Dar al-Salam kampanyasına yapılan bağışlar, derneğin olağan yönetiminden <strong>ayrılmış, özel bir PostFinance IBAN hesabına</strong> akar; Lega dei Musulmani in Ticino adına, \"Progetto Nuova Moschea\" özel açıklaması ile. Tüm hareketler izlenebilir ve denetlenebilir."
@@ -350,6 +350,7 @@ trasp_contact_response = "24 iş saati içinde yanıtlıyoruz."
 
 # ---------- FOOTER ----------
 footer_endorser = "Lega dei Musulmani in Ticino tarafından yürütülmektedir"
+footer_lmt_link_aria = "Lega dei Musulmani in Ticino resmi sitesine git"
 footer_promosso = "Lega dei Musulmani in Ticino tarafından yürütülmektedir"
 footer_legal_id = "CHE-112.406.415 · 2014 vergi muafiyeti"
 footer_label_sede = "Merkez"

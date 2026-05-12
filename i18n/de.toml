@@ -321,7 +321,7 @@ trasparenza_documenti = "DOKUMENTE"
 trasparenza_stampa = "PRESSE"
 trasparenza_contatto_stampa = "Pressekontakt"
 
-trasp_body_p1_pre = "Die Lega dei Musulmani in Ticino ist seit dem 20. Juni 2005 unter der Nummer "
+trasp_body_p1_pre = "Die <a href=\"https://islam-lugano.ch/\" target=\"_blank\" rel=\"noopener\">Lega dei Musulmani in Ticino</a> ist seit dem 20. Juni 2005 unter der Nummer "
 trasp_body_p1_post = " im Handelsregister des Kantons Tessin eingetragen. Sie ist seit dem 13. März 2014 von den Kantons- und Bundessteuern auf ihre Erträge befreit, gemäss Art. 65 Abs. g des kantonalen Steuergesetzes und Art. 56 Abs. h des eidgenössischen DBG."
 trasp_body_p2 = "Der derzeitige Vorstand wurde am 23. Januar 2019 gewählt. Präsident und Kassier ist <strong>Samir Gomaa</strong> (Einzelunterschrift). Vizepräsident: <strong>Radouan Jelassi</strong>. Mitglied und Sekretär: <strong>Adnan Al Hariri</strong>."
 trasp_body_p3 = "Die Spenden für die Kampagne Dar al-Salam fliessen auf ein <strong>dediziertes PostFinance-IBAN-Konto, getrennt</strong> von der ordentlichen Vereinsführung, im Namen der Lega dei Musulmani in Ticino mit dem Verwendungszweck \"Progetto Nuova Moschea\". Alle Bewegungen sind nachvollziehbar und prüfbar."
@@ -350,6 +350,7 @@ trasp_contact_response = "Wir antworten innerhalb von 24 Arbeitsstunden."
 
 # ---------- FOOTER ----------
 footer_endorser = "Initiiert von der Lega dei Musulmani in Ticino"
+footer_lmt_link_aria = "Zur offiziellen Website der Lega dei Musulmani in Ticino"
 footer_promosso = "Initiiert von der Lega dei Musulmani in Ticino"
 footer_legal_id = "CHE-112.406.415 · Steuerbefreiung 2014"
 footer_label_sede = "Sitz"

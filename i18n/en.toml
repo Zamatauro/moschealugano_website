@@ -321,7 +321,7 @@ trasparenza_documenti = "DOCUMENTS"
 trasparenza_stampa = "PRESS"
 trasparenza_contatto_stampa = "Press contact"
 
-trasp_body_p1_pre = "Lega dei Musulmani in Ticino is registered in the Commercial Register of the Canton of Ticino since 20 June 2005 with number "
+trasp_body_p1_pre = "<a href=\"https://islam-lugano.ch/\" target=\"_blank\" rel=\"noopener\">Lega dei Musulmani in Ticino</a> is registered in the Commercial Register of the Canton of Ticino since 20 June 2005 with number "
 trasp_body_p1_post = ". It has been exempt from cantonal and federal taxes on its income since 13 March 2014, pursuant to art. 65 lett. g of the cantonal Tax Law and art. 56 lett. h of the federal LIFD."
 trasp_body_p2 = "The committee currently in office was elected on 23 January 2019. President and treasurer is <strong>Samir Gomaa</strong> (individual signature). Vice-president, <strong>Radouan Jelassi</strong>. Member and secretary, <strong>Adnan Al Hariri</strong>."
 trasp_body_p3 = "Donations to the Dar al-Salam campaign flow into a <strong>dedicated PostFinance IBAN account, separate</strong> from the association's ordinary operations, in the name of Lega dei Musulmani in Ticino with the dedicated reference \"Progetto Nuova Moschea\". All movements are traceable and auditable."
@@ -350,6 +350,7 @@ trasp_contact_response = "We reply within 24 working hours."
 
 # ---------- FOOTER ----------
 footer_endorser = "Promoted by Lega dei Musulmani in Ticino"
+footer_lmt_link_aria = "Go to Lega dei Musulmani in Ticino official website"
 footer_promosso = "Promoted by Lega dei Musulmani in Ticino"
 footer_legal_id = "CHE-112.406.415 · Tax exemption 2014"
 footer_label_sede = "Office"

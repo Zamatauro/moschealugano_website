@@ -5,12 +5,16 @@
 <footer class="footer">
   <div class="container">
 
-    {{/* Lockup V4: logo iconografico + Dar al-Salam + endorser legale */}}
+    {{/* Lockup V4: logo iconografico + Dar al-Salam + endorser legale.
+         Logo e linea "Promosso da" sono link al sito ufficiale LMT (autorevolezza,
+         signal site-wide su ogni pagina/lingua) */}}
     <div class="footer__lockup">
-      <img src="{{ $logoLockupW.RelPermalink }}" alt="Lega dei Musulmani in Ticino" class="footer__logo" width="120" height="120">
+      <a href="{{ .Site.Params.lmtWebsite }}" target="_blank" rel="noopener" class="footer__logo-link" aria-label="{{ i18n "footer_lmt_link_aria" }}">
+        <img src="{{ $logoLockupW.RelPermalink }}" alt="Lega dei Musulmani in Ticino" class="footer__logo" width="120" height="120">
+      </a>
       <div class="footer__lockup-text">
         <div class="footer__wordmark">Dar al-Salam</div>
-        <div class="footer__endorser">{{ i18n "footer_endorser" }}</div>
+        <div class="footer__endorser"><a href="{{ .Site.Params.lmtWebsite }}" target="_blank" rel="noopener">{{ i18n "footer_endorser" }}</a></div>
         <div class="footer__legal-id">{{ i18n "footer_legal_id" }}</div>
       </div>
     </div>

@@ -321,7 +321,7 @@ trasparenza_documenti = "DOKUMENTET"
 trasparenza_stampa = "SHTYPI"
 trasparenza_contatto_stampa = "Kontakti i shtypit"
 
-trasp_body_p1_pre = "Lega dei Musulmani in Ticino është e regjistruar në Regjistrin e Tregtisë të Kantonit të Tiçinos që nga 20 qershori 2005 me numrin "
+trasp_body_p1_pre = "<a href=\"https://islam-lugano.ch/\" target=\"_blank\" rel=\"noopener\">Lega dei Musulmani in Ticino</a> është e regjistruar në Regjistrin e Tregtisë të Kantonit të Tiçinos që nga 20 qershori 2005 me numrin "
 trasp_body_p1_post = ". Është e përjashtuar nga taksat kantonale dhe federale mbi të ardhurat e veta që nga 13 marsi 2014, sipas nenit 65 lett. g të Ligjit Tatimor Kantonal dhe nenit 56 lett. h LIFD federal."
 trasp_body_p2 = "Komiteti aktual është zgjedhur më 23 janar 2019. President dhe arkëtar është <strong>Samir Gomaa</strong> (firmë individuale). Nënkryetar, <strong>Radouan Jelassi</strong>. Anëtar dhe sekretar, <strong>Adnan Al Hariri</strong>."
 trasp_body_p3 = "Dhurimet për fushatën Dar al-Salam derdhen në një <strong>llogari IBAN PostFinance të dedikuar dhe të ndarë</strong> nga administrimi i zakonshëm i shoqatës, në emër të Lega dei Musulmani in Ticino me arsyen e dedikuar \"Progetto Nuova Moschea\". Të gjitha lëvizjet janë të gjurmueshme dhe të auditueshme."
@@ -350,6 +350,7 @@ trasp_contact_response = "Përgjigjemi brenda 24 orëve të punës."
 
 # ---------- FOOTER ----------
 footer_endorser = "E nismuar nga Lega dei Musulmani in Ticino"
+footer_lmt_link_aria = "Shko në faqen zyrtare të Lega dei Musulmani in Ticino"
 footer_promosso = "E nismuar nga Lega dei Musulmani in Ticino"
 footer_legal_id = "CHE-112.406.415 · Përjashtim fiskal 2014"
 footer_label_sede = "Selia"

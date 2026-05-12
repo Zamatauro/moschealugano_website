@@ -122,5 +122,8 @@ disableKinds = ["taxonomy", "term", "RSS"]
   # URL pagamenti
   sumupCarta = "https://pay.sumup.com/b2c/QG9XE1CT"
 
+  # Sito ufficiale Lega dei Musulmani in Ticino (LMT) — per link di autorevolezza
+  lmtWebsite = "https://islam-lugano.ch/"
+
   # Importi suggeriti (CHF)
   importiSuggeriti = [50, 200, 1000]
