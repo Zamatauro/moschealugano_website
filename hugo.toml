@@ -114,9 +114,9 @@ disableKinds = ["taxonomy", "term", "RSS"]
   architetto = "Beier Cabrini Architetti, Carabbia"
   capienza = "Sala polivalente · sala di preghiera quotidiana"
 
-  # Contatti — unico indirizzo ufficiale, niente alias inventati
-  emailContatto = "info@lmticino.ch"
-  # Email dedicata stampa/media (usata in sezione trasparenza)
+  # Contatti — mail ufficiale di progetto (footer, FAQ, donare)
+  emailContatto = "info@islam-lugano.ch"
+  # Email dedicata stampa/media e comunicazioni istituzionali (sezione trasparenza)
   emailStampa = "stampa.lmt@gmail.com"
 
   # URL pagamenti

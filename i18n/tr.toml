@@ -265,7 +265,7 @@ voce3_attrib_role = "eğitimci"
 voce3_alt = "Anes, topluluğun eğitimcisi"
 
 voci_cta_text = "Dar al-Salam'ın seslerinden biri olmak ister misin?"
-voci_cta_link_pre = "info@lmticino.ch'a yaz —"
+voci_cta_link_pre = "info@islam-lugano.ch'a yaz —"
 
 # ---------- FAQ ----------
 faq_eyebrow = "SSS"
@@ -363,7 +363,7 @@ footer_promosso = "Lega dei Musulmani in Ticino tarafından yürütülmektedir"
 footer_legal_id = "CHE-112.406.415 · 2014 vergi muafiyeti"
 footer_label_sede = "Merkez"
 footer_indirizzo_label = "Merkez"
-footer_email = "info@lmticino.ch"
+footer_email = "info@islam-lugano.ch"
 footer_label_iban = "IBAN PostFinance"
 footer_iban_label = "IBAN PostFinance"
 footer_bic_short = "BIC:"
