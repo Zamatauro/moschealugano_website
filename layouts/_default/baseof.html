@@ -3,7 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow"><!-- TOGLIERE AL LANCIO -->
+  {{/* Indicizzazione: governata dal param `indexable` in hugo.toml.
+       Develop / preview: indexable=false → noindex,nofollow (default).
+       Produzione (al lancio): indexable=true → index,follow. */}}
+  {{ if .Site.Params.indexable }}
+  <meta name="robots" content="index,follow">
+  {{ else }}
+  <meta name="robots" content="noindex,nofollow">
+  {{ end }}
 
   <title>{{ block "title" . }}{{ i18n "meta_title" }}{{ end }}</title>
   <meta name="description" content="{{ i18n "meta_description" }}">
@@ -32,26 +39,9 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ .Permalink }}">
 
-  {{/* Meta Pixel — pixel ID 1436027624875475 (LMT). Caricato site-wide su tutte le lingue.
-       NB privacy: in produzione (CH/EU) valutare cookie banner per consenso prima del fire.
-       Per disabilitare in dev/preview: condizionare con `if not hugo.IsServer` o env. */}}
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1436027624875475');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1436027624875475&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+  {{/* Meta Pixel — pixel ID 1436027624875475 (LMT). Caricamento condizionato
+       al consenso utente via cookie banner (vedi script in fondo body).
+       Il pixel NON parte finché l'utente non ha cliccato "Accetta". */}}
 </head>
 <body>
   {{ partial "nav.html" . }}
@@ -66,6 +56,87 @@
   <div class="cta-sticky">
     <a href="#donare" class="btn btn--primary">{{ i18n "cta_dona_ora" }}</a>
   </div>
+
+  {{/* Cookie banner — consenso GDPR/revDSG per Meta Pixel.
+       Custom JS, niente servizi a pagamento. Decisione utente salvata in localStorage.
+       Riapertura banner: link "Gestisci cookie" in footer. */}}
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-banner-title" aria-describedby="cookie-banner-text" hidden>
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__copy">
+        <strong id="cookie-banner-title" class="cookie-banner__title">{{ i18n "cookie_title" }}</strong>
+        <p id="cookie-banner-text" class="cookie-banner__text">{{ i18n "cookie_body" }}</p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button type="button" class="btn btn--secondary cookie-banner__btn" id="cookie-reject">{{ i18n "cookie_reject" }}</button>
+        <button type="button" class="btn btn--primary cookie-banner__btn" id="cookie-accept">{{ i18n "cookie_accept" }}</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var CONSENT_KEY = 'cookieConsent';
+    var PIXEL_ID = '1436027624875475';
+
+    function loadMetaPixel(){
+      if (window.fbq) return;
+      !function(f,b,e,v,n,t,s){
+        if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s);
+      }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      window.fbq('init', PIXEL_ID);
+      window.fbq('track', 'PageView');
+    }
+
+    function showBanner(){
+      var el = document.getElementById('cookie-banner');
+      if (el) { el.hidden = false; el.classList.add('is-visible'); }
+    }
+    function hideBanner(){
+      var el = document.getElementById('cookie-banner');
+      if (el) { el.classList.remove('is-visible'); el.hidden = true; }
+    }
+
+    var consent = null;
+    try { consent = localStorage.getItem(CONSENT_KEY); } catch(e){}
+
+    if (consent === 'granted') {
+      loadMetaPixel();
+    }
+
+    function init(){
+      var acceptBtn = document.getElementById('cookie-accept');
+      var rejectBtn = document.getElementById('cookie-reject');
+      var manageLink = document.getElementById('cookie-manage');
+
+      if (!consent) showBanner();
+
+      if (acceptBtn) acceptBtn.addEventListener('click', function(){
+        try { localStorage.setItem(CONSENT_KEY, 'granted'); } catch(e){}
+        hideBanner();
+        loadMetaPixel();
+      });
+      if (rejectBtn) rejectBtn.addEventListener('click', function(){
+        try { localStorage.setItem(CONSENT_KEY, 'denied'); } catch(e){}
+        hideBanner();
+      });
+      if (manageLink) manageLink.addEventListener('click', function(e){
+        e.preventDefault();
+        showBanner();
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+  </script>
 
   {{/* Lightbox modale per immagini galleria */}}
   <dialog class="lightbox" id="lightbox" aria-label="{{ i18n "lightbox_aria" }}">

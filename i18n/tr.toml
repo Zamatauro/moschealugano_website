@@ -351,6 +351,13 @@ trasp_contact_response = "24 iş saati içinde yanıtlıyoruz."
 # ---------- FOOTER ----------
 footer_endorser = "Lega dei Musulmani in Ticino tarafından yürütülmektedir"
 footer_lmt_link_aria = "Lega dei Musulmani in Ticino resmi sitesine git"
+
+# ---------- COOKIE BANNER (GDPR / revDSG) ----------
+cookie_title = "Çerezler"
+cookie_body = "Kampanyanın etkinliğini ölçmek için Meta Pixel kullanıyoruz. Hiçbir kişisel veri satılmaz. İstediğin zaman kabul edebilir veya reddedebilirsin."
+cookie_accept = "Kabul et"
+cookie_reject = "Reddet"
+cookie_manage = "Çerezleri yönet"
 footer_promosso = "Lega dei Musulmani in Ticino tarafından yürütülmektedir"
 footer_legal_id = "CHE-112.406.415 · 2014 vergi muafiyeti"
 footer_label_sede = "Merkez"

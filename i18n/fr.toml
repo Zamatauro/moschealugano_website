@@ -351,6 +351,13 @@ trasp_contact_response = "Nous répondons sous 24 heures ouvrables."
 # ---------- FOOTER ----------
 footer_endorser = "Portée par la Lega dei Musulmani in Ticino"
 footer_lmt_link_aria = "Aller au site officiel de la Lega dei Musulmani in Ticino"
+
+# ---------- COOKIE BANNER (GDPR / revDSG) ----------
+cookie_title = "Cookies"
+cookie_body = "Nous utilisons Meta Pixel pour mesurer l'efficacité de la campagne. Aucune donnée personnelle n'est vendue. Tu peux accepter ou refuser à tout moment."
+cookie_accept = "Accepter"
+cookie_reject = "Refuser"
+cookie_manage = "Gérer les cookies"
 footer_promosso = "Portée par la Lega dei Musulmani in Ticino"
 footer_legal_id = "CHE-112.406.415 · Exonération fiscale 2014"
 footer_label_sede = "Siège"
