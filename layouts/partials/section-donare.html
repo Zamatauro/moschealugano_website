@@ -133,10 +133,10 @@
             {{ i18n "altre_intro" }}
           </p>
           {{/* Box piattaforme con logo solo (no testo). Loghi in assets/img/platforms/.
-               Rete del Dono rimossa: piattaforma italiana, non utilizzabile in CH. */}}
+               Rete del Dono rimossa: piattaforma italiana, non utilizzabile in CH.
+               Lokalhelden rimossa: formula "tutto o niente" non compatibile con la campagna. */}}
           {{ $logoDonorbox := resources.Get "img/platforms/donorbox.svg" }}
           {{ $logoLaunchGood := resources.Get "img/platforms/launchgood.svg" }}
-          {{ $logoLokalhelden := resources.Get "img/platforms/lokalhelden.svg" }}
           <div class="platforms">
             <a href="#" class="platform" aria-disabled="true" aria-label="Donorbox">
               <img class="platform__logo" src="{{ $logoDonorbox.RelPermalink }}" alt="Donorbox" loading="lazy">
@@ -144,10 +144,6 @@
             </a>
             <a href="#" class="platform" aria-disabled="true" aria-label="LaunchGood">
               <img class="platform__logo" src="{{ $logoLaunchGood.RelPermalink }}" alt="LaunchGood" loading="lazy">
-              <span class="platform__pending">{{ i18n "platform_pending" }}</span>
-            </a>
-            <a href="#" class="platform" aria-disabled="true" aria-label="lokalhelden.ch">
-              <img class="platform__logo" src="{{ $logoLokalhelden.RelPermalink }}" alt="lokalhelden.ch" loading="lazy">
               <span class="platform__pending">{{ i18n "platform_pending" }}</span>
             </a>
           </div>
