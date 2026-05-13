@@ -25,5 +25,5 @@ deadline_iso = "2026-09-15"
 # finché V3 non propaga la dinamizzazione a tutte le lingue).
 # Per /sq/ usiamo `updated_iso` + tabelle data/locale/{days,months}_sq.yaml
 # per generare la stringa albanese dinamicamente.
-updated = "venerdì 5 maggio 2026"
+updated = "martedì 5 maggio 2026"
 updated_iso = "2026-05-05"
