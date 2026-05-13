@@ -26,6 +26,8 @@ hero_counter_mancano = "Hâlâ eksik"
 hero_counter_pct_obiettivo = "hedefin"
 hero_counter_giorni_label = "gün kaldı"
 hero_counter_aggiornato = "Güncellendi"
+# Convenzione turca: data-giorno (es. "5 Mayıs 2026 Salı"). Riordino positional.
+counter_date_format = "%[2]s %[3]s %[4]s %[1]s"
 hero_cta_sadaqa = "Sadakanızı verin →"
 hero_polaroid_caption = "Render Beier Cabrini · Via Ceresio 53B"
 hero_img_alt_comunita = "Toplanan Müslüman topluluk"
