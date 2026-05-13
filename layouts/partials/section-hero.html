@@ -52,7 +52,24 @@
           <div class="counter__meta">
             <span><span class="counter__pct">{{ printf "%.0f" $pct }}%</span> {{ i18n "hero_counter_pct_obiettivo" }}</span>
             <span class="counter__days"><strong class="tabular">{{ $daysRemaining }} {{ i18n "hero_counter_giorni_label" }}</strong></span>
-            <span class="counter__updated">{{ i18n "hero_counter_aggiornato" }} {{ $counter.updated }}</span>
+            {{/* Counter "Aggiornato …" — per /sq/ formattiamo la data dinamicamente
+                 da updated_iso usando le tabelle data/locale/{days,months}_sq.yaml.
+                 Per le altre 6 lingue resta il fallback hardcoded $counter.updated
+                 (italiano) finché V3 non propaga la dinamizzazione site-wide. */}}
+            {{ $updatedText := $counter.updated }}
+            {{ if and (eq .Site.Language.Lang "sq") $counter.updated_iso }}
+              {{ $t := time.AsTime (printf "%sT00:00:00Z" $counter.updated_iso) }}
+              {{ $dayKey := $t.Format "Monday" }}
+              {{ $monthKey := $t.Format "January" }}
+              {{ $dayNum := $t.Format "2" }}
+              {{ $year := $t.Format "2006" }}
+              {{ $days := site.Data.locale.days_sq }}
+              {{ $months := site.Data.locale.months_sq }}
+              {{ $dayLocal := index $days $dayKey }}
+              {{ $monthLocal := index $months $monthKey }}
+              {{ $updatedText = printf "%s, më %s %s %s" $dayLocal $dayNum $monthLocal $year }}
+            {{ end }}
+            <span class="counter__updated">{{ i18n "hero_counter_aggiornato" }} {{ $updatedText }}</span>
           </div>
         </div>
 

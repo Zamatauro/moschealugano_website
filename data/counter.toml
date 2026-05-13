@@ -21,4 +21,9 @@ donors_count = 0   # SOSTITUIRE con cifra reale al lancio (es. 421)
 
 deadline = "15 settembre 2026"
 deadline_iso = "2026-09-15"
+# `updated` resta hardcoded in italiano per IT (e fallback per AR/EN/DE/FR/TR
+# finché V3 non propaga la dinamizzazione a tutte le lingue).
+# Per /sq/ usiamo `updated_iso` + tabelle data/locale/{days,months}_sq.yaml
+# per generare la stringa albanese dinamicamente.
 updated = "venerdì 5 maggio 2026"
+updated_iso = "2026-05-05"

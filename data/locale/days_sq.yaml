@@ -1,0 +1,10 @@
+# Mapping giorni della settimana per /sq/ counter "Përditësuar [giorno_sq]…"
+# Forma accusativa preceduta da "të" (idiomatica albanese per "il [giorno]")
+# Chiavi = output di {{ dateFormat "Monday" $t }} in Hugo
+Monday: "të hënën"
+Tuesday: "të martën"
+Wednesday: "të mërkurën"
+Thursday: "të enjten"
+Friday: "të premten"
+Saturday: "të shtunën"
+Sunday: "të dielën"
