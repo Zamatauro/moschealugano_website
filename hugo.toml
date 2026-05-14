@@ -112,7 +112,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
   mappale = "253 RFD Pregassona"
   superficie = "550 m²"
   architetto = "Beier Cabrini Architetti, Carabbia"
-  capienza = "Sala polivalente · sala di preghiera quotidiana"
+  # capienza (Spazi/Räume/Spaces/…) ora gestito via i18n "pf_capienza_value"
 
   # Contatti — mail ufficiale di progetto (footer, FAQ, donare)
   emailContatto = "info@islam-lugano.ch"

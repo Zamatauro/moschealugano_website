@@ -68,6 +68,7 @@ pf_particella = "Parcela"
 pf_superficie = "Sipërfaqja"
 pf_architetto = "Arkitekt"
 pf_capienza = "Hapësirat"
+pf_capienza_value = "Sallë shumëfunksionale · sallë e lutjes së përditshme"
 pf_inizio_cantiere = "Fillimi i punimeve"
 pf_inizio_cantiere_value = "Nga 2027, pas Fazës 2"
 

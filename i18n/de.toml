@@ -68,6 +68,7 @@ pf_particella = "Parzelle"
 pf_superficie = "Fläche"
 pf_architetto = "Architekt"
 pf_capienza = "Räume"
+pf_capienza_value = "Mehrzweckraum · Saal für das tägliche Gebet"
 pf_inizio_cantiere = "Baubeginn"
 pf_inizio_cantiere_value = "Ab 2027, nach Phase 2"
 
@@ -96,7 +97,7 @@ budget_details_summary = "Zusammensetzung des bereits Gesammelten"
 budget_sub_fedeli = "Bereits von Gläubigen gesammelt"
 budget_sub_promesso = "Von Gläubigen zugesagt"
 budget_sub_passato = "In den letzten 6 Jahren gesammelt"
-budget_da_raccogliere = "Bis 15.09. zu sammeln"
+budget_da_raccogliere = "Bis am 15.09. zu sammeln"
 budget_project_eyebrow = "PROJEKT"
 budget_project_text = "4 Wohngeschosse · 6 Wohnungen · Mehrzwecksaal · täglicher Gebetsraum"
 
@@ -154,7 +155,7 @@ twint_intro = "Für Brüder und Schwestern in der Schweiz mit TWINT. Scanne den 
 twint_qr_alt = "TWINT-QR — Lega dei Musulmani in Ticino"
 twint_caption = "Deine Sadaqa Jariya."
 
-altre_intro = "Hast du ein Konto bei einer Crowdfunding-Plattform, die du bereits kennst und nutzt? Wir öffnen die wichtigsten Kanäle. Deine Spende zählt gleich, über welchen Eingang sie auch kommt."
+altre_intro = "Hast du ein Konto bei einer Crowdfunding-Plattform, die du bereits kennst und nutzt? Wir öffnen die wichtigsten Kanäle. Deine Spende zählt gleichviel, unabhängig des verwendeten Eingangs."
 donare_trust = "LMT ist von der Kantons- und Bundessteuer befreit (CHE-112.406.415). Zur Abzugsfähigkeit deiner Spende siehe die"
 donare_trust_link = "FAQ"
 
@@ -164,10 +165,10 @@ perche_eyebrow = "Warum jetzt"
 perche_h2 = "Eine Tür hat sich geöffnet"
 
 # Versione V2 (8 mag 2026): testo asciutto, 4 paragrafi, no cifra dinamica
-perche_v2_p1 = "Zwanzig Jahre lang beten wir in hundert Quadratmetern in Bottogno. Seit zwanzig Jahren sind wir Gäste: der Saal, in dem wir beten, gehört uns nicht, wir mieten ihn Monat für Monat, ohne Gewissheit, dass er morgen noch da sein wird. Die Gemeinschaft ist gewachsen, der Raum nicht."
+perche_v2_p1 = "Zwanzig Jahre lang beten wir nun in hundert Quadratmetern in Bottogno. Seit zwanzig Jahren sind wir Gäste: der Saal, in dem wir beten, gehört uns nicht, wir mieten ihn Monat für Monat, ohne die Gewissheit, dass er morgen noch da sein wird. Die Gemeinschaft ist gewachsen, der Raum nicht."
 perche_v2_p2 = "<strong>Ihn offen zu halten hat uns rund CHF 400'000 an Miete gekostet.</strong> Geld, das die Lichter brennen liess, aber niemals zu unserem Zuhause wurde."
 perche_v2_p3 = "Dieses Jahr hat Allah uns eine Tür geöffnet. In Pregassona, an der Via Ceresio 53B, gibt es ein Grundstück, <strong>das wir endlich kaufen können</strong>. Wir haben es <strong>Dar al-Salam — ein neues Haus des Friedens</strong> genannt."
-perche_v2_p4 = "<strong>Wir haben Zeit bis zum 15. September.</strong> Was fehlt, müssen wir gemeinsam sammeln. Jeder Franken, den du heute spendest, ist <strong>Sadaqa Jariya</strong> — ein Werk, das weiter Frucht trägt, jedes Mal wenn ein Kind in jenem Saal den Quran lernt, jedes Mal wenn ein Bruder Taraweeh betet, jedes Mal wenn eine Schwester in Not jemanden findet, der ihr zuhört."
+perche_v2_p4 = "<strong>Wir haben Zeit bis zum 15. September.</strong> Was fehlt, müssen wir gemeinsam sammeln. Jeder Franken, den du heute spendest, ist <strong>Sadaqa Jariya</strong> — ein Werk, das weiter Früchte trägt, jedes Mal wenn ein Kind in jenem Saal den Quran lernt, jedes Mal wenn ein Bruder Taraweeh betet, jedes Mal wenn eine Schwester in Not jemanden findet, der ihr zuhört."
 perche_p1 = "Seit zwanzig Jahren beten wir auf hundert Quadratmetern in Bottogno."
 perche_p2 = "Ein gemieteter Saal hinter einer Tür, die in Lugano niemand kennt. Dort wissen jeden Freitag siebentausend Muslime im Tessin, dass sie für die Jumu'a einkehren können. Dort lehrt unsere Sonntagsschule El Nur das Alif-Ba an etwa dreissig Kinder, italienischsprachige Kinder, geboren in Lugano. Dort brechen wir gemeinsam das Fasten im Monat Ramadan, dort verrichten wir die Janazah, wenn ein Bruder zu Allah zurückkehrt, dort empfangen wir die Brüder und Schwestern, die im Tessin ankommen und noch kein Zuhause haben."
 perche_p3_pre = "Um diesen Saal aufrechtzuerhalten, haben wir in zwanzig Jahren rund "
@@ -192,7 +193,7 @@ perche_cta = "Spende deine Sadaqa →"
 # ---------- VOCI ----------
 voci_eyebrow = "Stimmen der Gemeinschaft"
 voci_h2 = "Die Stimmen von Dar al-Salam"
-voci_intro = "Es sind die Menschen, die diese Gemeinschaft seit zwanzig Jahren tragen. Der Präsident, der Imam, die Mütter der Sonntagsschule, die in Lugano geborenen jungen Menschen, die Älteren, die die Moschee öffneten, als die Gemeinschaft in Lugano noch eine Handvoll Familien war. Sie sind es, die in diesen Wochen den Mut fassen, vor die Kamera zu treten und zu erzählen, was Dar al-Salam sein wird."
+voci_intro = "Es sind die Menschen, die diese Gemeinschaft seit zwanzig Jahren tragen. Der Präsident, der Imam, die Mütter der Sonntagsschule, die in Lugano geborenen jungen Menschen, die Älteren, die die Moschee öffneten, als die Gemeinschaft in Lugano noch aus einer Handvoll Familien bestand. Sie sind es, die in diesen Wochen den Mut fassen, vor die Kamera zu treten und zu erzählen, was Dar al-Salam sein wird."
 voci_aria_label = "Stimmen der Gemeinschaft"
 voci_prev_aria = "Vorherige Stimme"
 voci_next_aria = "Nächste Stimme"
@@ -205,7 +206,7 @@ voce1_attrib_role = "Präsident, Lega dei Musulmani in Ticino"
 voce1_alt = "Samir Gomaa, Präsident der Lega dei Musulmani in Ticino"
 voce1_placeholder_label = "Foto folgt"
 
-voce2_quote = "«Ein Haus für Allah zu bauen, ist Sadaqa Jariya — ein Werk, das Frucht trägt bis zum Tag des Gerichts, jedes Mal wenn ein Bruder darin betet, jedes Mal wenn ein Kind darin den Quran lernt.»"
+voce2_quote = "«Ein Haus für Allah zu bauen, ist Sadaqa Jariya — ein Werk, das bis zum Tag des Gerichts Früchte trägt, jedes Mal wenn ein Bruder darin betet, jedes Mal wenn ein Kind darin den Quran lernt.»"
 voce2_attrib_name = "Sheikh Samir Jelassi"
 voce2_attrib_role = "Imam der Gemeinschaft"
 voce2_alt = "Sheikh Samir Jelassi, Imam der Lega dei Musulmani in Ticino"
@@ -225,13 +226,13 @@ faq_a1_p1 = "Die Antwort hängt von der Rechtsschule ab, der du folgst. Die Mehr
 faq_a1_p2 = "Um Mehrdeutigkeiten zu vermeiden, empfehlen wir dir, <strong>eine freiwillige Sadaqa für Dar al-Salam zu bestimmen</strong> — keine Zakat — und deine Zakat nach der Meinung deines Bezugs-Imams oder über die Organisation zu zahlen, die du bereits nutzt. Eine freiwillige Sadaqa für ein solches Projekt wird von allen Ulema als eine Form der Sadaqa Jariya betrachtet."
 
 faq_q2 = "Kann ich eine wiederkehrende Spende einrichten?"
-faq_a2_p1 = "Ja, und für uns ist sie die wertvollste Form. Im Tab «Karte» kannst du deine Spende in eine <strong>monatlich wiederkehrende</strong> umwandeln, schon ab CHF 20 pro Monat. Vier Monate wiederkehrende Spenden zu CHF 20 sind CHF 80, die sicher in unseren Sammlungsplan eingehen — und für uns, die wir planen, ist das wertvoller als eine grosse einmalige Spende, die wir nicht voraussehen können."
+faq_a2_p1 = "Ja, und für uns ist dies die wertvollste Form. Im Tab «Karte» kannst du deine Spende in eine <strong>monatlich wiederkehrende</strong> umwandeln, schon ab CHF 20 pro Monat. Vier Monate wiederkehrender Spenden zu CHF 20 sind CHF 80, die sicher in unseren Sammlungsplan eingehen — und für uns, die wir planen, ist das wertvoller als eine grosse einmalige Spende, die wir nicht voraussehen können."
 faq_a2_p2 = "Eine wiederkehrende Spende ist zudem eine klassische Form der <strong>Sadaqa Jariya</strong>: Sie trägt Monat für Monat Frucht, ohne dass du etwas tun musst."
 faq_a2_p3 = "Du kannst sie jederzeit kündigen, ohne Nachfragen."
 
 faq_q3 = "Kann ich im Namen einer verstorbenen Person spenden?"
 faq_a3_p1 = "Ja. Es ist eine der edelsten Formen der Sadaqa Jariya. Der Prophet (s.a.w.s) sagte: <em>«Wenn der Sohn Adams stirbt, hören seine Werke auf, ausser dreien — einer Sadaqa Jariya, einem nützlichen Wissen, das er hinterlassen hat, oder einem rechtschaffenen Kind, das für ihn Du'a macht.»</em> (Muslim)."
-faq_a3_p2 = "Wenn du mit Karte spendest, im Verwendungszweck der Überweisung oder in den Spendennotizen kannst du <em>«im Gedenken an [Name]»</em> schreiben. Der LMT-Vorstand führt ein privates Register der Namen und wird bei der Eröffnung des Zentrums Du'a für sie sprechen. Kein Name wird ohne ausdrückliche Zustimmung der Familie veröffentlicht."
+faq_a3_p2 = "Wenn du per Karte spendest, kannst du im Verwendungszweck der Überweisung, oder in den Spendennotizen, <em>«im Gedenken an [Name]»</em> schreiben. Der LMT-Vorstand führt ein privates Register der Namen und wird bei der Eröffnung des Zentrums Du'a für sie sprechen. Kein Name wird ohne ausdrückliche Zustimmung der Familie veröffentlicht."
 
 faq_q4 = "Ist meine Spende steuerlich absetzbar?"
 faq_a4_p1_pre = "Die Lega dei Musulmani in Ticino (LMT) ist seit dem 20. Juni 2005 unter der Nummer "
@@ -245,30 +246,30 @@ faq_a5_p2 = "Realistisch ist die Eröffnung des Zentrums <strong>zwischen 2028 u
 faq_a5_p3 = "Alle Aktualisierungen zu den Etappen werden wöchentlich auf dieser Landing Page und monatlich im öffentlichen Rechenschaftsbericht veröffentlicht."
 
 faq_q6 = "Was passiert, wenn die Spendensammlung bis zum 15. September nicht abgeschlossen ist?"
-faq_a6_p1 = "Die ehrliche Antwort: Die Parzelle bliebe bis zum Ablauf der mit dem Verkäufer vereinbarten Frist unsere, aber wir riskieren, das Kaufrecht zu verlieren und neu suchen zu müssen. Deshalb ist diese Frist nicht symbolisch — sie ist real."
+faq_a6_p1 = "Die ehrliche Antwort: Die Parzelle bliebe bis zum Ablauf der mit dem Verkäufer vereinbarten Frist unsere, aber wir riskieren, das Kaufrecht zu verlieren und neu suchen zu müssen. Deshalb ist diese Frist nicht symbolisch — sie ist reell."
 faq_a6_p2 = "In jedem Fall <strong>bleibt jeder gespendete Franken auf dem dafür eingerichteten Konto</strong> (PostFinance-IBAN, getrennt von der laufenden Verwaltung der LMT) und wird ausschliesslich für das Projekt Dar al-Salam verwendet. Sollte Phase 1 nicht rechtzeitig abgeschlossen werden, wird der LMT-Vorstand der Gemeinschaft in voller Transparenz mitteilen, wie weiter vorgegangen wird."
 faq_a6_p3 = "Unsere Verantwortung gegenüber den Spenderinnen und Spendern steht vor unserem Kalender."
 
 faq_q7 = "Kann ich die heutige Moschee in Bottogno besuchen?"
-faq_a7_p1 = "Ja, wir erwarten dich. Die Moschee in Bottogno ist den ganzen Tag geöffnet, oft auch nachts. Du findest uns versammelt zu den Gebetszeiten — der beste Moment, um zu verstehen, wer wir sind, ist der Freitag, zur Jumu'a, wenn die ganze Gemeinschaft anwesend ist."
+faq_a7_p1 = "Ja, wir erwarten dich. Die Moschee in Bottogno ist den ganzen Tag geöffnet, oft auch nachts. Du findest uns zu den Gebetszeiten versammelt — der beste Moment, um zu verstehen, wer wir sind, ist der Freitag, zur Jumu'a, wenn die ganze Gemeinschaft anwesend ist."
 faq_a7_p2_pre = "<strong>Adresse:</strong> "
 faq_a7_p3 = "Wenn du einen privaten Termin bevorzugst, um mit dem Präsidenten oder dem Vorstand über das Projekt zu sprechen, schreib an"
 faq_a7_p3_post = ". Wir antworten innerhalb von 48 Stunden."
 
 faq_q8 = "Erhalte ich eine Quittung?"
-faq_a8_p1 = "Bei Spenden mit Karte, Apple Pay und Google Pay kommt die Quittung automatisch per E-Mail. Bei den anderen Methoden, falls du sie nicht erhältst, schreib an"
+faq_a8_p1 = "Bei Spenden mit Karte, Apple Pay und Google Pay kommt die Quittung automatisch per E-Mail. Bei den anderen Methoden, falls du sie nicht erhalten solltest, schreib an"
 faq_a8_p1_post = "mit Datum und Betrag der Spende, und wir senden sie dir zu."
 faq_a8_p2 = "Alle Quittungen tragen"
 faq_a8_p2_post = "und den Verweis auf die Steuerbefreiung, gültig für die Steuererklärung."
 
 # ---------- TRASPARENZA ----------
 trasp_eyebrow = "Transparenz"
-trasp_h2 = "Dokumente, Governance, dediziertes Konto"
+trasp_h2 = "Dokumente, Governance, zweckgebundenes Konto"
 
 trasp_body_p1_pre = "Die <a href=\"https://islam-lugano.ch/\" target=\"_blank\" rel=\"noopener\">Lega dei Musulmani in Ticino</a> ist seit dem 20. Juni 2005 unter der Nummer "
 trasp_body_p1_post = " im Handelsregister des Kantons Tessin eingetragen. Sie ist seit dem 13. März 2014 von den Kantons- und Bundessteuern auf ihre Erträge befreit, gemäss Art. 65 Abs. g des kantonalen Steuergesetzes und Art. 56 Abs. h des eidgenössischen DBG."
 trasp_body_p2 = "Der derzeitige Vorstand wurde am 23. Januar 2019 gewählt. Präsident und Kassier ist <strong>Samir Gomaa</strong> (Einzelunterschrift). Vizepräsident: <strong>Radouan Jelassi</strong>. Mitglied und Sekretär: <strong>Adnan Al Hariri</strong>."
-trasp_body_p3 = "Die Spenden für die Kampagne Dar al-Salam fliessen auf ein <strong>dediziertes PostFinance-IBAN-Konto, getrennt</strong> von der ordentlichen Vereinsführung, im Namen der Lega dei Musulmani in Ticino mit dem Verwendungszweck \"Progetto Nuova Moschea\". Alle Bewegungen sind nachvollziehbar und prüfbar."
+trasp_body_p3 = "Die Spenden für die Kampagne Dar al-Salam fliessen auf ein <strong>zweckgebundenes PostFinance-IBAN-Konto, getrennt</strong> von der ordentlichen Vereinsführung, registriert auf die Lega dei Musulmani in Ticino, mit dem Verwendungszweck \"Progetto Nuova Moschea\". Alle Bewegungen sind nachvollziehbar und prüfbar."
 trasp_body_p4 = "Der Spendenbericht wird wöchentlich auf dieser Seite veröffentlicht. Der vollständige Jahresabschluss des Vereins ist hinterlegt und einsehbar."
 # Comitato direttivo — V2 (8 mag 2026)
 trasp_committee_h3 = "Vorstand"

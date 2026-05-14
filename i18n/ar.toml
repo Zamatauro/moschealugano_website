@@ -68,6 +68,7 @@ pf_particella = "القطعة العقارية"
 pf_superficie = "المساحة"
 pf_architetto = "المهندس المعماري"
 pf_capienza = "المساحات"
+pf_capienza_value = "قاعة متعدّدة الأغراض · قاعة الصلاة اليومية"
 pf_inizio_cantiere = "بدء البناء"
 pf_inizio_cantiere_value = "اعتباراً من 2027، بعد المرحلة 2"
 

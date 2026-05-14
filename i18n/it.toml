@@ -75,6 +75,7 @@ pf_particella = "Particella"
 pf_superficie = "Superficie"
 pf_architetto = "Architetto"
 pf_capienza = "Spazi"
+pf_capienza_value = "Sala polivalente · sala di preghiera quotidiana"
 pf_inizio_cantiere = "Inizio cantiere"
 pf_inizio_cantiere_value = "Dal 2027, dopo Fase 2"
 

@@ -68,6 +68,7 @@ pf_particella = "Plot"
 pf_superficie = "Surface area"
 pf_architetto = "Architect"
 pf_capienza = "Spaces"
+pf_capienza_value = "Multi-purpose hall · daily prayer hall"
 pf_inizio_cantiere = "Construction start"
 pf_inizio_cantiere_value = "From 2027, after Phase 2"
 

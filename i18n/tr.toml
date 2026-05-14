@@ -69,6 +69,7 @@ pf_particella = "Parsel"
 pf_superficie = "Yüzölçümü"
 pf_architetto = "Mimar"
 pf_capienza = "Mekânlar"
+pf_capienza_value = "Çok amaçlı salon · günlük namaz salonu"
 pf_inizio_cantiere = "İnşaat başlangıcı"
 pf_inizio_cantiere_value = "2027'den itibaren, Faz 2'den sonra"
 

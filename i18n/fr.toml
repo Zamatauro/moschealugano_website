@@ -68,6 +68,7 @@ pf_particella = "Parcelle"
 pf_superficie = "Surface"
 pf_architetto = "Architecte"
 pf_capienza = "Espaces"
+pf_capienza_value = "Salle polyvalente · salle de prière quotidienne"
 pf_inizio_cantiere = "Début du chantier"
 pf_inizio_cantiere_value = "À partir de 2027, après la Phase 2"
 
