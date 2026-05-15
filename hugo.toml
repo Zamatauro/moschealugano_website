@@ -120,7 +120,13 @@ disableKinds = ["taxonomy", "term", "RSS"]
   emailStampa = "stampa.lmt@gmail.com"
 
   # URL pagamenti
+  # sumupCarta = bottone "dona con carta" (donazione LIBERA, importo a scelta)
   sumupCarta = "https://pay.sumup.com/b2c/QG9XE1CT"
+  # Link SumUp dedicati per i 4 importi fissi (box importi sezione donare)
+  sumupCarta50 = "https://pay.sumup.com/b2c/QLVZNHDC"
+  sumupCarta200 = "https://pay.sumup.com/b2c/Q9MNDQV7"
+  sumupCarta1000 = "https://pay.sumup.com/b2c/Q0C0BMJ7"
+  sumupCarta5000 = "https://pay.sumup.com/b2c/QB1N627X"
 
   # Sito ufficiale Lega dei Musulmani in Ticino (LMT) — per link di autorevolezza
   lmtWebsite = "https://islam-lugano.ch/"

@@ -2,6 +2,12 @@
 {{ $qrTwint := resources.Get "img/qr/twint.svg" }}
 {{ $qrBonifico := resources.Get "img/qr/bonifico-ch.svg" }}
 {{ $sumup := .Site.Params.sumupCarta }}
+{{/* Link SumUp dedicati per i 4 box di donazione fissa (50/200/1000/5000 CHF).
+     Il bottone CTA "Dona con carta" sotto i box resta su $sumup (importo libero). */}}
+{{ $sumup50 := .Site.Params.sumupCarta50 }}
+{{ $sumup200 := .Site.Params.sumupCarta200 }}
+{{ $sumup1000 := .Site.Params.sumupCarta1000 }}
+{{ $sumup5000 := .Site.Params.sumupCarta5000 }}
 {{ $iban := .Site.Params.ibanFormatted }}
 {{ $ibanRaw := .Site.Params.ibanRaw }}
 {{ $bic := .Site.Params.bic }}
@@ -36,22 +42,22 @@
             {{ i18n "carta_intro" }}
           </p>
           <div class="amounts">
-            <a href="{{ $sumup }}?amount=50" class="amount-btn" target="_blank" rel="noopener">
+            <a href="{{ $sumup50 }}" class="amount-btn" target="_blank" rel="noopener">
               <span class="amount-btn__big">50<small>CHF</small></span>
               <span class="amount-btn__label">{{ i18n "amount_50_label" }}</span>
               <span class="amount-btn__sublabel">{{ i18n "amount_50_sublabel" }}</span>
             </a>
-            <a href="{{ $sumup }}?amount=200" class="amount-btn" target="_blank" rel="noopener">
+            <a href="{{ $sumup200 }}" class="amount-btn" target="_blank" rel="noopener">
               <span class="amount-btn__big">200<small>CHF</small></span>
               <span class="amount-btn__label">{{ i18n "amount_200_label" }}</span>
               <span class="amount-btn__sublabel">{{ i18n "amount_200_sublabel" }}</span>
             </a>
-            <a href="{{ $sumup }}?amount=1000" class="amount-btn" target="_blank" rel="noopener">
+            <a href="{{ $sumup1000 }}" class="amount-btn" target="_blank" rel="noopener">
               <span class="amount-btn__big">1000<small>CHF</small></span>
               <span class="amount-btn__label">{{ i18n "amount_1000_label" }}</span>
               <span class="amount-btn__sublabel">{{ i18n "amount_1000_sublabel" }}</span>
             </a>
-            <a href="{{ $sumup }}?amount=5000" class="amount-btn" target="_blank" rel="noopener">
+            <a href="{{ $sumup5000 }}" class="amount-btn" target="_blank" rel="noopener">
               <span class="amount-btn__big">5'000<small>CHF</small></span>
               <span class="amount-btn__label">{{ i18n "amount_5000_label" }}</span>
               <span class="amount-btn__sublabel">{{ i18n "amount_5000_sublabel" }}</span>
