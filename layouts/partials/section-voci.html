@@ -23,27 +23,7 @@
 
       <div class="voci-carousel" id="voci-carousel" aria-label="{{ i18n "voci_aria_label" }}">
 
-        {{/* Voce 1 — Samir Gomaa */}}
-        <article class="voce-card">
-          <div class="voce-card__photo">
-            <img src="{{ $samirGomaa.RelPermalink }}"
-                 alt="{{ i18n "voce1_alt" }}"
-                 loading="lazy"
-                 width="{{ $samirGomaa.Width }}"
-                 height="{{ $samirGomaa.Height }}">
-          </div>
-          <div class="voce-card__body">
-            <blockquote class="voce-card__quote">
-              {{ i18n "voce1_quote" }}
-            </blockquote>
-            <div class="voce-card__attrib">
-              <strong>{{ i18n "voce1_attrib_name" | safeHTML }}</strong>
-              <span>{{ i18n "voce1_attrib_role" | safeHTML }}</span>
-            </div>
-          </div>
-        </article>
-
-        {{/* Voce 2 — Sheik Samir Jelassi */}}
+        {{/* Voce 2 — Sheikh Samir Jelassi (PRIMA della serie, "primo piano") */}}
         <article class="voce-card">
           <div class="voce-card__photo">
             <img src="{{ $imamJelassi.RelPermalink }}"
@@ -59,6 +39,26 @@
             <div class="voce-card__attrib">
               <strong>{{ i18n "voce2_attrib_name" | safeHTML }}</strong>
               <span>{{ i18n "voce2_attrib_role" | safeHTML }}</span>
+            </div>
+          </div>
+        </article>
+
+        {{/* Voce 1 — Samir Gomaa (presidente) */}}
+        <article class="voce-card">
+          <div class="voce-card__photo">
+            <img src="{{ $samirGomaa.RelPermalink }}"
+                 alt="{{ i18n "voce1_alt" }}"
+                 loading="lazy"
+                 width="{{ $samirGomaa.Width }}"
+                 height="{{ $samirGomaa.Height }}">
+          </div>
+          <div class="voce-card__body">
+            <blockquote class="voce-card__quote">
+              {{ i18n "voce1_quote" }}
+            </blockquote>
+            <div class="voce-card__attrib">
+              <strong>{{ i18n "voce1_attrib_name" | safeHTML }}</strong>
+              <span>{{ i18n "voce1_attrib_role" | safeHTML }}</span>
             </div>
           </div>
         </article>
@@ -105,7 +105,9 @@
   </div>
 </section>
 
-{{/* JS carousel voci — stessa meccanica della gallery progetto */}}
+{{/* JS carousel voci — navigazione manuale only (no auto-rotate).
+     L'imam apre la sequenza in "primo piano"; le altre voci si scoprono
+     scorrendo manualmente con frecce o dots. */}}
 <script>
 (function(){
   var carousel = document.getElementById('voci-carousel');
@@ -116,8 +118,7 @@
   var prev = carousel.parentElement.querySelector('.voci-nav--prev');
   var next = carousel.parentElement.querySelector('.voci-nav--next');
 
-  // Smooth scroll custom: 400ms con easing cubic (più rapido del browser
-  // default ~600-1000ms che faceva sembrare il carousel "statico").
+  // Smooth scroll custom: 400ms con easing cubic
   function smoothScrollX(el, to, duration){
     var start = el.scrollLeft, dist = to - start, t0 = performance.now();
     function step(now){
@@ -148,34 +149,10 @@
     return best;
   }
 
-  // Auto-rotate: 9s per voce (le citazioni richiedono lettura).
-  // Pausa su hover desktop / touch mobile / tab nascosto / prefers-reduced-motion
-  var AUTO_INTERVAL = 9000;
-  var RESUME_AFTER_INTERACT = 18000;
-  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var autoTimer = null;
-  var paused = prefersReduced;
-  function autoTick(){ if (!paused) activate(currentIdx() + 1); }
-  function autoStart(){ if (autoTimer || paused) return; autoTimer = setInterval(autoTick, AUTO_INTERVAL); }
-  function autoStop(){ if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
-  function autoPauseLong(){
-    paused = true; autoStop();
-    setTimeout(function(){ paused = false; autoStart(); }, RESUME_AFTER_INTERACT);
-  }
-  carousel.addEventListener('mouseenter', autoStop);
-  carousel.addEventListener('mouseleave', autoStart);
-  carousel.addEventListener('touchstart', function(){ autoStop(); paused = true; }, {passive:true});
-  carousel.addEventListener('touchend', function(){
-    setTimeout(function(){ paused = false; autoStart(); }, 6000);
-  }, {passive:true});
-  document.addEventListener('visibilitychange', function(){
-    if (document.hidden) autoStop(); else autoStart();
-  });
-
-  prev && prev.addEventListener('click', function(){ activate(currentIdx() - 1); autoPauseLong(); });
-  next && next.addEventListener('click', function(){ activate(currentIdx() + 1); autoPauseLong(); });
+  prev && prev.addEventListener('click', function(){ activate(currentIdx() - 1); });
+  next && next.addEventListener('click', function(){ activate(currentIdx() + 1); });
   dots.forEach(function(d){
-    d.addEventListener('click', function(){ activate(parseInt(d.dataset.idx, 10)); autoPauseLong(); });
+    d.addEventListener('click', function(){ activate(parseInt(d.dataset.idx, 10)); });
   });
   function syncDots(){
     var idx = currentIdx();
@@ -186,6 +163,5 @@
     carousel._t = setTimeout(syncDots, 80);
   }, {passive:true});
   syncDots();
-  autoStart();
 })();
 </script>
