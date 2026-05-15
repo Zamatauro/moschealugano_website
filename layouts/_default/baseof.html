@@ -15,6 +15,14 @@
   <title>{{ block "title" . }}{{ i18n "meta_title" }}{{ end }}</title>
   <meta name="description" content="{{ i18n "meta_description" }}">
 
+  {{/* Favicon set — logo LMT come marca identitaria.
+       SVG vettoriale per browser moderni, ICO multi-size per legacy,
+       apple-touch-icon 180x180 per iOS, PNG 192 per Android. */}}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
   {{/* Hreflang per SEO multilingua */}}
   {{ range .Translations }}
   <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
@@ -33,11 +41,30 @@
   {{ $css := slice $tokens $main | resources.Concat "css/bundle.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 
-  {{/* OpenGraph */}}
+  {{/* OpenGraph + Twitter Card.
+       OG image generata a build-time dal render della sala polivalente
+       (crop centrato 1200x630, WebP q85). Asset condiviso fra tutte le 7 lingue. */}}
+  {{ $ogImage := (resources.Get "img/progetto/03-render-sala-polivalente.png").Fill "1200x630 webp q85 Center" }}
   <meta property="og:title" content="{{ i18n "meta_og_title" }}">
   <meta property="og:description" content="{{ i18n "meta_og_description" }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:image" content="{{ $ogImage.Permalink }}">
+  <meta property="og:image:secure_url" content="{{ $ogImage.Permalink }}">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ i18n "meta_og_image_alt" }}">
+  <meta property="og:site_name" content="Dar al-Salam">
+  <meta property="og:locale" content="{{ .Site.Language.LanguageCode }}">
+  {{ range .Translations }}
+  <meta property="og:locale:alternate" content="{{ .Language.LanguageCode }}">
+  {{ end }}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ i18n "meta_og_title" }}">
+  <meta name="twitter:description" content="{{ i18n "meta_og_description" }}">
+  <meta name="twitter:image" content="{{ $ogImage.Permalink }}">
+  <meta name="twitter:image:alt" content="{{ i18n "meta_og_image_alt" }}">
 
   {{/* Meta Pixel — pixel ID 1436027624875475 (LMT). Caricamento condizionato
        al consenso utente via cookie banner (vedi script in fondo body).

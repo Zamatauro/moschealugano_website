@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>404 · Dar al-Salam</title>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  {{/* Stesso bundle CSS della home — la pagina 404 eredita branding completo */}}
+  {{ $tokens := resources.Get "css/tokens.css" }}
+  {{ $main := resources.Get "css/main.css" }}
+  {{ $css := slice $tokens $main | resources.Concat "css/bundle.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
+  <style>
+    /* Layout 404 — minimal, centrato, branded ivory */
+    .err404 {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: var(--sp-8) var(--sp-6);
+      text-align: center;
+      background: var(--c-ivory, #f5f1ea);
+    }
+    .err404__code {
+      font-family: var(--font-display, "Philosopher", serif);
+      font-size: clamp(4rem, 12vw, 8rem);
+      line-height: 1;
+      color: var(--c-teal, #2E7474);
+      margin: 0 0 var(--sp-2);
+      letter-spacing: -0.02em;
+    }
+    .err404__wordmark {
+      font-family: var(--font-display, "Philosopher", serif);
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      color: var(--c-text, #1f1f1f);
+      margin: 0 0 var(--sp-6);
+      font-weight: 400;
+    }
+    .err404__msg {
+      max-width: 32rem;
+      font-size: 1.05rem;
+      line-height: 1.55;
+      color: var(--c-text, #1f1f1f);
+      margin: 0 0 var(--sp-6);
+    }
+    .err404__msg ul {
+      list-style: none;
+      padding: 0;
+      margin: var(--sp-4) 0 0;
+      font-size: 0.95rem;
+      color: var(--c-text-muted, #555);
+    }
+    .err404__msg li { margin: 0.35rem 0; }
+    .err404__msg li[lang="ar"] { font-family: "Amiri", serif; direction: rtl; }
+    .err404__cta {
+      display: inline-block;
+      padding: 0.85rem 1.6rem;
+      background: var(--c-teal, #2E7474);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background 0.15s ease;
+    }
+    .err404__cta:hover { background: var(--c-teal-dark, #245959); }
+    .err404__langs {
+      margin-top: var(--sp-8);
+      font-size: 0.85rem;
+      color: var(--c-text-muted, #777);
+    }
+    .err404__langs a {
+      color: var(--c-text-muted, #777);
+      text-decoration: none;
+      margin: 0 0.4rem;
+      border-bottom: 1px dotted currentColor;
+    }
+    .err404__langs a:hover { color: var(--c-teal, #2E7474); }
+  </style>
+</head>
+<body>
+  <main class="err404">
+    <h1 class="err404__code">404</h1>
+    <p class="err404__wordmark">Dar al-Salam</p>
+
+    <div class="err404__msg">
+      <p><strong>Pagina non trovata.</strong> Quello che stavi cercando non esiste, o l'indirizzo è cambiato.</p>
+      <ul>
+        <li lang="ar">الصفحة غير موجودة.</li>
+        <li lang="en">Page not found.</li>
+        <li lang="de">Seite nicht gefunden.</li>
+        <li lang="fr">Page introuvable.</li>
+        <li lang="sq">Faqja nuk u gjet.</li>
+        <li lang="tr">Sayfa bulunamadı.</li>
+      </ul>
+    </div>
+
+    <a href="/" class="err404__cta">← Torna alla home</a>
+
+    <p class="err404__langs">
+      <a href="/">IT</a> ·
+      <a href="/ar/" lang="ar">العربية</a> ·
+      <a href="/en/">EN</a> ·
+      <a href="/de/">DE</a> ·
+      <a href="/fr/">FR</a> ·
+      <a href="/sq/">SQ</a> ·
+      <a href="/tr/">TR</a>
+    </p>
+  </main>
+</body>
+</html>
