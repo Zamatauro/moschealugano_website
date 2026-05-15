@@ -78,7 +78,7 @@
                 <dd>{{ i18n "iban_beneficiario_dd" }}</dd>
               </div>
               <div class="iban__row iban__row--copy">
-                <dt>{{ i18n "iban_iban_dt" }}</dt>
+                <dt>{{ i18n "iban_iban_dt" | safeHTML }}</dt>
                 <dd>
                   <span class="tabular" id="iban-value">{{ $iban }}</span>
                   <button type="button" class="copy-btn" data-copy="{{ $ibanRaw }}" data-copy-label="{{ i18n "copy_copia" }}" data-copied-label="{{ i18n "copy_copiato" }}" aria-label="{{ i18n "copy_iban_aria" }}">
