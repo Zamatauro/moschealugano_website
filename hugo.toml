@@ -5,7 +5,7 @@ baseURL = "https://nuovamoschealugano.ch/"
 title = "Dar al-Salam · Una nuova casa di pace"
 defaultContentLanguage = "it"
 defaultContentLanguageInSubdir = false
-enableRobotsTXT = false  # blocchiamo i bot finché non si lancia
+enableRobotsTXT = true  # GO-LIVE 15.05.2026: robots.txt generato per indicizzazione
 enableEmoji = false
 disableHugoGeneratorInject = true
 disableKinds = ["taxonomy", "term", "RSS"]
@@ -135,9 +135,9 @@ disableKinds = ["taxonomy", "term", "RSS"]
   facebook = "https://www.facebook.com/people/Dar-Al-Salam-Lugano/61589136853286/"
   instagram = "https://www.instagram.com/daralsalam.lugano/"
 
-  # Indicizzazione SEO: false = noindex,nofollow (default per develop/preview).
-  # AL LANCIO portare a true per produzione + flip enableRobotsTXT a true (riga 8).
-  indexable = false
+  # Indicizzazione SEO: true = index,follow (produzione).
+  # GO-LIVE 15.05.2026 — flippato da false a true insieme a enableRobotsTXT (riga 8).
+  indexable = true
 
   # Importi suggeriti (CHF)
   importiSuggeriti = [50, 200, 1000]
