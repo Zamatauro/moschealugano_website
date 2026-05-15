@@ -289,7 +289,7 @@
         </details>
         <div class="budget__row budget__row--highlight">
           <span class="budget__dot" style="background:transparent"></span>
-          <span class="budget__label"><strong>{{ i18n "budget_da_raccogliere" }}</strong></span>
+          <span class="budget__label"><strong>{{ i18n "budget_da_raccogliere" | safeHTML }}</strong></span>
           <span class="budget__value tabular"><strong>CHF {{ .Site.Data.counter.gap_formatted }}</strong></span>
           <span class="budget__pct"></span>
         </div>
@@ -307,7 +307,7 @@
       <div class="callout">
         <p class="callout__eyebrow">{{ i18n "callout1_eyebrow" }}</p>
         <p>
-          {{ i18n "callout1_body_pre" }}<strong>{{ i18n "callout1_body_strong1" }}</strong>{{ i18n "callout1_body_mid" }}<strong>{{ i18n "callout1_body_strong2" }}</strong>{{ i18n "callout1_body_post" }}
+          {{ i18n "callout1_body_pre" }}<strong>{{ i18n "callout1_body_strong1" }}</strong>{{ i18n "callout1_body_mid" }}<strong>{{ i18n "callout1_body_strong2" | safeHTML }}</strong>{{ i18n "callout1_body_post" }}
         </p>
         <p class="callout__quote">{{ i18n "callout1_quote" }}</p>
       </div>

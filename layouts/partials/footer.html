@@ -15,7 +15,7 @@
       <div class="footer__lockup-text">
         <div class="footer__wordmark">Dar al-Salam</div>
         <div class="footer__endorser"><a href="{{ .Site.Params.lmtWebsite }}" target="_blank" rel="noopener">{{ i18n "footer_endorser" }}</a></div>
-        <div class="footer__legal-id">{{ i18n "footer_legal_id" }}</div>
+        <div class="footer__legal-id">{{ i18n "footer_legal_id" | safeHTML }}</div>
       </div>
     </div>
 
