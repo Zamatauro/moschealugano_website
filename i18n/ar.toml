@@ -303,7 +303,7 @@ footer_lmt_link_aria = "اذهب إلى الموقع الرسمي لـ Lega dei 
 
 # ---------- COOKIE BANNER (GDPR / revDSG) ----------
 cookie_title = "ملفات تعريف الارتباط"
-cookie_body = "نستخدم Meta Pixel لقياس فعالية الحملة. لا تُباع أي بيانات شخصية. يمكنك القبول أو الرفض في أي وقت."
+cookie_body = "نستخدم Meta Pixel وGoogle Analytics لقياس فعالية الحملة. لا تُباع أي بيانات شخصية. يمكنك القبول أو الرفض في أي وقت."
 cookie_accept = "قبول"
 cookie_reject = "رفض"
 cookie_manage = "إدارة ملفات الارتباط"

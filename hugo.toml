@@ -139,5 +139,9 @@ disableKinds = ["taxonomy", "term", "RSS"]
   # GO-LIVE 15.05.2026 — flippato da false a true insieme a enableRobotsTXT (riga 8).
   indexable = true
 
+  # Analytics — caricamento gated da consenso cookie banner.
+  # GA4 Measurement ID (creato 16/05/2026 dopo go-live).
+  ga4MeasurementId = "G-GWYR3EVPDZ"
+
   # Importi suggeriti (CHF)
   importiSuggeriti = [50, 200, 1000]

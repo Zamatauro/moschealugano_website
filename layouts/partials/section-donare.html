@@ -184,3 +184,51 @@
     });
   });
 </script>
+
+{{/* GA4 event tracking — solo se gtag caricato (= consenso cookie accettato).
+     Eventi inviati: donation_click sui 4 box importi fissi + sul CTA Carta libero,
+     donation_method_view quando l'utente apre tab Bonifico/Twint/Altre,
+     iban_copy quando l'utente clicca un copy-btn dell'IBAN/BIC/Causale. */}}
+<script>
+  (function(){
+    function fire(name, params){
+      if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+    }
+
+    // Click sui 4 box importi fissi (50/200/1000/5000)
+    document.querySelectorAll('.amount-btn').forEach(function(btn){
+      var big = btn.querySelector('.amount-btn__big');
+      if (!big) return;
+      var amount = parseInt(big.textContent.replace(/[^0-9]/g, ''), 10) || null;
+      btn.addEventListener('click', function(){
+        fire('donation_click', { amount_chf: amount, source: 'fixed_' + amount });
+      });
+    });
+
+    // Click sul CTA "Dona con carta" (importo libero)
+    var ctaCarta = document.querySelector('.tab-panel__cta .btn--primary');
+    if (ctaCarta) ctaCarta.addEventListener('click', function(){
+      fire('donation_click', { amount_chf: null, source: 'free_card' });
+    });
+
+    // Tab switch — l'utente apre Bonifico/Twint/Altre (indica metodo preferito)
+    var tabIds = { 'tab-bonifico': 'bonifico', 'tab-twint': 'twint', 'tab-altre': 'altre' };
+    Object.keys(tabIds).forEach(function(id){
+      var radio = document.getElementById(id);
+      if (radio) radio.addEventListener('change', function(){
+        if (radio.checked) fire('donation_method_view', { method: tabIds[id] });
+      });
+    });
+
+    // Copy IBAN/BIC/Causale (tracking del livello di interesse al bonifico)
+    document.querySelectorAll('.copy-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var label = (btn.getAttribute('aria-label') || '').toLowerCase();
+        var field = label.indexOf('iban') >= 0 ? 'iban'
+                  : label.indexOf('bic') >= 0 ? 'bic'
+                  : label.indexOf('causal') >= 0 ? 'causale' : 'other';
+        fire('iban_copy', { field: field });
+      });
+    });
+  })();
+</script>

@@ -303,7 +303,7 @@ footer_lmt_link_aria = "Shko në faqen zyrtare të Lega dei Musulmani in Ticino"
 
 # ---------- COOKIE BANNER (GDPR / revDSG) ----------
 cookie_title = "Cookies"
-cookie_body = "Përdorim Meta Pixel për të matur efikasitetin e fushatës. Asnjë e dhënë personale nuk shitet. Mund të pranosh ose refuzosh në çdo moment."
+cookie_body = "Përdorim Meta Pixel dhe Google Analytics për të matur efikasitetin e fushatës. Asnjë e dhënë personale nuk shitet. Mund të pranosh ose refuzosh në çdo moment."
 cookie_accept = "Prano"
 cookie_reject = "Refuzo"
 cookie_manage = "Menaxho cookies"
