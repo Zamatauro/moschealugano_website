@@ -66,6 +66,133 @@
   <meta name="twitter:image" content="{{ $ogImage.Permalink }}">
   <meta name="twitter:image:alt" content="{{ i18n "meta_og_image_alt" }}">
 
+  {{/* Schema.org JSON-LD structured data — solo home (.IsHome).
+       Quattro entità in un singolo @graph:
+         1. Organization (LMT) — trust signal con CHE-ID + esenzione fiscale
+         2. PlaceOfWorship — la moschea attuale a Bottogno (per Google Maps)
+         3. DonateAction — l'azione di donazione (eligibility Google for Nonprofits)
+         4. FAQPage — le 9 FAQ del sito (rich snippets espandibili in SERP)
+       Render solo per pagina canonica (home) per evitare duplicazione cross-locale.
+       Le FAQ usano la lingua corrente del sito. */}}
+  {{ if .IsHome }}
+  {{ $hreflang := .Site.Language.LanguageCode }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://nuovamoschealugano.ch/#organization",
+        "name": "Lega dei Musulmani in Ticino",
+        "alternateName": "LMT",
+        "url": "{{ .Site.Params.lmtWebsite }}",
+        "logo": "https://nuovamoschealugano.ch/favicon-192.png",
+        "email": "{{ .Site.Params.emailContatto }}",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{ .Site.Params.indirizzoModeschea }}",
+          "addressLocality": "Lugano",
+          "addressRegion": "Ticino",
+          "postalCode": "6962",
+          "addressCountry": "CH"
+        },
+        "taxID": "{{ .Site.Params.cheId }}",
+        "foundingDate": "2005-06-20",
+        "sameAs": [
+          "{{ .Site.Params.facebook }}",
+          "{{ .Site.Params.instagram }}",
+          "{{ .Site.Params.lmtWebsite }}"
+        ]
+      },
+      {
+        "@type": "PlaceOfWorship",
+        "@id": "https://nuovamoschealugano.ch/#place",
+        "name": "Moschea di Bottogno — Lega dei Musulmani in Ticino",
+        "description": "{{ i18n "meta_description" }}",
+        "url": "https://nuovamoschealugano.ch/",
+        "image": "{{ $ogImage.Permalink }}",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{ .Site.Params.indirizzoModeschea }}",
+          "addressLocality": "Lugano",
+          "addressRegion": "Ticino",
+          "postalCode": "6962",
+          "addressCountry": "CH"
+        },
+        "parentOrganization": { "@id": "https://nuovamoschealugano.ch/#organization" }
+      },
+      {
+        "@type": "DonateAction",
+        "@id": "https://nuovamoschealugano.ch/#donate",
+        "name": "{{ i18n "donare_h2" }}",
+        "description": "Dar al-Salam — campagna fundraising 2026 per il nuovo centro culturale islamico a Lugano-Pregassona.",
+        "recipient": { "@id": "https://nuovamoschealugano.ch/#organization" },
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://nuovamoschealugano.ch/#donare"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "CHF"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://nuovamoschealugano.ch/#faq",
+        "inLanguage": "{{ $hreflang }}",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": {{ i18n "faq_q1" | jsonify }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ printf "%s %s" (i18n "faq_a1_p1") (i18n "faq_a1_p2") | plainify | jsonify }} }
+          },
+          {
+            "@type": "Question",
+            "name": {{ i18n "faq_q1b" | jsonify }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ printf "%s %s %s %s %s" (i18n "faq_a1b_p1") (i18n "faq_a1b_p2") (i18n "faq_a1b_p3") (i18n "faq_a1b_p4") (i18n "faq_a1b_p5") | plainify | jsonify }} }
+          },
+          {
+            "@type": "Question",
+            "name": {{ i18n "faq_q2" | jsonify }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ printf "%s %s %s" (i18n "faq_a2_p1") (i18n "faq_a2_p2") (i18n "faq_a2_p3") | plainify | jsonify }} }
+          },
+          {
+            "@type": "Question",
+            "name": {{ i18n "faq_q3" | jsonify }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ printf "%s %s" (i18n "faq_a3_p1") (i18n "faq_a3_p2") | plainify | jsonify }} }
+          },
+          {
+            "@type": "Question",
+            "name": {{ i18n "faq_q4" | jsonify }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ printf "%s %s %s %s" (i18n "faq_a4_p1_pre") (.Site.Params.cheId) (i18n "faq_a4_p1_post") (i18n "faq_a4_p2") | plainify | jsonify }} }
+          },
+          {
+            "@type": "Question",
+            "name": {{ i18n "faq_q5" | jsonify }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ printf "%s %s %s" (i18n "faq_a5_p1") (i18n "faq_a5_p2") (i18n "faq_a5_p3") | plainify | jsonify }} }
+          },
+          {
+            "@type": "Question",
+            "name": {{ i18n "faq_q6" | jsonify }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ printf "%s %s %s" (i18n "faq_a6_p1") (i18n "faq_a6_p2") (i18n "faq_a6_p3") | plainify | jsonify }} }
+          },
+          {
+            "@type": "Question",
+            "name": {{ i18n "faq_q7" | jsonify }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ i18n "faq_a7_p1" | plainify | jsonify }} }
+          },
+          {
+            "@type": "Question",
+            "name": {{ i18n "faq_q8" | jsonify }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ printf "%s %s" (i18n "faq_a8_p1") (i18n "faq_a8_p2") | plainify | jsonify }} }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  {{ end }}
+
   {{/* Meta Pixel — pixel ID 1436027624875475 (LMT). Caricamento condizionato
        al consenso utente via cookie banner (vedi script in fondo body).
        Il pixel NON parte finché l'utente non ha cliccato "Accetta". */}}
