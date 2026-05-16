@@ -131,6 +131,11 @@ disableKinds = ["taxonomy", "term", "RSS"]
   # Sito ufficiale Lega dei Musulmani in Ticino (LMT) — per link di autorevolezza
   lmtWebsite = "https://islam-lugano.ch/"
 
+  # Piattaforme crowdfunding (tab "Altre piattaforme" sezione donare).
+  # Lascia vuoto "" per mostrare "coming soon"; valorizza per attivare il link.
+  donorboxUrl = "https://donorbox.org/dar-al-salam-934268"
+  launchgoodUrl = ""
+
   # Social Dar al-Salam Lugano (link puliti, senza tracking params)
   facebook = "https://www.facebook.com/people/Dar-Al-Salam-Lugano/61589136853286/"
   instagram = "https://www.instagram.com/daralsalam.lugano/"

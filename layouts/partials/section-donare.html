@@ -143,15 +143,29 @@
                Lokalhelden rimossa: formula "tutto o niente" non compatibile con la campagna. */}}
           {{ $logoDonorbox := resources.Get "img/platforms/donorbox.svg" }}
           {{ $logoLaunchGood := resources.Get "img/platforms/launchgood.svg" }}
+          {{ $donorboxUrl := .Site.Params.donorboxUrl }}
+          {{ $launchgoodUrl := .Site.Params.launchgoodUrl }}
           <div class="platforms">
-            <a href="#" class="platform" aria-disabled="true" aria-label="Donorbox">
-              <img class="platform__logo" src="{{ $logoDonorbox.RelPermalink }}" alt="Donorbox" loading="lazy">
-              <span class="platform__pending">{{ i18n "platform_pending" }}</span>
-            </a>
-            <a href="#" class="platform" aria-disabled="true" aria-label="LaunchGood">
-              <img class="platform__logo" src="{{ $logoLaunchGood.RelPermalink }}" alt="LaunchGood" loading="lazy">
-              <span class="platform__pending">{{ i18n "platform_pending" }}</span>
-            </a>
+            {{ if $donorboxUrl }}
+              <a href="{{ $donorboxUrl }}" class="platform" target="_blank" rel="noopener" aria-label="Donorbox">
+                <img class="platform__logo" src="{{ $logoDonorbox.RelPermalink }}" alt="Donorbox" loading="lazy">
+              </a>
+            {{ else }}
+              <a href="#" class="platform" aria-disabled="true" aria-label="Donorbox">
+                <img class="platform__logo" src="{{ $logoDonorbox.RelPermalink }}" alt="Donorbox" loading="lazy">
+                <span class="platform__pending">{{ i18n "platform_pending" }}</span>
+              </a>
+            {{ end }}
+            {{ if $launchgoodUrl }}
+              <a href="{{ $launchgoodUrl }}" class="platform" target="_blank" rel="noopener" aria-label="LaunchGood">
+                <img class="platform__logo" src="{{ $logoLaunchGood.RelPermalink }}" alt="LaunchGood" loading="lazy">
+              </a>
+            {{ else }}
+              <a href="#" class="platform" aria-disabled="true" aria-label="LaunchGood">
+                <img class="platform__logo" src="{{ $logoLaunchGood.RelPermalink }}" alt="LaunchGood" loading="lazy">
+                <span class="platform__pending">{{ i18n "platform_pending" }}</span>
+              </a>
+            {{ end }}
           </div>
         </div>
 
