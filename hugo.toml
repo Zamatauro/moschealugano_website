@@ -108,6 +108,10 @@ disableKinds = ["taxonomy", "term", "RSS"]
 
   # Indirizzi (CAP corretto 6962, da Copy V1 cowork)
   indirizzoModeschea = "Via Bottogno 12, 6962 Lugano-Viganello"
+  # Indirizzo legale LMT (Registro di Commercio) — usato nella sezione Bonifico
+  # per i campi obbligatori richiesti da alcune banche (Via, NPA, Località, Paese).
+  # Coincide con l'indirizzo della Moschea attuale (sede operativa = sede legale).
+  indirizzoLegaleLMT = "Via Bottogno 12, 6962 Lugano-Viganello, CH"
   indirizzoProgetto = "Via Ceresio 53B, Pregassona"
   mappale = "253 RFD Pregassona"
   superficie = "550 m²"
