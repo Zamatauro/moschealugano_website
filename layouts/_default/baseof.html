@@ -184,6 +184,30 @@
   })();
   </script>
 
+  {{/* GA4 — tracking globale CTA "Vai a #donare" (intent to donate).
+       Mappa source dal parent del link (.hero__cta-row, .storytelling__cta,
+       .nav__cta-wrap, .nav__links, .cta-sticky). Evento sparato anche se gtag
+       non ancora caricato — solo se consenso accettato. */}}
+  <script>
+  (function(){
+    function ctaSource(a){
+      if (a.closest('.cta-sticky')) return 'sticky_mobile';
+      if (a.closest('.hero__cta-row')) return 'hero';
+      if (a.closest('.storytelling__cta')) return 'perche_ora';
+      if (a.closest('.nav__cta-wrap')) return 'nav_cta';
+      if (a.closest('.nav__links')) return 'nav_link';
+      return 'other';
+    }
+    document.querySelectorAll('a[href="#donare"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'intent_to_donate', { source: ctaSource(a) });
+        }
+      });
+    });
+  })();
+  </script>
+
   {{/* Lightbox modale per immagini galleria */}}
   <dialog class="lightbox" id="lightbox" aria-label="{{ i18n "lightbox_aria" }}">
     <button type="button" class="lightbox__close" aria-label="{{ i18n "lightbox_close" }}">×</button>

@@ -230,5 +230,23 @@
         fire('iban_copy', { field: field });
       });
     });
+
+    // QR code bonifico — apertura del <details> (utente desktop che vuole
+    // scansionare con app mobile invece di copiare a mano)
+    var qrDetails = document.querySelector('.iban__qr');
+    if (qrDetails) qrDetails.addEventListener('toggle', function(){
+      if (qrDetails.open) fire('iban_qr_open', {});
+    });
+
+    // Click sui box piattaforme crowdfunding (Donorbox, LaunchGood).
+    // Al momento sono in stato 'coming soon' (aria-disabled), ma tracciamo
+    // comunque l'interesse per misurare la domanda di crowdfunding.
+    document.querySelectorAll('.platform').forEach(function(p){
+      var label = (p.getAttribute('aria-label') || '').toLowerCase();
+      p.addEventListener('click', function(){
+        var disabled = p.getAttribute('aria-disabled') === 'true';
+        fire('platform_click', { platform: label, status: disabled ? 'pending' : 'live' });
+      });
+    });
   })();
 </script>
