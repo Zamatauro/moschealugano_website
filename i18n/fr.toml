@@ -2,9 +2,9 @@
 
 # ---------- META ----------
 meta_title = "Dar al-Salam · Une nouvelle maison de paix"
-meta_description = "Campagne de collecte 2026 pour le nouveau centre culturel islamique à Lugano-Pregassona. Portée par la Lega dei Musulmani in Ticino."
+meta_description = "Campagne de collecte 2026 pour le nouveau centre culturel islamique à Lugano-Pregassona, Suisse. Portée par la Lega dei Musulmani in Ticino."
 meta_og_title = "Dar al-Salam · Une nouvelle maison de paix"
-meta_og_description = "Campagne de collecte 2026 pour le nouveau centre culturel islamique à Lugano-Pregassona."
+meta_og_description = "Campagne de collecte 2026 pour le nouveau centre culturel islamique à Lugano-Pregassona, Suisse."
 meta_og_image_alt = "Rendu de la salle polyvalente de Dar al-Salam · le nouveau centre culturel islamique à Lugano-Pregassona"
 
 # ---------- NAV ----------
@@ -19,7 +19,7 @@ nav_faq = "FAQ"
 nav_dona_cta = "Donner maintenant"
 
 # ---------- HERO ----------
-hero_eyebrow = "Lugano · Collecte 2026"
+hero_eyebrow = "Lugano, Suisse · Collecte 2026"
 hero_claim = "Une nouvelle maison de paix."
 hero_counter_aria = "État de la collecte"
 hero_counter_raccolti = "Collectés à ce jour"
@@ -65,6 +65,7 @@ gallery_caption_10 = "Façade latérale"
 gallery_alt_10 = "Coupe architecturale latérale"
 
 pf_indirizzo = "Adresse"
+pf_indirizzo_value = "Via Ceresio 53B, Pregassona (Lugano), Suisse"
 pf_particella = "Parcelle"
 pf_superficie = "Surface"
 pf_architetto = "Architecte"

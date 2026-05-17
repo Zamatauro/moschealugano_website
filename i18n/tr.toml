@@ -2,9 +2,9 @@
 
 # ---------- META ----------
 meta_title = "Dar al-Salam · Yeni bir barış evi"
-meta_description = "Lugano-Pregassona'daki yeni İslam kültür merkezi için 2026 bağış kampanyası. Lega dei Musulmani in Ticino tarafından yürütülmektedir."
+meta_description = "İsviçre, Lugano-Pregassona'daki yeni İslam kültür merkezi için 2026 bağış kampanyası. Lega dei Musulmani in Ticino tarafından yürütülmektedir."
 meta_og_title = "Dar al-Salam · Yeni bir barış evi"
-meta_og_description = "Lugano-Pregassona'daki yeni İslam kültür merkezi için 2026 bağış kampanyası."
+meta_og_description = "İsviçre, Lugano-Pregassona'daki yeni İslam kültür merkezi için 2026 bağış kampanyası."
 meta_og_image_alt = "Dar al-Salam'ın Çok amaçlı salonunun render görüntüsü · Lugano-Pregassona'daki yeni İslam kültür merkezi"
 
 # ---------- NAV ----------
@@ -19,7 +19,7 @@ nav_faq = "SSS"
 nav_dona_cta = "Şimdi bağış yapın"
 
 # ---------- HERO ----------
-hero_eyebrow = "Lugano · 2026 Bağış kampanyası"
+hero_eyebrow = "Lugano, İsviçre · 2026 Bağış kampanyası"
 hero_claim = "Yeni bir barış evi."
 hero_counter_aria = "Bağış durumu"
 hero_counter_raccolti = "Şu ana kadar toplanan"
@@ -66,6 +66,7 @@ gallery_caption_10 = "Yan cephe"
 gallery_alt_10 = "Mimari yan cephe"
 
 pf_indirizzo = "Adres"
+pf_indirizzo_value = "Via Ceresio 53B, Pregassona (Lugano), İsviçre"
 pf_particella = "Parsel"
 pf_superficie = "Yüzölçümü"
 pf_architetto = "Mimar"

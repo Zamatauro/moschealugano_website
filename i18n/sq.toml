@@ -2,9 +2,9 @@
 
 # ---------- META ----------
 meta_title = "Dar al-Salam · Një shtëpi e re paqeje"
-meta_description = "Fushatë mbledhjeje fondesh 2026 për qendrën e re kulturore islame në Lugano-Pregassona. E nismuar nga Lega dei Musulmani in Ticino."
+meta_description = "Fushatë mbledhjeje fondesh 2026 për qendrën e re kulturore islame në Lugano-Pregassona, Zvicër. E nismuar nga Lega dei Musulmani in Ticino."
 meta_og_title = "Dar al-Salam · Një shtëpi e re paqeje"
-meta_og_description = "Fushatë mbledhjeje fondesh 2026 për qendrën e re kulturore islame në Lugano-Pregassona."
+meta_og_description = "Fushatë mbledhjeje fondesh 2026 për qendrën e re kulturore islame në Lugano-Pregassona, Zvicër."
 meta_og_image_alt = "Pamje e Sallës shumëfunksionale të Dar al-Salam · qendra e re kulturore islame në Lugano-Pregassona"
 
 # ---------- NAV ----------
@@ -19,7 +19,7 @@ nav_faq = "FAQ"
 nav_dona_cta = "Dhuro tani"
 
 # ---------- HERO ----------
-hero_eyebrow = "Lugano · Mbledhje fondesh 2026"
+hero_eyebrow = "Lugano, Zvicër · Mbledhje fondesh 2026"
 hero_claim = "Një shtëpi e re paqeje."
 hero_counter_aria = "Statusi i mbledhjes"
 hero_counter_raccolti = "Të mbledhura deri tani"
@@ -65,6 +65,7 @@ gallery_caption_10 = "Pamja anësore"
 gallery_alt_10 = "Seksion arkitektonik anësor"
 
 pf_indirizzo = "Adresa"
+pf_indirizzo_value = "Via Ceresio 53B, Pregassona (Lugano), Zvicër"
 pf_particella = "Parcela"
 pf_superficie = "Sipërfaqja"
 pf_architetto = "Arkitekt"

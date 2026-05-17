@@ -112,7 +112,8 @@ disableKinds = ["taxonomy", "term", "RSS"]
   # per i campi obbligatori richiesti da alcune banche (Via, NPA, Località, Paese).
   # Coincide con l'indirizzo della Moschea attuale (sede operativa = sede legale).
   indirizzoLegaleLMT = "Via Bottogno 12, 6962 Lugano-Viganello, CH"
-  indirizzoProgetto = "Via Ceresio 53B, Pregassona"
+  # indirizzoProgetto (scheda progetto) ora gestito via i18n "pf_indirizzo_value"
+  # per includere "Svizzera" tradotto nelle 7 lingue (chiarezza per visitatori esteri).
   mappale = "253 RFD Pregassona"
   superficie = "550 m²"
   architetto = "Beier Cabrini Architetti, Carabbia"
