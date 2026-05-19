@@ -66,6 +66,7 @@ gallery_alt_10 = "Seksion arkitektonik anësor"
 
 pf_indirizzo = "Adresa"
 pf_indirizzo_value = "Via Ceresio 53B, Pregassona (Lugano), Zvicër"
+pf_particella_value = "253 RFD Pregassona"
 pf_particella = "Parcela"
 pf_superficie = "Sipërfaqja"
 pf_architetto = "Arkitekt"

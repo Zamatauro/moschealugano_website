@@ -66,6 +66,7 @@ gallery_alt_10 = "Architectural side elevation"
 
 pf_indirizzo = "Address"
 pf_indirizzo_value = "Via Ceresio 53B, Pregassona (Lugano), Switzerland"
+pf_particella_value = "253 RFD Pregassona"
 pf_particella = "Plot"
 pf_superficie = "Surface area"
 pf_architetto = "Architect"

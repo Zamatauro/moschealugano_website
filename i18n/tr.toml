@@ -67,6 +67,7 @@ gallery_alt_10 = "Mimari yan cephe"
 
 pf_indirizzo = "Adres"
 pf_indirizzo_value = "Via Ceresio 53B, Pregassona (Lugano), İsviçre"
+pf_particella_value = "253 RFD Pregassona"
 pf_particella = "Parsel"
 pf_superficie = "Yüzölçümü"
 pf_architetto = "Mimar"

@@ -73,6 +73,7 @@ gallery_alt_10 = "Sezione architettonica laterale"
 # Project facts
 pf_indirizzo = "Indirizzo"
 pf_indirizzo_value = "Via Ceresio 53B, Pregassona (Lugano), Svizzera"
+pf_particella_value = "253 RFD Pregassona"
 pf_particella = "Particella"
 pf_superficie = "Superficie"
 pf_architetto = "Architetto"

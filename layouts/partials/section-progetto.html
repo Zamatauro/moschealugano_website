@@ -165,7 +165,7 @@
     <div class="project-facts">
       <dl>
         <div><dt>{{ i18n "pf_indirizzo" }}</dt><dd>{{ i18n "pf_indirizzo_value" }}</dd></div>
-        <div><dt>{{ i18n "pf_particella" }}</dt><dd>{{ .Site.Params.mappale }}</dd></div>
+        <div><dt>{{ i18n "pf_particella" }}</dt><dd>{{ i18n "pf_particella_value" }}</dd></div>
         <div><dt>{{ i18n "pf_superficie" }}</dt><dd>{{ .Site.Params.superficie }}</dd></div>
         <div><dt>{{ i18n "pf_architetto" }}</dt><dd>{{ .Site.Params.architetto }}</dd></div>
         <div><dt>{{ i18n "pf_capienza" }}</dt><dd>{{ i18n "pf_capienza_value" }}</dd></div>
@@ -297,7 +297,7 @@
         {{/* Mini callout progetto, ispirato dal mockup Wave 2 */}}
         <div class="budget__project-mini">
           <p class="budget__project-eyebrow">{{ i18n "budget_project_eyebrow" }}</p>
-          <p>{{ i18n "budget_project_text" }}</p>
+          <p>{{ i18n "budget_project_text" | safeHTML }}</p>
         </div>
       </div>
     </div>
