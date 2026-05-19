@@ -4,6 +4,6 @@ hero_claim: "A new house of peace."
 hero_body: |
   Bismillah ar-Rahman ar-Rahim. Dear brothers and sisters,
   after twenty years renting in Viganello (Lugano), Allah has opened
-  a door for us in Pregassona. Our parcel exists. We need
+  a door for us in Pregassona (Lugano). Our parcel exists. We need
   CHF 983,600 to purchase our own land by 15 September.
 ---
