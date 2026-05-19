@@ -25,6 +25,7 @@ hero_counter_aria = "Bağış durumu"
 hero_counter_raccolti = "Şu ana kadar toplanan"
 hero_counter_mancano = "Hâlâ eksik"
 hero_counter_pct_obiettivo = "hedefin"
+hero_counter_giorni_label_pre = ""
 hero_counter_giorni_label = "gün kaldı"
 hero_counter_aggiornato = "Güncellendi"
 # Convenzione turca: data-giorno (es. "5 Mayıs 2026 Salı"). Riordino positional.

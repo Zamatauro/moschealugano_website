@@ -27,6 +27,7 @@ hero_counter_aria = "Stato della raccolta"
 hero_counter_raccolti = "Raccolti finora"
 hero_counter_mancano = "Mancano ancora"
 hero_counter_pct_obiettivo = "dell'obiettivo"
+hero_counter_giorni_label_pre = ""
 hero_counter_giorni_label = "giorni rimanenti"
 hero_counter_aggiornato = "Aggiornato"
 # Format string per data localizzata (printf-style). Argomenti in ordine:

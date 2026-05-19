@@ -51,7 +51,7 @@
           </div>
           <div class="counter__meta">
             <span><span class="counter__pct">{{ printf "%.0f" $pct }}%</span> {{ i18n "hero_counter_pct_obiettivo" }}</span>
-            <span class="counter__days"><strong class="tabular">{{ $daysRemaining }} {{ i18n "hero_counter_giorni_label" }}</strong></span>
+            <span class="counter__days"><strong class="tabular">{{ i18n "hero_counter_giorni_label_pre" }}{{ $daysRemaining }} {{ i18n "hero_counter_giorni_label" }}</strong></span>
             {{/* Counter "Aggiornato …" — data formattata dinamicamente da updated_iso
                  per TUTTE le 7 lingue. Tabelle in data/locale/{days,months}_{lang}.yaml,
                  format string per-lingua in i18n key `counter_date_format`. Fallback
