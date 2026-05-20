@@ -30,7 +30,7 @@
         <div class="faq__body">
           <p>{{ i18n "faq_a2_p1" | safeHTML }}</p>
           <p>{{ i18n "faq_a2_p2" | safeHTML }}</p>
-          {{ with i18n "faq_a2_p3" }}<p>{{ . | safeHTML }}</p>{{ end }}
+          {{ if ne .Site.Language.Lang "ar" }}<p>{{ i18n "faq_a2_p3" | safeHTML }}</p>{{ end }}
         </div>
       </details>
 

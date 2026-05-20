@@ -154,7 +154,7 @@
           {
             "@type": "Question",
             "name": {{ i18n "faq_q2" | jsonify }},
-            "acceptedAnswer": { "@type": "Answer", "text": {{ printf "%s %s %s" (i18n "faq_a2_p1") (i18n "faq_a2_p2") (i18n "faq_a2_p3") | plainify | jsonify }} }
+            "acceptedAnswer": { "@type": "Answer", "text": {{ if eq .Site.Language.Lang "ar" }}{{ printf "%s %s" (i18n "faq_a2_p1") (i18n "faq_a2_p2") | plainify | jsonify }}{{ else }}{{ printf "%s %s %s" (i18n "faq_a2_p1") (i18n "faq_a2_p2") (i18n "faq_a2_p3") | plainify | jsonify }}{{ end }} }
           },
           {
             "@type": "Question",
