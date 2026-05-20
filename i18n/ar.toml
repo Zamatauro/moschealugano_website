@@ -281,7 +281,7 @@ trasp_h2 = "المستندات والحوكمة والحساب المخصَّص"
 trasp_body_p1_pre = "<a href=\"https://islam-lugano.ch/\" target=\"_blank\" rel=\"noopener\">Lega dei Musulmani in Ticino</a> مسجَّلة في السجلّ التجاري لكانتون تيتشينو منذ 20 يونيو 2005 برقم "
 trasp_body_p1_post = ". وهي معفاة من الضرائب الكانتونية والفيدرالية على دخلها منذ 13 مارس 2014، وفقاً للمادة 65 الفقرة <bdi>(g)</bdi> من قانون الضرائب الكانتوني والمادة 56 الفقرة <bdi>(h)</bdi> من قانون الضرائب الفيدرالي <bdi>LIFD</bdi>."
 trasp_body_p2 = "اللجنة الحالية انتُخبت في 23 يناير 2019. الرئيس وأمين الصندوق هو <strong>سمير جمعة (Samir Gomaa)</strong> (توقيع منفرد). نائب الرئيس <strong>سمير رضوان الجلاصي (Samir Radouan Jelassi)</strong>. عضو وأمين السرّ <strong>عدنان الحريري (Adnan Al Hariri)</strong>."
-trasp_body_p3 = "تبرّعاتكم لحملة دار السلام تصل إلى حساب <strong>IBAN PostFinance وهو مخصَّص ومنفصل</strong> عن الحساب الجاري للجمعية، باسم: <bdi>Lega dei Musulmani in Ticino</bdi> مع ذكر سبب التحويل \"Progetto Nuova Moschea\"."
+trasp_body_p3 = "تبرّعاتكم لحملة دار السلام تصل إلى حساب <strong>IBAN PostFinance وهو حساب مخصَّص ومنفصل</strong> عن الحساب الجاري للجمعية، باسم: <strong><bdi>Lega dei Musulmani in Ticino</bdi></strong> مع ذكر سبب التحويل <strong>\"Progetto Nuova Moschea\"</strong>."
 trasp_body_p4 = "تقرير الجمع يُنشَر أسبوعياً على هذه الصفحة."
 # Comitato direttivo — V2 (8 mag 2026)
 trasp_committee_h3 = "مجلس إدارة رابطة مسلمي تيتشينو"
