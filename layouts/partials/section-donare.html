@@ -65,7 +65,7 @@
           </div>
           <div class="tab-panel__cta">
             <a href="{{ $sumup }}" class="btn btn--primary" target="_blank" rel="noopener">
-              {{ i18n "carta_cta" }}
+              {{ i18n "carta_cta" | safeHTML }}
             </a>
             <p class="tab-panel__meta">{{ i18n "carta_meta" }}</p>
           </div>
