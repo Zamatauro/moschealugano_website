@@ -140,7 +140,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
   # Piattaforme crowdfunding (tab "Altre piattaforme" sezione donare).
   # Lascia vuoto "" per mostrare "coming soon"; valorizza per attivare il link.
   donorboxUrl = "https://donorbox.org/dar-al-salam-934268"
-  launchgoodUrl = ""
+  launchgoodUrl = "https://www.launchgood.com/v4/campaign/dar_al_salam?src=6793940"
 
   # Social Dar al-Salam Lugano (link puliti, senza tracking params)
   facebook = "https://www.facebook.com/people/Dar-Al-Salam-Lugano/61589136853286/"
