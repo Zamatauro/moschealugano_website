@@ -208,14 +208,37 @@
   });
 </script>
 
-{{/* GA4 event tracking — solo se gtag caricato (= consenso cookie accettato).
+{{/* GA4 + Meta Pixel event tracking — solo se gtag/fbq caricati (= consenso cookie accettato).
      Eventi inviati: donation_click sui 4 box importi fissi + sul CTA Carta libero,
      donation_method_view quando l'utente apre tab Bonifico/Twint/Altre,
-     iban_copy quando l'utente clicca un copy-btn dell'IBAN/BIC/Causale. */}}
+     iban_copy quando l'utente clicca un copy-btn dell'IBAN/BIC/Causale.
+
+     Meta Pixel: 'Donate' (standard event) per abilitare campagne con
+     obiettivo Conversione. Sparato solo su segnali di vera intenzione di donare:
+     - click su box importo fisso (con value)
+     - click su CTA carta libero (senza value, importo digitato dopo in SumUp)
+     - click su piattaforme live (Donorbox/LaunchGood)
+     - copy IBAN/BIC/Causale o apertura QR (dedup: solo prima volta per sessione,
+       per non gonfiare il count). Bonifico = unico canale che porta fuori da
+       qualsiasi tracciamento, quindi è importante captarne l'intento qui.
+     NON sparato su tab switch, intent_to_donate (#donare) — troppo a monte,
+     sporcherebbero il targeting algoritmico Meta. */}}
 <script>
   (function(){
+    var bonificoIntentFired = false;
     function fire(name, params){
       if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+      if (typeof window.fbq !== 'function') return;
+      var fbParams = { currency: 'CHF' };
+      if (name === 'donation_click') {
+        if (params && params.amount_chf) fbParams.value = params.amount_chf;
+        window.fbq('track', 'Donate', fbParams);
+      } else if (name === 'platform_click' && params && params.status === 'live') {
+        window.fbq('track', 'Donate', fbParams);
+      } else if ((name === 'iban_copy' || name === 'iban_qr_open') && !bonificoIntentFired) {
+        bonificoIntentFired = true;
+        window.fbq('track', 'Donate', fbParams);
+      }
     }
 
     // Click sui 4 box importi fissi (50/200/1000/5000)
