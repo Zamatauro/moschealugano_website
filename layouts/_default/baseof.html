@@ -23,6 +23,12 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
+  {{/* Canonical: indica a Google la versione "ufficiale" della pagina.
+       Risolve "Duplicate page without user-selected canonical" su Search Console
+       quando il sito è accessibile sia su www. che apex. .Permalink usa il baseURL
+       in hugo.toml (nuovamoschealugano.ch, senza www) come canonical. */}}
+  <link rel="canonical" href="{{ .Permalink }}">
+
   {{/* Hreflang per SEO multilingua */}}
   {{ range .Translations }}
   <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">

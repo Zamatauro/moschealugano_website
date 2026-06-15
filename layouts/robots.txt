@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# /cdn-cgi/ è un endpoint interno di Cloudflare (es. email-protection per
+# l'obfuscation dei mailto:). Non sono pagine reali, vanno escluse dal crawl.
+# Risolve i 404 segnalati da Search Console su /cdn-cgi/l/email-protection.
+Disallow: /cdn-cgi/
+
+Sitemap: {{ "sitemap.xml" | absURL }}
