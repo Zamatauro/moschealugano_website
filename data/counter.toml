@@ -8,14 +8,14 @@
 #          spese legali 30k stima prudenziale) — intermediazione rimossa
 # gap    = goal - raised = quanto manca da raccogliere ora
 
-raised = 473161
-raised_formatted = "473'161"
+raised = 475953
+raised_formatted = "475'953"
 
 goal = 1405000
 goal_formatted = "1'405'000"
 
-gap = 931839
-gap_formatted = "931'839"
+gap = 929047
+gap_formatted = "929'047"
 
 donors_count = 0   # SOSTITUIRE con cifra reale al lancio (es. 421)
 
@@ -25,5 +25,5 @@ deadline_iso = "2026-09-15"
 # finché V3 non propaga la dinamizzazione a tutte le lingue).
 # Per /sq/ usiamo `updated_iso` + tabelle data/locale/{days,months}_sq.yaml
 # per generare la stringa albanese dinamicamente.
-updated = "lunedì 6 luglio 2026"
-updated_iso = "2026-07-06"
+updated = "domenica 12 luglio 2026"
+updated_iso = "2026-07-12"
