@@ -715,6 +715,9 @@ html[dir="rtl"] .hero__wordmark-ar { text-align: right; }
 }
 .footer__cookie-link:hover { color: var(--c-cta); }
 .footer__copyright { margin-left: auto; }
+.footer__credit-oida { font-size: 0.6875rem; opacity: 0.75; }
+.footer__credit-oida a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.footer__credit-oida a:hover { color: var(--c-cta); }
 
 /* ---------- COOKIE BANNER (GDPR / revDSG, consenso Meta Pixel) ---------- */
 .cookie-banner {

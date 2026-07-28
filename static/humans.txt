@@ -1,0 +1,20 @@
+/* SITE */
+    Site: Dar al-Salam
+    URL: https://nuovamoschealugano.ch/
+    Purpose: campagna fundraising 2026 per il nuovo centro culturale islamico
+             a Lugano-Pregassona, Svizzera.
+    Owner: Lega dei Musulmani in Ticino (LMT)
+    Owner URL: https://islam-lugano.ch/
+    Languages: it, ar, en, de, fr, sq, tr
+    Doctype: HTML5
+    Standards: HTML5, CSS3, JSON-LD (schema.org)
+    Built with: Hugo (extended)
+    Hosting: Cloudflare Pages
+
+/* TEAM */
+    Design & Development: OIDA Labs
+    URL: https://oida-labs.com
+    Location: Canton Ticino, Switzerland
+
+/* THANKS */
+    Comunità di Dar al-Salam

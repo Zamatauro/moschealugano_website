@@ -1,0 +1,36 @@
+# Dar al-Salam
+
+> Campagna di raccolta fondi 2026 per la costruzione del nuovo centro culturale islamico Dar al-Salam a Lugano-Pregassona (Canton Ticino, Svizzera). Promossa dalla Lega dei Musulmani in Ticino (LMT).
+
+## Chi
+
+- **Ente promotore**: Lega dei Musulmani in Ticino (LMT), associazione iscritta al Registro di commercio del Cantone Ticino con n. CHE-112.406.415, esente dalle imposte cantonali e federali sui propri redditi dal 13 marzo 2014.
+- **Sede attuale**: Via Bottogno 12, 6962 Lugano-Viganello.
+- **Sede legale nuovo centro**: Pregassona (Lugano).
+- **Sito realizzato da**: [OIDA Labs](https://oida-labs.com) — pro bono.
+
+## Obiettivo
+
+Raccolta di CHF 1'405'000 entro il 15 settembre 2026 per finalizzare l'acquisto della particella su cui sarà costruito il nuovo centro (Fase 1: terreno + progetto + spese notarili e legali).
+
+## Come donare
+
+- **Carta di credito**: link SumUp dedicati per importi fissi 50 / 200 / 1'000 / 5'000 CHF, oppure importo libero.
+- **Bonifico bancario**: IBAN CH44 0900 0000 6576 2899 3 (PostFinance, conto dedicato al progetto).
+- **Twint**: QR code sul sito.
+- **Piattaforme di crowdfunding**: Donorbox, LaunchGood.
+
+## Contenuti del sito
+
+- [Homepage (IT)](https://nuovamoschealugano.ch/) — landing di campagna con counter, breakdown budget, come donare, FAQ.
+- [العربية (AR)](https://nuovamoschealugano.ch/ar/)
+- [English (EN)](https://nuovamoschealugano.ch/en/)
+- [Deutsch (DE)](https://nuovamoschealugano.ch/de/)
+- [Français (FR)](https://nuovamoschealugano.ch/fr/)
+- [Shqip (SQ)](https://nuovamoschealugano.ch/sq/)
+- [Türkçe (TR)](https://nuovamoschealugano.ch/tr/)
+
+## Contatto
+
+- Email: info@islam-lugano.ch
+- Sito LMT: https://islam-lugano.ch/
